@@ -384,10 +384,10 @@
 	--wui-selectpicker-opener-iconcolor-disabled: var(--wuiplugins-theme-utilitycolor-disabled);
 	--wui-selectpicker-opener-openicon-src: none;
 	--wui-selectpicker-opener-closeicon-src: none;
-	--wui-selectpicker-input-paddingleft: 10px;
-	--wui-selectpicker-input-textcolor-out: var(--wui-form-input-textcolor-out);
-	--wui-selectpicker-input-textcolor-over: var(--wui-form-input-textcolor-over);
-	--wui-selectpicker-input-textcolor-disabled: var(--wui-form-input-textcolor-disabled);
+	--wui-selectpicker-viewinput-paddingleft: 10px;
+	--wui-selectpicker-viewinput-textcolor-out: var(--wui-form-input-textcolor-out);
+	--wui-selectpicker-viewinput-textcolor-over: var(--wui-form-input-textcolor-over);
+	--wui-selectpicker-viewinput-textcolor-disabled: var(--wui-form-input-textcolor-disabled);
 	--wui-selectpicker-box-shadowcolor: var(--wuiplugins-theme-shadowcolor-low);
 	--wui-selectpicker-box-borderradius: var(--wuiplugins-theme-borderradius-half);
 	--wui-selectpicker-box-bordercolor: var(--wuiplugins-theme-bordercolor-low);
@@ -427,10 +427,10 @@
 	--wui-datepicker-opener-iconcolor-disabled: var(--wuiplugins-theme-utilitycolor-disabled);
 	--wui-datepicker-opener-openicon-src: none;
 	--wui-datepicker-opener-closeicon-src: none;
-	--wui-datepicker-input-paddingleft: 10px;
-	--wui-datepicker-input-textcolor-out: var(--wui-form-input-textcolor-out);
-	--wui-datepicker-input-textcolor-over: var(--wui-form-input-textcolor-over);
-	--wui-datepicker-input-textcolor-disabled: var(--wui-form-input-textcolor-disabled);
+	--wui-datepicker-viewinput-paddingleft: 10px;
+	--wui-datepicker-viewinput-textcolor-out: var(--wui-form-input-textcolor-out);
+	--wui-datepicker-viewinput-textcolor-over: var(--wui-form-input-textcolor-over);
+	--wui-datepicker-viewinput-textcolor-disabled: var(--wui-form-input-textcolor-disabled);
 	--wui-datepicker-box-shadowcolor: var(--wuiplugins-theme-shadowcolor-low);
 	--wui-datepicker-box-borderradius: var(--wuiplugins-theme-borderradius-half);
 	--wui-datepicker-box-bordercolor: var(--wuiplugins-theme-bordercolor-low);
@@ -476,10 +476,10 @@
 	--wui-timepicker-opener-iconcolor-disabled: var(--wuiplugins-theme-utilitycolor-disabled);
 	--wui-timepicker-opener-openicon-src: none;
 	--wui-timepicker-opener-closeicon-src: none;
-	--wui-timepicker-input-paddingleft: 10px;
-	--wui-timepicker-input-textcolor-out: var(--wui-form-input-textcolor-out);
-	--wui-timepicker-input-textcolor-over: var(--wui-form-input-textcolor-over);
-	--wui-timepicker-input-textcolor-disabled: var(--wui-form-input-textcolor-disabled);
+	--wui-timepicker-viewinput-paddingleft: 10px;
+	--wui-timepicker-viewinput-textcolor-out: var(--wui-form-input-textcolor-out);
+	--wui-timepicker-viewinput-textcolor-over: var(--wui-form-input-textcolor-over);
+	--wui-timepicker-viewinput-textcolor-disabled: var(--wui-form-input-textcolor-disabled);
 	--wui-timepicker-box-shadowcolor: var(--wuiplugins-theme-shadowcolor-low);
 	--wui-timepicker-box-borderradius: var(--wuiplugins-theme-borderradius-half);
 	--wui-timepicker-box-bordercolor: var(--wuiplugins-theme-bordercolor-low);
@@ -620,11 +620,13 @@
 	--wui-button-mobile-icon-float-padding: 10px;
 	--wui-button-form-default-minwidth: 100px;
 }
+
 .wuiplugins-themes {
 	-webkit-transition: none;
 	-moz-transition: none;
 	transition: none;
 }
+
 .wuiplugins-themes.system {
 	color-scheme: light dark;
 	--wuiplugins-theme-graycolor-max: light-dark(var(--wuiplugins-theme-graycolor-max-light), var(--wuiplugins-theme-graycolor-max-dark));
@@ -654,6 +656,7 @@
 	--wuiplugins-theme-intencitycolor-half: light-dark(var(--wuiplugins-theme-intencitycolor-half-light), var(--wuiplugins-theme-intencitycolor-half-dark));
 	--wuiplugins-theme-intencitycolor-high: light-dark(var(--wuiplugins-theme-intencitycolor-high-light), var(--wuiplugins-theme-intencitycolor-high-dark));
 }
+
 .wuiplugins-themes.light {
 	color-scheme: light;
 	--wuiplugins-theme-graycolor-max: var(--wuiplugins-theme-graycolor-max-light);
@@ -683,6 +686,7 @@
 	--wuiplugins-theme-intencitycolor-half: var(--wuiplugins-theme-intencitycolor-half-light);
 	--wuiplugins-theme-intencitycolor-high: var(--wuiplugins-theme-intencitycolor-high-light);
 }
+
 .wuiplugins-themes.dark {
 	color-scheme: dark;
 	--wuiplugins-theme-graycolor-max: var(--wuiplugins-theme-graycolor-max-dark);
@@ -712,6 +716,7 @@
 	--wuiplugins-theme-intencitycolor-half: var(--wuiplugins-theme-intencitycolor-half-dark);
 	--wuiplugins-theme-intencitycolor-high: var(--wuiplugins-theme-intencitycolor-high-dark);
 }
+
 .wuiplugins-themes.transition,
 .wuiplugins-themes.transition * {
 	--delay: var(--wuiplugins-theme-transition-delay);
