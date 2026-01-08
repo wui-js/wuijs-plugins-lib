@@ -463,6 +463,8 @@
 	--wui-timepicker-box-borderradius: var(--wuiplugins-theme-borderradius-half);
 	--wui-timepicker-box-bordercolor: var(--wuiplugins-theme-bordercolor-low);
 	--wui-timepicker-box-bgcolor: rgb(from var(--wuiplugins-theme-graycolor-max) r g b / 80%);
+	--wui-timepicker-box-scroll-bgcolor-out: rgb(from var(--wuiplugins-theme-bgcolor-scroll) r g b / 20%);
+	--wui-timepicker-box-scroll-bgcolor-over: rgb(from var(--wuiplugins-theme-bgcolor-scroll) r g b / 40%);
 	--wui-timepicker-box-option-bgcolor-now: var(--wuiplugins-theme-bordercolor-low);
 	--wui-timepicker-box-option-bgcolor-over: rgb(from var(--wuiplugins-theme-utilitycolor-hightlight) r g b / 20%);
 	--wui-timepicker-box-option-bgcolor-selected: var(--wuiplugins-theme-utilitycolor-hightlight);

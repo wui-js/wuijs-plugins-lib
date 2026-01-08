@@ -388,6 +388,8 @@
 	--wui-timepicker-box-borderradius: 15px;
 	--wui-timepicker-box-bordercolor: #f0f0f3;
 	--wui-timepicker-box-bgcolor: rgb(from #fff r g b / 80%);
+	--wui-timepicker-box-scroll-bgcolor-out: rgb(from #353a40 r g b / 20%);
+	--wui-timepicker-box-scroll-bgcolor-over: rgb(from #353a40 r g b / 40%);
 	--wui-timepicker-box-option-bgcolor-now: #f0f0f3;
 	--wui-timepicker-box-option-bgcolor-over: rgb(from #1e90ff r g b / 20%);
 	--wui-timepicker-box-option-bgcolor-selected: #1e90ff;
