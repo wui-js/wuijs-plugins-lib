@@ -423,20 +423,20 @@
 
 	/* wui-colorpicker */
 
-	--wui-colorpicker-button-size: 30px;
-	--wui-colorpicker-button-bordercolor-out: rgb(from #1e90ff r g b / 20%);
-	--wui-colorpicker-button-bordercolor-over: #1e90ff;
-	--wui-colorpicker-button-bordercolor-invalid: #f44343;
-	--wui-colorpicker-button-bordercolor-disabled: #4b5563;
-	--wui-colorpicker-button-bgcolor-out: transparent;
-	--wui-colorpicker-button-bgcolor-over: transparent;
-	--wui-colorpicker-button-bgcolor-disabled: transparent;
 	--wui-colorpicker-opener-iconsize: 30px;
 	--wui-colorpicker-opener-iconcolor-out: #fff;
 	--wui-colorpicker-opener-iconcolor-over: #1e90ff;
 	--wui-colorpicker-opener-iconcolor-disabled: #4b5563;
 	--wui-colorpicker-opener-openicon-src: none;
 	--wui-colorpicker-opener-closeicon-src: none;
+	--wui-colorpicker-viewbutton-size: 30px;
+	--wui-colorpicker-viewbutton-bordercolor-out: rgb(from #1e90ff r g b / 20%);
+	--wui-colorpicker-viewbutton-bordercolor-over: #1e90ff;
+	--wui-colorpicker-viewbutton-bordercolor-invalid: #f44343;
+	--wui-colorpicker-viewbutton-bordercolor-disabled: #4b5563;
+	--wui-colorpicker-viewbutton-bgcolor-out: transparent;
+	--wui-colorpicker-viewbutton-bgcolor-over: transparent;
+	--wui-colorpicker-viewbutton-bgcolor-disabled: transparent;
 	--wui-colorpicker-viewcolor-borderwidth: 1px;
 	--wui-colorpicker-viewcolor-bordercolor: rgb(from #1e90ff r g b / 20%);
 	--wui-colorpicker-viewcolor-emptyicon-src: none;

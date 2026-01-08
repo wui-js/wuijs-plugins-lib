@@ -498,20 +498,20 @@
 
 	/* wui-colorpicker */
 
-	--wui-colorpicker-button-size: 30px;
-	--wui-colorpicker-button-bordercolor-out: rgb(from var(--wuiplugins-theme-utilitycolor-hightlight) r g b / 20%);
-	--wui-colorpicker-button-bordercolor-over: var(--wuiplugins-theme-utilitycolor-hightlight);
-	--wui-colorpicker-button-bordercolor-invalid: var(--wuiplugins-theme-utilitycolor-warning);
-	--wui-colorpicker-button-bordercolor-disabled: var(--wuiplugins-theme-utilitycolor-disabled);
-	--wui-colorpicker-button-bgcolor-out: transparent;
-	--wui-colorpicker-button-bgcolor-over: transparent;
-	--wui-colorpicker-button-bgcolor-disabled: transparent;
 	--wui-colorpicker-opener-iconsize: var(--wuiplugins-theme-input-opener-iconsize);
 	--wui-colorpicker-opener-iconcolor-out: var(--wuiplugins-theme-graycolor-min);
 	--wui-colorpicker-opener-iconcolor-over: var(--wuiplugins-theme-utilitycolor-hightlight);
 	--wui-colorpicker-opener-iconcolor-disabled: var(--wuiplugins-theme-utilitycolor-disabled);
 	--wui-colorpicker-opener-openicon-src: none;
 	--wui-colorpicker-opener-closeicon-src: none;
+	--wui-colorpicker-viewbutton-size: 30px;
+	--wui-colorpicker-viewbutton-bordercolor-out: rgb(from var(--wuiplugins-theme-utilitycolor-hightlight) r g b / 20%);
+	--wui-colorpicker-viewbutton-bordercolor-over: var(--wuiplugins-theme-utilitycolor-hightlight);
+	--wui-colorpicker-viewbutton-bordercolor-invalid: var(--wuiplugins-theme-utilitycolor-warning);
+	--wui-colorpicker-viewbutton-bordercolor-disabled: var(--wuiplugins-theme-utilitycolor-disabled);
+	--wui-colorpicker-viewbutton-bgcolor-out: transparent;
+	--wui-colorpicker-viewbutton-bgcolor-over: transparent;
+	--wui-colorpicker-viewbutton-bgcolor-disabled: transparent;
 	--wui-colorpicker-viewcolor-borderwidth: 1px;
 	--wui-colorpicker-viewcolor-bordercolor: rgb(from var(--wuiplugins-theme-utilitycolor-hightlight) r g b / 20%);
 	--wui-colorpicker-viewcolor-emptyicon-src: none;
