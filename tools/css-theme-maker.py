@@ -3,16 +3,18 @@ import re
 import argparse
 
 # Default arguments
-css_path = "../src/WUIPlugins/Themes/WUIPluginsThemes-0.1.css"
-out_dir = "../src/WUIPlugins/Themes/"
+default_css_path = "../src/WUIPlugins/Themes/WUIPluginsThemes-0.1.css"
+default_out_dir = "../src/WUIPlugins/Themes/"
+default_theme = "theme-1"
 
 # Get arguments
 parser = argparse.ArgumentParser(
     description="Make CSS themes from WUIPluginsThemes CSS file.",
     formatter_class=argparse.ArgumentDefaultsHelpFormatter
 )
-parser.add_argument("--css", type=str, help="Path to the CSS file.", default=css_path)
-parser.add_argument("--out", type=str, help="Output directory for CSS themes.", default=out_dir)
+parser.add_argument("--css", type=str, help="Path to the CSS file.", default=default_css_path)
+parser.add_argument("-o", "--out", type=str, help="Output directory for CSS themes.", default=default_out_dir)
+parser.add_argument("-t", "--theme", type=str, help="Theme name to extract and use in output.", default=default_theme)
 args = parser.parse_args()
 
 def resolve_value(value, lookup):
@@ -27,21 +29,10 @@ def resolve_value(value, lookup):
         # If var_name is in lookup, use it. Otherwise keep original var(...)
         return lookup.get(var_name, match.group(0))
 
-    # Keep resolving until no more changes (to handle nested vars if any, 
-    # though strict top-down should handle single-level dependencies)
-    # Just one pass is usually enough if we trust topological order or 
-    # if we only care about resolving against the primitives/previous lines.
-    # However, to be safe against `rgb(from var(--a) ...)` where `var(--a)` is simple:
-    
     new_value = re.sub(pattern, repl, value)
-    
-    # If the resolution introduced new vars (unlikely in this specific CSS structure 
-    # but possible), we might want another pass. 
-    # Given the requirements, one pass using fully-populated lookup (primitives + previous wui vars) is best.
-    
     return new_value
 
-def parse_css_file(filepath):
+def parse_css_file(filepath, target_theme):
     with open(filepath, 'r', encoding='utf-8') as f:
         lines = f.readlines()
 
@@ -55,8 +46,7 @@ def parse_css_file(filepath):
     in_components = False
     
     # Regexes
-    # Header: assume lines starting with /* at the top
-    primitives_start = re.compile(r'^\.wuiplugins-themes:is')
+    primitives_start = re.compile(r'^\.wuiplugins-themes:is\((.+)\)\s*{')
     components_start = re.compile(r'^\.wuiplugins-themes\s*{')
     block_end = re.compile(r'^\s*}\s*$')
     
@@ -78,9 +68,15 @@ def parse_css_file(filepath):
                 in_header = False
         
         # Check block starts
-        if primitives_start.match(line):
-            in_primitives = True
+        prim_match = primitives_start.match(line)
+        if prim_match:
+            # Check if this block contains our target theme
+            selectors = prim_match.group(1)
+            # selectors will be something like ".theme-1, .theme-default"
+            if f".{target_theme}" in selectors:
+                in_primitives = True
             continue
+            
         if components_start.match(line):
             in_components = True
             continue
@@ -100,9 +96,6 @@ def parse_css_file(filepath):
                 primitives[name] = val
                 
         if in_components:
-            # We want to preserve comments and layout as much as possible, 
-            # or at least the variables.
-            # The task asks to "preserve comments with names of each class".
             if comment_line.match(line):
                 components.append({'type': 'comment', 'content': line})
             elif var_decl.match(line):
@@ -118,55 +111,47 @@ def parse_css_file(filepath):
 
     return header, primitives, components
 
-def generate_theme(mode, header, primitives, components, output_path):
+def generate_theme(mode, theme_name, header, primitives, components, output_path):
     # 1. Build lookup for this mode
     lookup = {}
     suffix = f"-{mode}"
-    
-    # Add primitives
-    for name, value in primitives.items():
-        # strict name match
-        lookup[name] = value
-        
-        # Mode-specific resolution logic
-        # If we have --foo-light, mapped to --foo
-        if name.endswith(suffix):
-            base_name = name[:-len(suffix)]
-            lookup[base_name] = value
-            
-    # Also ensure common variables (without -light/-dark) are available if not overwritten
-    # (The loop above adds everything, so --foo is in lookup. 
-    # If --foo-light existed, we added --foo pointing to its value, overwriting if --foo existed?
-    # In the CSS, --wuiplugins-theme-graycolor-max-light exists. --wuiplugins-theme-graycolor-max DOES NOT exist in primitives block.
-    # But --wuiplugins-theme-borderradius-low exists and has no suffix.
-    # So logic:
-    #   Iterate all primitives.
-    #   If endswith suffix: lookup[base] = val
-    #   Else if not endswith opposite suffix: lookup[name] = val)
-    
-    # Refined Lookup Construction
-    refined_lookup = {}
     opposite_suffix = "-dark" if mode == "light" else "-light"
     
+    # Simple resolution logic: preferred suffix > base name > ignored other suffix
+    
+    # First pass: map everything to ensure we have base values
+    # We need to treat "no suffix" as base, but "suffix" overrides it.
+    
+    # Let's iterate keys and resolve "best match" for each base variable present
+    
+    # But wait, primitives contains ALL matched lines.
+    # E.g. --gray-max-light, --gray-max-dark, --borderradius-low
+    
+    resolved_primitives = {}
+    
+    # 1. Add common variables (no usage suffix)
+    for name, value in primitives.items():
+        if not name.endswith('-light') and not name.endswith('-dark'):
+            resolved_primitives[name] = value
+
+    # 2. Add/Override with specific mode variables
     for name, value in primitives.items():
         if name.endswith(suffix):
-            base = name[:-len(suffix)]
-            refined_lookup[base] = value
-        elif name.endswith(opposite_suffix):
-            pass
-        else:
-            refined_lookup[name] = value
+            base_name = name[:-len(suffix)]
+            resolved_primitives[base_name] = value
             
+    # Now resolved_primitives has the correct values for this mode
+    
     # 2. Process components for output
     output_lines = []
     output_lines.extend(header)
     output_lines.append("\n") # spacing
     
-    class_name = f".wuiplugins-themes.{mode} " + "{\n"
+    class_name = f".wuiplugins-themes.{theme_name}.{mode} " + "{\n"
     output_lines.append(class_name)
     
-    # Use refined_lookup to resolve vars. 
-    # Also add resolved vars to refined_lookup so subsequent vars can use them.
+    # Lookup for resolution (starts with resolved primitives)
+    lookup = resolved_primitives.copy()
     
     for item in components:
         if item['type'] == 'comment':
@@ -176,14 +161,14 @@ def generate_theme(mode, header, primitives, components, output_path):
         elif item['type'] == 'var':
             name = item['name']
             raw_val = item['value']
-            resolved = resolve_value(raw_val, refined_lookup)
+            resolved = resolve_value(raw_val, lookup)
             
             # Write to output
             indent = item['indent']
             output_lines.append(f"{indent}{name}: {resolved};\n")
             
             # Store for future self-reference
-            refined_lookup[name] = resolved
+            lookup[name] = resolved
             
     output_lines.append("}\n")
     
@@ -196,7 +181,10 @@ def main():
     os.makedirs(args.out, exist_ok=True)
     
     # Parse source
-    header, primitives, components = parse_css_file(args.css)
+    header, primitives, components = parse_css_file(args.css, args.theme)
+    
+    if not primitives:
+        print(f"Warning: No primitive variables found for theme '{args.theme}'. Check if the theme exists in the CSS file.")
     
     # Extract base name for output
     base_name = os.path.basename(args.css)
@@ -204,12 +192,13 @@ def main():
         base_name = base_name[:-4]
         
     # Generate Light
-    light_file = os.path.join(args.out, f"{base_name}-light.css")
-    generate_theme('light', header, primitives, components, light_file)
+    # FileName format: "WUIPluginsThemes-0.1-theme-1-light.css"
+    light_file = os.path.join(args.out, f"{base_name}-{args.theme}-light.css")
+    generate_theme('light', args.theme, header, primitives, components, light_file)
     
     # Generate Dark
-    dark_file = os.path.join(args.out, f"{base_name}-dark.css")
-    generate_theme('dark', header, primitives, components, dark_file)
+    dark_file = os.path.join(args.out, f"{base_name}-{args.theme}-dark.css")
+    generate_theme('dark', args.theme, header, primitives, components, dark_file)
 
 if __name__ == "__main__":
     main()
