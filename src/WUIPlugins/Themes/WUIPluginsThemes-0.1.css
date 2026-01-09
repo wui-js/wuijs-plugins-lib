@@ -392,6 +392,8 @@
 	--wui-selectpicker-box-borderradius: var(--wuiplugins-theme-borderradius-half);
 	--wui-selectpicker-box-bordercolor: var(--wuiplugins-theme-bordercolor-low);
 	--wui-selectpicker-box-bgcolor: var(--wuiplugins-theme-bgcolor-out);
+	--wui-selectpicker-box-scroll-bgcolor-out: rgb(from var(--wuiplugins-theme-bgcolor-scroll) r g b / 20%);
+	--wui-selectpicker-box-scroll-bgcolor-over: rgb(from var(--wuiplugins-theme-bgcolor-scroll) r g b / 40%);
 	--wui-selectpicker-box-option-borderradius: var(--wuiplugins-theme-borderradius-low);
 	--wui-selectpicker-box-option-bordercolor-out: var(--wuiplugins-theme-bordercolor-low);
 	--wui-selectpicker-box-option-bordercolor-over: var(--wuiplugins-theme-bordercolor-low);
@@ -519,6 +521,8 @@
 	--wui-colorpicker-box-borderradius: var(--wuiplugins-theme-borderradius-half);
 	--wui-colorpicker-box-bordercolor: var(--wuiplugins-theme-bordercolor-low);
 	--wui-colorpicker-box-bgcolor: rgb(from var(--wuiplugins-theme-graycolor-max) r g b / 80%);
+	--wui-colorpicker-box-scroll-bgcolor-out: rgb(from var(--wuiplugins-theme-bgcolor-scroll) r g b / 20%);
+	--wui-colorpicker-box-scroll-bgcolor-over: rgb(from var(--wuiplugins-theme-bgcolor-scroll) r g b / 40%);
 	--wui-colorpicker-box-tab-textcolor-out: var(--wuiplugins-theme-textcolor-active);
 	--wui-colorpicker-box-tab-textcolor-selected: var(--wuiplugins-theme-utilitycolor-hightlight);
 	--wui-colorpicker-box-option-bordercolor-out: var(--wuiplugins-theme-bordercolor-low);
