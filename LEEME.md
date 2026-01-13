@@ -9,7 +9,7 @@ Versión documentación: `0.1.0.20251107.1`
 
 Licencia: `Apache License 2.0`
 
-Autor: `Sergio E. Belmar V. <sbelmar@wuijs.dev>`
+Autor: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 
 ## Description General
 
