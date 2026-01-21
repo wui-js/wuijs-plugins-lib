@@ -206,8 +206,9 @@
 	--wui-menubar-expander-iconcolor-over: var(--wuiplugins-theme-graycolor-min);
 	--wui-menubar-expander-expandicon-src: none;
 	--wui-menubar-expander-contracticon-src: none;
-	--wui-menubar-submenu-opener-iconsize: 16px;
-	--wui-menubar-submenu-opener-openicon-src: none;
+	--wui-menubar-opener-iconsize: 16px;
+	--wui-menubar-opener-openicon-src: none;
+	--wui-menubar-opener-closeicon-src: none;
 	--wui-menubar-submenu-bordercolor: var(--wuiplugins-theme-bordercolor-low);
 	--wui-menubar-submenu-bgcolor: var(--wuiplugins-theme-bgcolor-out);
 	--wui-menubar-submenu-button-bgcolor-out: transparent;
