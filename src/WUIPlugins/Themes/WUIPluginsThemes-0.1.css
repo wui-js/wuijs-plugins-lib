@@ -228,6 +228,7 @@
 	--wui-menubar-tooltip-textcolor: #fff;
 	--wui-menubar-bubble-bgcolor: var(--wuiplugins-theme-utilitycolor-warning);
 	--wui-menubar-bubble-textcolor: #fff;
+	--wui-menubar-mobile-opener-closeicon-src: none;
 
 	/* wui-list */
 
