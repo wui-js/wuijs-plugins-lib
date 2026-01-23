@@ -1,10 +1,10 @@
 /*
- * WUIPluginsThemes - v0.1
+ * WUIPluginThemes - v0.1
  * Author: Sergio E. Belmar (wuijs.project@gmail.com)
  * Copyright (c) Sergio E. Belmar (wuijs.project@gmail.com)
  */
 
-class WUIPluginsThemes {
+class WUIPluginThemes {
 
 	static version = "0.1";
 
@@ -30,9 +30,9 @@ class WUIPluginsThemes {
 			const colorScheme = value.match(/dark light|system/i) ? "light dark" : value.toLowerCase().replace("only ", "").trim();
 			if (this._colorScheme != colorScheme) {
 				const className = colorScheme.replace("light dark", "system");
-				let delay = getComputedStyle(document.documentElement).getPropertyValue("--wuiplugins-theme-transition-delay").trim() || "0";
+				let delay = getComputedStyle(document.documentElement).getPropertyValue("--wuiplugin-theme-transition-delay").trim() || "0";
 				delay = (delay.match(/\d+s$/) ? 1000 : 1) * parseFloat(delay.replace(/m?s$/, ""));
-				document.documentElement.querySelectorAll(".wuiplugins-themes").forEach(element => {
+				document.documentElement.querySelectorAll(".wuiplugin-themes").forEach(element => {
 					element.classList.add("transition");
 				});
 				document.documentElement.style.colorScheme = colorScheme;
@@ -40,7 +40,7 @@ class WUIPluginsThemes {
 				document.body.classList.add(className);
 				this._colorScheme = colorScheme;
 				setTimeout(() => {
-					document.documentElement.querySelectorAll(".wuiplugins-themes").forEach(element => {
+					document.documentElement.querySelectorAll(".wuiplugin-themes").forEach(element => {
 						element.classList.remove("transition");
 					});
 				}, delay);

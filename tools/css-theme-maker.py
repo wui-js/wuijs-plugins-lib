@@ -3,13 +3,13 @@ import re
 import argparse
 
 # Default arguments
-default_css_path = "../src/WUIPlugins/Themes/WUIPluginsThemes-0.1.css"
+default_css_path = "../src/WUIPlugins</Themes/WUIPluginThemes-0.1.css"
 default_out_dir = "../src/WUIPlugins/Themes/"
 default_theme = "theme-1"
 
 # Get arguments
 parser = argparse.ArgumentParser(
-    description="Make CSS themes from WUIPluginsThemes CSS file.",
+    description="Make CSS themes from WUIPluginThemes CSS file.",
     formatter_class=argparse.ArgumentDefaultsHelpFormatter
 )
 parser.add_argument("--css", type=str, help="Path to the CSS file.", default=default_css_path)
@@ -46,8 +46,8 @@ def parse_css_file(filepath, target_theme):
     in_components = False
     
     # Regexes
-    primitives_start = re.compile(r'^\.wuiplugins-themes:is\((.+)\)\s*{')
-    components_start = re.compile(r'^\.wuiplugins-themes\s*{')
+    primitives_start = re.compile(r'^\.wuiplugin-themes:is\((.+)\)\s*{')
+    components_start = re.compile(r'^\.wuiplugin-themes\s*{')
     block_end = re.compile(r'^\s*}\s*$')
     
     var_decl = re.compile(r'^\s*(--[a-zA-Z0-9-]+):\s*(.+?);\s*$')
@@ -147,7 +147,7 @@ def generate_theme(mode, theme_name, header, primitives, components, output_path
     output_lines.extend(header)
     output_lines.append("\n") # spacing
     
-    class_name = f".wuiplugins-themes.{theme_name}.{mode} " + "{\n"
+    class_name = f".wuiplugin-themes.{theme_name}.{mode} " + "{\n"
     output_lines.append(class_name)
     
     # Lookup for resolution (starts with resolved primitives)
@@ -192,7 +192,7 @@ def main():
         base_name = base_name[:-4]
         
     # Generate Light
-    # FileName format: "WUIPluginsThemes-0.1-theme-1-light.css"
+    # FileName format: "WUIPluginThemes-0.1-theme-1-light.css"
     light_file = os.path.join(args.out, f"{base_name}-{args.theme}-light.css")
     generate_theme('light', args.theme, header, primitives, components, light_file)
     
