@@ -155,18 +155,18 @@
 	--wui-modal-select-option-checker-bgcolor-selected: var(--wuiplugin-theme-utilitycolor-hightlight);
 	--wui-modal-select-button-bordercolor: var(--wuiplugin-theme-bordercolor-low);
 
-	/* wui-slider */
-
-	--wui-slider-dots-bgcolor: transparent;
-	--wui-slider-dot-bgcolor: rgb(from var(--wuiplugin-theme-graycolor-max) r g b / 60%);
-	--wui-slider-dot-bgcolor-selected: rgb(from var(--wuiplugin-theme-graycolor-max) r g b / 90%);
-
 	/* wui-paging */
 
 	--wui-paging-page-transition-time: .4s;
 	--wui-paging-page-bgcolor: transparent;
 	--wui-paging-page-scroll-bgcolor-out: rgb(from var(--wuiplugin-theme-bgcolor-scroll) r g b / 20%);
 	--wui-paging-page-scroll-bgcolor-over: rgb(from var(--wuiplugin-theme-bgcolor-scroll) r g b / 40%);
+
+	/* wui-slider */
+
+	--wui-slider-dots-bgcolor: transparent;
+	--wui-slider-dot-bgcolor: rgb(from var(--wuiplugin-theme-graycolor-max) r g b / 60%);
+	--wui-slider-dot-bgcolor-selected: rgb(from var(--wuiplugin-theme-graycolor-max) r g b / 90%);
 
 	/* wui-tabs */
 
@@ -625,6 +625,27 @@
 	--wui-button-mobile-submit-height: 40px;
 	--wui-button-mobile-icon-float-padding: 10px;
 	--wui-button-form-default-minwidth: 100px;
+
+	/* wuiplugin-selector */
+
+	--wuiplugin-selector-box-width: 280px;
+	--wuiplugin-selector-box-bgcolor: var(--wuiplugin-theme-bgcolor-out);
+	--wuiplugin-selector-option-bordercolor-out: var(--wuiplugin-theme-bordercolor-low);
+	--wuiplugin-selector-option-bordercolor-over: var(--wuiplugin-theme-bordercolor-low);
+	--wuiplugin-selector-option-bgcolor-out: transparent;
+	--wuiplugin-selector-option-bgcolor-over: var(--wuiplugin-theme-bgcolor-over);
+	--wuiplugin-selector-option-iconcolor-out: var(--wuiplugin-theme-utilitycolor-hightlight);
+	--wuiplugin-selector-option-iconcolor-over: var(--wuiplugin-theme-utilitycolor-hightlight);
+	--wuiplugin-selector-option-iconcolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
+	--wuiplugin-selector-option-textcolor-out: var(--wuiplugin-theme-textcolor-active);
+	--wuiplugin-selector-option-textcolor-over: var(--wuiplugin-theme-utilitycolor-hightlight);
+	--wuiplugin-selector-option-textcolor-selected: var(--wuiplugin-theme-utilitycolor-hightlight);
+	--wuiplugin-selector-option-textcolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
+	--wuiplugin-selector-option-checker-bordercolor-out: var(--wuiplugin-theme-utilitycolor-hightlight);
+	--wuiplugin-selector-option-checker-bordercolor-selected: var(--wuiplugin-theme-utilitycolor-hightlight);
+	--wuiplugin-selector-option-checker-bgcolor-out: transparent;
+	--wuiplugin-selector-option-checker-bgcolor-selected: var(--wuiplugin-theme-utilitycolor-hightlight);
+	--wuiplugin-selector-button-bordercolor: var(--wuiplugin-theme-bordercolor-low);
 }
 
 .wuiplugin-themes {

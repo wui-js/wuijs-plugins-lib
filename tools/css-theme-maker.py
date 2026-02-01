@@ -3,7 +3,7 @@ import re
 import argparse
 
 # Default arguments
-default_css_path = "../src/WUIPlugins</Themes/WUIPluginThemes-0.1.css"
+default_css_path = "../src/WUIPlugins/Themes/WUIPluginThemes-0.1.css"
 default_out_dir = "../src/WUIPlugins/Themes/"
 default_theme = "theme-1"
 

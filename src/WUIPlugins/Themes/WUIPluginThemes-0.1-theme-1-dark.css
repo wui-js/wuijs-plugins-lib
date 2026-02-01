@@ -80,18 +80,18 @@
 	--wui-modal-select-option-checker-bgcolor-selected: #1e90ff;
 	--wui-modal-select-button-bordercolor: #374151;
 
-	/* wui-slider */
-
-	--wui-slider-dots-bgcolor: transparent;
-	--wui-slider-dot-bgcolor: rgb(from #000 r g b / 60%);
-	--wui-slider-dot-bgcolor-selected: rgb(from #000 r g b / 90%);
-
 	/* wui-paging */
 
 	--wui-paging-page-transition-time: .4s;
 	--wui-paging-page-bgcolor: transparent;
 	--wui-paging-page-scroll-bgcolor-out: rgb(from #4b5563 r g b / 20%);
 	--wui-paging-page-scroll-bgcolor-over: rgb(from #4b5563 r g b / 40%);
+
+	/* wui-slider */
+
+	--wui-slider-dots-bgcolor: transparent;
+	--wui-slider-dot-bgcolor: rgb(from #000 r g b / 60%);
+	--wui-slider-dot-bgcolor-selected: rgb(from #000 r g b / 90%);
 
 	/* wui-tabs */
 

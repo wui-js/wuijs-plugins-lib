@@ -7,39 +7,43 @@
 class WUIPluginSelector extends WUIModal {
 
 	static version = "0.2";
-
-	#properties = {
-		value: null,
-		options: null,
-		multiple: null,
-		emptyText: null,
-		selecteableText: null,
-		maxScreenWidth: null,
+	static #_defaults = {
+		value: "",
+		options: [],
+		multiple: false,
+		separatorValue: ",",
+		separatorText: ", ",
+		emptyText: "",
+		selecteableText: false,
 		acceptButton: null,
-		acceptDisplay: null,
+		acceptVisible: true,
+		acceptData: {},
+		acceptText: "",
 		acceptOnClick: null,
 		cancelButton: null,
-		cancelDisplay: null,
+		cancelVisible: true,
+		cancelData: {},
+		cancelText: "",
 		cancelOnClick: null,
 		onSelect: null
+	};
+
+	#properties = {};
+	#htmlElements = {
+		box: null,
+		options: null,
+		footer: null,
+		cancelButton: null,
+		acceptButton: null
 	};
 	#input;
 
 	constructor(properties = {}) {
 		super(properties);
-		this.#properties.value = "";
-		this.#properties.options = [];
-		this.#properties.multiple = false;
-		this.#properties.emptyText = "";
-		this.#properties.selecteableText = false;
-		this.#properties.maxScreenWidth = 768;
-		this.#properties.acceptButton = null;
-		this.#properties.acceptDisplay = true;
-		this.#properties.acceptOnClick = null;
-		this.#properties.cancelButton = null;
-		this.#properties.cancelDisplay = true;
-		this.#properties.cancelOnClick = null;
-		this.#properties.onSelect = null;
+		const defaults = structuredClone(WUIPluginSelector.#_defaults);
+		Object.entries(defaults).forEach(([name, value]) => {
+			this[name] = name in properties ? properties[name] : value;
+		});
 		this.#input = null;
 	}
 
@@ -55,6 +59,14 @@ class WUIPluginSelector extends WUIModal {
 		return this.#properties.multiple;
 	}
 
+	get separatorValue() {
+		return this.#properties.separatorValue;
+	}
+
+	get separatorText() {
+		return this.#properties.separatorText;
+	}
+
 	get emptyText() {
 		return this.#properties.emptyText;
 	}
@@ -63,16 +75,20 @@ class WUIPluginSelector extends WUIModal {
 		return this.#properties.selecteableText;
 	}
 
-	get maxScreenWidth() {
-		return this.#properties.maxScreenWidth;
-	}
-
 	get acceptButton() {
 		return this.#properties.acceptButton;
 	}
 
-	get acceptDisplay() {
-		return this.#properties.acceptDisplay;
+	get acceptVisible() {
+		return this.#properties.acceptVisible;
+	}
+
+	get acceptData() {
+		return this.#properties.acceptData;
+	}
+
+	get acceptText() {
+		return this.#properties.acceptText;
 	}
 
 	get acceptOnClick() {
@@ -83,8 +99,16 @@ class WUIPluginSelector extends WUIModal {
 		return this.#properties.cancelButton;
 	}
 
-	get cancelDisplay() {
-		return this.#properties.cancelDisplay;
+	get cancelVisible() {
+		return this.#properties.cancelVisible;
+	}
+
+	get cancelData() {
+		return this.#properties.cancelData;
+	}
+
+	get cancelText() {
+		return this.#properties.cancelText;
 	}
 
 	get cancelOnClick() {
@@ -113,6 +137,18 @@ class WUIPluginSelector extends WUIModal {
 		}
 	}
 
+	set separatorValue(value) {
+		if (typeof (value) == "string") {
+			this.#properties.separatorValue = value;
+		}
+	}
+
+	set separatorText(value) {
+		if (typeof (value) == "string") {
+			this.#properties.separatorText = value;
+		}
+	}
+
 	set emptyText(value) {
 		if (typeof (value) == "string") {
 			this.#properties.emptyText = value;
@@ -125,21 +161,27 @@ class WUIPluginSelector extends WUIModal {
 		}
 	}
 
-	set maxScreenWidth(value) {
-		if (typeof (value) == "integer") {
-			this.#properties.maxScreenWidth = value;
-		}
-	}
-
 	set acceptButton(value) {
-		if (typeof (value) == "object" && value.constructor.name == "WUIButton") {
+		if (typeof (value) == "object" && value != null && value.constructor.name == "WUIButton") {
 			this.#properties.acceptButton = value;
 		}
 	}
 
-	set acceptDisplay(value) {
+	set acceptVisible(value) {
 		if (typeof (value) == "boolean") {
-			this.#properties.acceptDisplay = value;
+			this.#properties.acceptVisible = value;
+		}
+	}
+
+	set acceptData(value) {
+		if (typeof (value) == "object") {
+			this.#properties.acceptData = value;
+		}
+	}
+
+	set acceptText(value) {
+		if (typeof (value) == "string") {
+			this.#properties.acceptText = value;
 		}
 	}
 
@@ -150,14 +192,26 @@ class WUIPluginSelector extends WUIModal {
 	}
 
 	set cancelButton(value) {
-		if (typeof (value) == "object" && value.constructor.name == "WUIButton") {
+		if (typeof (value) == "object" && value != null && value.constructor.name == "WUIButton") {
 			this.#properties.cancelButton = value;
 		}
 	}
 
-	set cancelDisplay(value) {
+	set cancelVisible(value) {
 		if (typeof (value) == "boolean") {
-			this.#properties.cancelDisplay = value;
+			this.#properties.cancelVisible = value;
+		}
+	}
+
+	set cancelData(value) {
+		if (typeof (value) == "object") {
+			this.#properties.cancelData = value;
+		}
+	}
+
+	set cancelText(value) {
+		if (typeof (value) == "string") {
+			this.#properties.cancelText = value;
 		}
 	}
 
@@ -173,32 +227,54 @@ class WUIPluginSelector extends WUIModal {
 		}
 	}
 
-	/*build() {
-		if (this.getBox() == null) {
-			const box = document.createElement("div");
-			const options = document.createElement("div");
-			const footer = document.createElement("div");
-			const cancelButton = document.createElement("button");
-			const acceptButton = document.createElement("button");
-			this.#element.classList.add("wui-modal", "select", "mobile", "priority");
-			this.#element.appendChild(this.getBox());
-			box.classList.add("box");
-			box.appendChild(options);
-			box.appendChild(footer);
-			options.classList.add("options");
-			footer.classList.add("footer");
-			footer.appendChild(cancelButton);
-			footer.appendChild(acceptButton);
-			cancelButton.classList.add("wui-button", "cancel", "wui-language", "flat");
-			acceptButton.classList.add("wui-button", "submit", "wui-language");
+	#initHTML() {
+		if (!document.querySelector(this.selector + " > .box")) {
+			this.#buildHTML();
+		} else {
+			this.#loadHTML();
 		}
-	}*/
+	}
+
+	#buildHTML() {
+		this.#htmlElements.box = document.createElement("div");
+		this.#htmlElements.options = document.createElement("div");
+		this.#htmlElements.footer = document.createElement("div");
+		this.#htmlElements.cancelButton = document.createElement("button");
+		this.#htmlElements.acceptButton = document.createElement("button");
+		this.getElement().classList.add("wui-modal", "wuiplugin-selector", "mobile", "priority");
+		this.getElement().appendChild(this.#htmlElements.box);
+		this.#htmlElements.box.classList.add("box");
+		this.#htmlElements.box.appendChild(this.#htmlElements.options);
+		this.#htmlElements.box.appendChild(this.#htmlElements.footer);
+		this.#htmlElements.options.classList.add("options");
+		this.#htmlElements.footer.classList.add("footer");
+		this.#htmlElements.footer.appendChild(this.#htmlElements.cancelButton);
+		this.#htmlElements.footer.appendChild(this.#htmlElements.acceptButton);
+		this.#htmlElements.cancelButton.classList.add("wui-button", "cancel", "wui-language", "flat");
+		this.#htmlElements.cancelButton.textContent = this.#properties.cancelText;
+		this.#htmlElements.acceptButton.classList.add("wui-button", "submit", "wui-language");
+		this.#htmlElements.acceptButton.textContent = this.#properties.acceptText;
+		Object.entries(this.#properties.cancelData).forEach(([key, value]) => {
+			this.#htmlElements.cancelButton.dataset[key] = value;
+		});
+		Object.entries(this.#properties.acceptData).forEach(([key, value]) => {
+			this.#htmlElements.acceptButton.dataset[key] = value;
+		});
+	}
+
+	#loadHTML() {
+		this.#htmlElements.box = document.querySelector(this.selector + " > .box");
+		this.#htmlElements.options = document.querySelector(this.selector + " > .box > .options");
+		this.#htmlElements.footer = document.querySelector(this.selector + " > .box > .footer");
+		this.#htmlElements.cancelButton = document.querySelector(this.selector + " > .box > .footer > button.cancel");
+		this.#htmlElements.acceptButton = document.querySelector(this.selector + " > .box > .footer > button.submit");
+	}
 
 	init() {
 		super.init();
-		this.#properties.acceptButton = new WUIButton({ selector: this.selector + " > .box > .footer > button.submit" });
-		this.#properties.cancelButton = new WUIButton({ selector: this.selector + " > .box > .footer > button.cancel" });
-		this.#properties.acceptButton.onClick = () => {
+		this.acceptButton = new WUIButton({ selector: this.selector + " > .box > .footer > button.submit" });
+		this.cancelButton = new WUIButton({ selector: this.selector + " > .box > .footer > button.cancel" });
+		this.acceptButton.onClick = () => {
 			let indexes = [];
 			let values = [];
 			let texts = [];
@@ -207,30 +283,36 @@ class WUIPluginSelector extends WUIModal {
 				values.push(option.dataset.value);
 				texts.push(option.dataset.text);
 			});
-			this.#properties.value = values.join(",");
+			this.value = values.join(this.separatorValue);
 			if (this.#input != null) {
-				this.#input.value = this.#properties.value;
+				if (this.multiple) {
+					Array.from(this.#input.options).forEach(option => {
+						option.selected = values.includes(option.value);
+					});
+				} else {
+					this.#input.value = this.value;
+				}
 				this.#input.dispatchEvent(new Event("change"));
 			}
-			if (typeof (this.#properties.acceptOnClick) == "function") {
-				this.#properties.acceptOnClick(this.#properties.value, indexes.join(","), texts.join(","));
+			if (typeof (this.acceptOnClick) == "function") {
+				this.acceptOnClick(indexes.join(this.separatorValue), this.value, texts.join(this.separatorText));
 			}
 			this.close();
 		};
-		this.#properties.acceptButton.init();
-		this.#properties.cancelButton.onClick = () => {
-			if (typeof (this.#properties.cancelOnClick) == "function") {
-				this.#properties.cancelOnClick();
+		this.acceptButton.init();
+		this.cancelButton.onClick = () => {
+			if (typeof (this.cancelOnClick) == "function") {
+				this.cancelOnClick();
 			}
 			this.close();
 		};
-		this.#properties.cancelButton.init();
+		this.cancelButton.init();
 	}
 
 	prepareInput(input, options = {}) {
 		if (typeof (input) == "object" && input instanceof HTMLElement && input.tagName.toLowerCase() == "select") {
 			const defaults = {
-				emptyText: this.#properties.emptyText,
+				emptyText: this.emptyText,
 				direction: "ltr",
 				force: false
 			};
@@ -252,8 +334,8 @@ class WUIPluginSelector extends WUIModal {
 				input._drag = true;
 			});
 			input.addEventListener("touchend", event => {
-				const screenWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-				if (screenWidth <= this.#properties.maxScreenWidth || options.force) {
+				const mobile = Boolean(window.matchMedia("(max-width: 767px)").matches);
+				if (mobile || options.force) {
 					if (!input._drag) {
 						if (event.cancelable) {
 							event.preventDefault();
@@ -267,19 +349,19 @@ class WUIPluginSelector extends WUIModal {
 						});
 						if (rightTouch <= 30) {
 							this.#input = input;
-							this.#properties.value = input.value;
-							this.#properties.options = [];
-							this.#properties.selecteableText = false;
+							this.value = input.value;
+							this.options = [];
+							this.selecteableText = false;
 							this.#input.querySelectorAll("option").forEach(option => {
-								this.#properties.options.push({
+								this.options.push({
 									icon: null,
-									text: option.text || option.emptyText || "",
+									text: option.text || options.emptyText || "",
 									value: option.value || "",
 									selected: values.indexOf(option.value) > -1 ? true : false
 								});
 							});
-							this.#properties.acceptDisplay = true;
-							this.#properties.cancelDisplay = true;
+							this.acceptVisible = true;
+							this.cancelVisible = true;
 							this.open();
 						}
 					}
@@ -291,23 +373,17 @@ class WUIPluginSelector extends WUIModal {
 	open() {
 		const options = this.getBox().querySelector(".options");
 		let index = 0;
-		/*if (this.multiple) {
-			options.classList.add("multiple");
-		} else {
-			options.classList.remove("multiple");
-		}*/
 		options.innerHTML = "";
-		if (Array.isArray(this.#properties.options)) {
-			this.#properties.options.forEach((opt, i) => {
+		if (Array.isArray(this.options)) {
+			this.options.forEach((opt, i) => {
 				const option = document.createElement("div");
 				const icon = document.createElement("div");
 				const text = document.createElement("div");
-				/*const checker = this.multiple ? document.createElement("div") : null;*/
 				const enabled = typeof (opt.enabled) == "boolean" && !opt.enabled ? false : true;
 				const selected = Boolean(opt.selected);
 				icon.className = "icon " + (typeof (opt.icon) == "string" && opt.icon != "" ? opt.icon : "wui-icon check-line");
-				text.className = "text " + (this.#properties.selecteableText ? "selecteable" : "");
-				text.innerHTML = opt.value == "" ? "<i class='empty'>" + this.#properties.emptyText + "</i>" : opt.text;
+				text.className = "text " + (this.selecteableText ? "selecteable" : "");
+				text.innerHTML = opt.value == "" ? "<i class='empty'>" + this.emptyText + "</i>" : opt.text;
 				option.className = "option" + (selected ? " selected" : "");
 				option.dataset.index = i;
 				option.dataset.value = opt.value;
@@ -319,23 +395,19 @@ class WUIPluginSelector extends WUIModal {
 						this.getBox().querySelectorAll(".option").forEach((opt, j) => {
 							if (opt.dataset.value == value) {
 								opt.classList.add("selected");
-								this.#properties.options[j].selected = true;
+								this.options[j].selected = true;
 							} else {
 								opt.classList.remove("selected");
 								opt.dataset.selected = false;
 							}
 						});
-						if (typeof (this.#properties.onSelect) == "function") {
-							this.#properties.onSelect(value, index);
+						if (typeof (this.onSelect) == "function") {
+							this.onSelect(value, index);
 						}
 					}
 				});
 				option.appendChild(icon);
 				option.appendChild(text);
-				/*if (this.multiple) {
-					checker.className = "checker";
-					option.appendChild(checker);
-				}*/
 				if (!enabled) {
 					option.classList.add("disabled");
 				}
@@ -345,20 +417,20 @@ class WUIPluginSelector extends WUIModal {
 				}
 			});
 		}
-		if (this.#properties.acceptDisplay || this.#properties.cancelDisplay) {
+		if (this.acceptVisible || this.cancelVisible) {
 			this.getFooter().classList.remove("hidden");
 		} else {
 			this.getFooter().classList.add("hidden");
 		}
-		if (this.#properties.acceptDisplay) {
-			this.#properties.acceptButton.getElement().classList.remove("hidden");
+		if (this.acceptVisible) {
+			this.acceptButton.getElement().classList.remove("hidden");
 		} else {
-			this.#properties.acceptButton.getElement().classList.add("hidden");
+			this.acceptButton.getElement().classList.add("hidden");
 		}
-		if (this.#properties.cancelDisplay) {
-			this.#properties.cancelButton.getElement().classList.remove("hidden");
+		if (this.cancelVisible) {
+			this.cancelButton.getElement().classList.remove("hidden");
 		} else {
-			this.#properties.cancelButton.getElement().classList.add("hidden");
+			this.cancelButton.getElement().classList.add("hidden");
 		}
 		super.open(() => {
 			const top = index * this.getBox().querySelectorAll(".option")[index].offsetHeight;
@@ -374,24 +446,40 @@ class WUIPluginSelector extends WUIModal {
 				opt.style.display = "block";
 			});
 		}
-		this.#properties.acceptDisplay = true;
+		this.#properties.acceptVisible = true;
 		this.#properties.acceptOnClick = null;
-		this.#properties.cancelDisplay = true;
+		this.#properties.cancelVisible = true;
 		this.#properties.cancelOnClick = null;
 		this.onOpen = null;
 		this.onClose = null;
 		this.#properties.onSelect = null;
 		this.#input = null;
 	}
+
+	destroy() {
+		if (this.getElement() instanceof HTMLElement) {
+			Object.entries(this.#htmlElements).forEach(([key, element]) => {
+				if (element) {
+					element.remove();
+				}
+				this.#htmlElements[key] = null;
+			});
+		}
+		Object.keys(this.#properties).forEach(name => {
+			delete this.#properties[name];
+		});
+		this.#input = undefined;
+		super.destroy();
+	}
 }
 
 /*
 HTML output:
-<div class="wui-modal wuiplugin-selector [priority]">
+<div class="wui-modal [priority] wuiplugin-selector">
 	<div class="box">
 		<div class="options">
 			<div class="option"></div>
-			...
+			[...]
 		</div>
 		<div class="footer">
 			<button class="wui-button cancel flat wui-language" data-key="buttons.cancel"></button>
