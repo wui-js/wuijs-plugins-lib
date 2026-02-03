@@ -7,7 +7,7 @@
 class WUIPluginSelector extends WUIModal {
 
 	static version = "0.2";
-	static #_defaults = {
+	static #defaults = {
 		value: "",
 		options: [],
 		multiple: false,
@@ -40,7 +40,7 @@ class WUIPluginSelector extends WUIModal {
 
 	constructor(properties = {}) {
 		super(properties);
-		const defaults = structuredClone(WUIPluginSelector.#_defaults);
+		const defaults = structuredClone(WUIPluginSelector.#defaults);
 		Object.entries(defaults).forEach(([name, value]) => {
 			this[name] = name in properties ? properties[name] : value;
 		});
@@ -271,6 +271,7 @@ class WUIPluginSelector extends WUIModal {
 	}
 
 	init() {
+		this.#initHTML();
 		super.init();
 		this.acceptButton = new WUIButton({ selector: this.selector + " > .box > .footer > button.submit" });
 		this.cancelButton = new WUIButton({ selector: this.selector + " > .box > .footer > button.cancel" });
@@ -278,7 +279,7 @@ class WUIPluginSelector extends WUIModal {
 			let indexes = [];
 			let values = [];
 			let texts = [];
-			this.getBox().querySelectorAll(".option.selected").forEach(option => {
+			this.#htmlElements.options.querySelectorAll(".option.selected").forEach(option => {
 				indexes.push(option.dataset.index);
 				values.push(option.dataset.value);
 				texts.push(option.dataset.text);
@@ -371,7 +372,7 @@ class WUIPluginSelector extends WUIModal {
 	}
 
 	open() {
-		const options = this.getBox().querySelector(".options");
+		const options = this.#htmlElements.box.querySelector(".options");
 		let index = 0;
 		options.innerHTML = "";
 		if (Array.isArray(this.options)) {
@@ -392,7 +393,7 @@ class WUIPluginSelector extends WUIModal {
 					if (enabled) {
 						const index = option.dataset.index;
 						const value = option.dataset.value;
-						this.getBox().querySelectorAll(".option").forEach((opt, j) => {
+						options.querySelectorAll(".option").forEach((opt, j) => {
 							if (opt.dataset.value == value) {
 								opt.classList.add("selected");
 								this.options[j].selected = true;
@@ -433,7 +434,7 @@ class WUIPluginSelector extends WUIModal {
 			this.cancelButton.getElement().classList.add("hidden");
 		}
 		super.open(() => {
-			const top = index * this.getBox().querySelectorAll(".option")[index].offsetHeight;
+			const top = index * this.#htmlElements.options.querySelectorAll(".option")[index].offsetHeight;
 			options.scrollTop = top;
 		});
 	}
