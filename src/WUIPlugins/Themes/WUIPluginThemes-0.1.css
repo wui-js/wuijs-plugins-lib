@@ -134,27 +134,6 @@
 	--wui-modal-smallpage-box-width: 340px;
 	--wui-modal-smallpage-box-height: 280px;
 
-	/* wui-modal select */
-
-	--wui-modal-select-box-width: 280px;
-	--wui-modal-select-box-bgcolor: var(--wuiplugin-theme-bgcolor-out);
-	--wui-modal-select-option-bordercolor-out: var(--wuiplugin-theme-bordercolor-low);
-	--wui-modal-select-option-bordercolor-over: var(--wuiplugin-theme-bordercolor-low);
-	--wui-modal-select-option-bgcolor-out: transparent;
-	--wui-modal-select-option-bgcolor-over: var(--wuiplugin-theme-bgcolor-over);
-	--wui-modal-select-option-iconcolor-out: var(--wuiplugin-theme-utilitycolor-hightlight);
-	--wui-modal-select-option-iconcolor-over: var(--wuiplugin-theme-utilitycolor-hightlight);
-	--wui-modal-select-option-iconcolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
-	--wui-modal-select-option-textcolor-out: var(--wuiplugin-theme-textcolor-active);
-	--wui-modal-select-option-textcolor-over: var(--wuiplugin-theme-utilitycolor-hightlight);
-	--wui-modal-select-option-textcolor-selected: var(--wuiplugin-theme-utilitycolor-hightlight);
-	--wui-modal-select-option-textcolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
-	--wui-modal-select-option-checker-bordercolor-out: var(--wuiplugin-theme-utilitycolor-hightlight);
-	--wui-modal-select-option-checker-bordercolor-selected: var(--wuiplugin-theme-utilitycolor-hightlight);
-	--wui-modal-select-option-checker-bgcolor-out: transparent;
-	--wui-modal-select-option-checker-bgcolor-selected: var(--wuiplugin-theme-utilitycolor-hightlight);
-	--wui-modal-select-button-bordercolor: var(--wuiplugin-theme-bordercolor-low);
-
 	/* wui-paging */
 
 	--wui-paging-page-transition-time: .4s;
@@ -416,7 +395,7 @@
 	--wui-selectpicker-box-button-textcolor-out: var(--wuiplugin-theme-utilitycolor-hightlight);
 	--wui-selectpicker-box-button-textcolor-over: var(--wuiplugin-theme-utilitycolor-hightlight);
 	--wui-selectpicker-mobile-overlay-bgcolor: rgb(from var(--wuiplugin-theme-bgcolor-overlay) r g b / 20%);
-	--wui-selectpicker-mobile-box-width: var(--wui-modal-select-box-width);
+	--wui-selectpicker-mobile-box-width: 280px;
 	--wui-selectpicker-mobile-box-borderradius: var(--wui-modal-box-borderradius);
 
 	/* wui-datepicker */
