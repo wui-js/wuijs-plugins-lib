@@ -445,26 +445,26 @@
 	--wui-colorpicker-box-button-textcolor-over: #1e90ff;
 	--wui-colorpicker-mobile-overlay-bgcolor: rgb(from #000 r g b / 20%);
 
-	/* wui-checkbox */
+	/* wui-switch */
 
-	--wui-checkbox-button-size: 30px;
-	--wui-checkbox-bordercolor-out: rgb(from #1e90ff r g b / 20%);
-	--wui-checkbox-bordercolor-over: #1e90ff;
-	--wui-checkbox-bordercolor-checked: #1e90ff;
-	--wui-checkbox-bordercolor-invalid: #f44343;
-	--wui-checkbox-bordercolor-disabled: #4b5563;
-	--wui-checkbox-bgcolor-out: rgb(from #1e90ff r g b / 4%);
-	--wui-checkbox-bgcolor-over: rgb(from #1e90ff r g b / 4%);
-	--wui-checkbox-bgcolor-checked: #1e90ff;
-	--wui-checkbox-bgcolor-disabled: rgb(from #4b5563 r g b / 20%);
-	--wui-checkbox-button-bordercolor-out: rgb(from #1e90ff r g b / 20%);
-	--wui-checkbox-button-bordercolor-over: #1e90ff;
-	--wui-checkbox-button-bordercolor-checked: #1e90ff;
-	--wui-checkbox-button-bordercolor-disabled: #4b5563;
-	--wui-checkbox-button-bgcolor-out: #374151;
-	--wui-checkbox-button-bgcolor-over: rgb(from #1e90ff r g b / 4%);
-	--wui-checkbox-button-bgcolor-checked: #374151;
-	--wui-checkbox-button-bgcolor-disabled: #4b5563;
+	--wui-switch-button-size: 30px;
+	--wui-switch-bordercolor-out: rgb(from #1e90ff r g b / 20%);
+	--wui-switch-bordercolor-over: #1e90ff;
+	--wui-switch-bordercolor-activated: #1e90ff;
+	--wui-switch-bordercolor-invalid: #f44343;
+	--wui-switch-bordercolor-disabled: #4b5563;
+	--wui-switch-bgcolor-out: rgb(from #1e90ff r g b / 4%);
+	--wui-switch-bgcolor-over: rgb(from #1e90ff r g b / 4%);
+	--wui-switch-bgcolor-activated: #1e90ff;
+	--wui-switch-bgcolor-disabled: rgb(from #4b5563 r g b / 20%);
+	--wui-switch-button-bordercolor-out: rgb(from #1e90ff r g b / 20%);
+	--wui-switch-button-bordercolor-over: #1e90ff;
+	--wui-switch-button-bordercolor-activated: #1e90ff;
+	--wui-switch-button-bordercolor-disabled: #4b5563;
+	--wui-switch-button-bgcolor-out: #374151;
+	--wui-switch-button-bgcolor-over: rgb(from #1e90ff r g b / 4%);
+	--wui-switch-button-bgcolor-activated: #374151;
+	--wui-switch-button-bgcolor-disabled: #4b5563;
 
 	/* wui-intensity */
 

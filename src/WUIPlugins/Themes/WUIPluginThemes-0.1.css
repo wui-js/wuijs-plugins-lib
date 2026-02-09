@@ -520,26 +520,26 @@
 	--wui-colorpicker-box-button-textcolor-over: var(--wuiplugin-theme-utilitycolor-hightlight);
 	--wui-colorpicker-mobile-overlay-bgcolor: rgb(from var(--wuiplugin-theme-bgcolor-overlay) r g b / 20%);
 
-	/* wui-checkbox */
+	/* wui-switch */
 
-	--wui-checkbox-button-size: 30px;
-	--wui-checkbox-bordercolor-out: rgb(from var(--wuiplugin-theme-utilitycolor-hightlight) r g b / 20%);
-	--wui-checkbox-bordercolor-over: var(--wuiplugin-theme-utilitycolor-hightlight);
-	--wui-checkbox-bordercolor-checked: var(--wuiplugin-theme-utilitycolor-hightlight);
-	--wui-checkbox-bordercolor-invalid: var(--wuiplugin-theme-utilitycolor-warning);
-	--wui-checkbox-bordercolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
-	--wui-checkbox-bgcolor-out: rgb(from var(--wuiplugin-theme-utilitycolor-hightlight) r g b / 4%);
-	--wui-checkbox-bgcolor-over: rgb(from var(--wuiplugin-theme-utilitycolor-hightlight) r g b / 4%);
-	--wui-checkbox-bgcolor-checked: var(--wuiplugin-theme-utilitycolor-hightlight);
-	--wui-checkbox-bgcolor-disabled: rgb(from var(--wuiplugin-theme-utilitycolor-disabled) r g b / 20%);
-	--wui-checkbox-button-bordercolor-out: rgb(from var(--wuiplugin-theme-utilitycolor-hightlight) r g b / 20%);
-	--wui-checkbox-button-bordercolor-over: var(--wuiplugin-theme-utilitycolor-hightlight);
-	--wui-checkbox-button-bordercolor-checked: var(--wuiplugin-theme-utilitycolor-hightlight);
-	--wui-checkbox-button-bordercolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
-	--wui-checkbox-button-bgcolor-out: var(--wuiplugin-theme-bgcolor-over);
-	--wui-checkbox-button-bgcolor-over: rgb(from var(--wuiplugin-theme-utilitycolor-hightlight) r g b / 4%);
-	--wui-checkbox-button-bgcolor-checked: var(--wuiplugin-theme-bgcolor-over);
-	--wui-checkbox-button-bgcolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
+	--wui-switch-button-size: 30px;
+	--wui-switch-bordercolor-out: rgb(from var(--wuiplugin-theme-utilitycolor-hightlight) r g b / 20%);
+	--wui-switch-bordercolor-over: var(--wuiplugin-theme-utilitycolor-hightlight);
+	--wui-switch-bordercolor-activated: var(--wuiplugin-theme-utilitycolor-hightlight);
+	--wui-switch-bordercolor-invalid: var(--wuiplugin-theme-utilitycolor-warning);
+	--wui-switch-bordercolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
+	--wui-switch-bgcolor-out: rgb(from var(--wuiplugin-theme-utilitycolor-hightlight) r g b / 4%);
+	--wui-switch-bgcolor-over: rgb(from var(--wuiplugin-theme-utilitycolor-hightlight) r g b / 4%);
+	--wui-switch-bgcolor-activated: var(--wuiplugin-theme-utilitycolor-hightlight);
+	--wui-switch-bgcolor-disabled: rgb(from var(--wuiplugin-theme-utilitycolor-disabled) r g b / 20%);
+	--wui-switch-button-bordercolor-out: rgb(from var(--wuiplugin-theme-utilitycolor-hightlight) r g b / 20%);
+	--wui-switch-button-bordercolor-over: var(--wuiplugin-theme-utilitycolor-hightlight);
+	--wui-switch-button-bordercolor-activated: var(--wuiplugin-theme-utilitycolor-hightlight);
+	--wui-switch-button-bordercolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
+	--wui-switch-button-bgcolor-out: var(--wuiplugin-theme-bgcolor-over);
+	--wui-switch-button-bgcolor-over: rgb(from var(--wuiplugin-theme-utilitycolor-hightlight) r g b / 4%);
+	--wui-switch-button-bgcolor-activated: var(--wuiplugin-theme-bgcolor-over);
+	--wui-switch-button-bgcolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
 
 	/* wui-intensity */
 
