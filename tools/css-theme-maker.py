@@ -103,7 +103,7 @@ def parse_css_file(filepath, target_theme):
                 if m:
                     name, val = m.groups()
                     # Only keep --wui-* variables
-                    if name.startswith('--wui-'):
+                    if name.startswith('--wui-') or name.startswith('--wuiplugin-'):
                         components.append({'type': 'var', 'name': name, 'value': val, 'indent': line[:line.find('--')]})
             elif stripped == '':
                  components.append({'type': 'empty', 'content': line})

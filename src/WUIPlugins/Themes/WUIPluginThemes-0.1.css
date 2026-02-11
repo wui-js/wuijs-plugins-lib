@@ -116,6 +116,9 @@
 	--wui-modal-body-scroll-bgcolor-out: rgb(from var(--wuiplugin-theme-bgcolor-scroll) r g b / 20%);
 	--wui-modal-body-scroll-bgcolor-over: rgb(from var(--wuiplugin-theme-bgcolor-scroll) r g b / 40%);
 	--wui-modal-footer-bordercolor: transparent;
+	--wui-modal-button-submit-bgcolor-mobile: rgb(from var(--wuiplugin-theme-shadowcolor-low) r g b / 20%);
+	--wui-modal-button-submit-textcolor-mobile: var(--wuiplugin-theme-utilitycolor-hightlight);
+	--wui-modal-button-warning-textcolor-mobile: var(--wuiplugin-theme-utilitycolor-warning);
 	--wui-modal-message-box-width: 280px;
 	--wui-modal-message-box-bgcolor: rgb(from var(--wuiplugin-theme-bgcolor-box) r g b / 80%);
 	--wui-modal-message-box-textcolor: var(--wuiplugin-theme-textcolor-active);
@@ -346,6 +349,9 @@
 	--wui-form-message-textcolor: var(--wuiplugin-theme-textcolor-active);
 	--wui-form-message-highlight-bgcolor: var(--wuiplugin-theme-utilitycolor-hightlight);
 	--wui-form-message-highlight-textcolor: var(--wuiplugin-theme-graycolor-max);
+
+	--wui-form-button-height: 30px;
+
 	--wui-form-mobile-field-bordercolor: rgb(from var(--wuiplugin-theme-utilitycolor-hightlight) r g b / 10%);
 	--wui-form-mobile-label-textcolor: var(--wuiplugin-theme-graycolor-low);
 	--wui-form-mobile-input-height: 40px;
@@ -577,12 +583,10 @@
 	--wui-button-submit-bordercolor-disabled: var(--wui-button-default-bordercolor-disabled);
 	--wui-button-submit-bgcolor-out: var(--wuiplugin-theme-utilitycolor-hightlight);
 	--wui-button-submit-bgcolor-over: var(--wuiplugin-theme-utilitycolor-hightlight);
-	--wui-button-submit-bgcolor-mobile: rgb(from var(--wuiplugin-theme-shadowcolor-low) r g b / 20%);
 	--wui-button-submit-bgcolor-selected: var(--wuiplugin-theme-utilitycolor-hightlight);
 	--wui-button-submit-bgcolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
 	--wui-button-submit-textcolor-out: var(--wuiplugin-theme-graycolor-max);
 	--wui-button-submit-textcolor-over: var(--wuiplugin-theme-graycolor-max);
-	--wui-button-submit-textcolor-mobile: var(--wuiplugin-theme-utilitycolor-hightlight);
 	--wui-button-submit-textcolor-selected: var(--wuiplugin-theme-graycolor-max);
 	--wui-button-submit-textcolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
 	--wui-button-submit-textsize: 15px;
@@ -596,7 +600,6 @@
 	--wui-button-warning-bgcolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
 	--wui-button-warning-textcolor-out: var(--wuiplugin-theme-graycolor-max);
 	--wui-button-warning-textcolor-over: var(--wuiplugin-theme-graycolor-max);
-	--wui-button-warning-textcolor-mobile: var(--wuiplugin-theme-utilitycolor-warning);
 	--wui-button-warning-textcolor-selected: var(--wuiplugin-theme-graycolor-max);
 	--wui-button-warning-textcolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
 	--wui-button-icon-float-padding: 5px;
