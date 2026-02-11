@@ -292,7 +292,7 @@
 	--wui-form-label-textcolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
 	--wui-form-input-height: 30px;
 	--wui-form-input-borderwidth: 1px;
-	--wui-form-input-borderradius: var(--wuiplugin-theme-borderradius-half);
+	--wui-form-input-borderradius: var(--wuiplugin-theme-borderradius-low);
 	--wui-form-input-bordercolor-out: rgb(from var(--wuiplugin-theme-utilitycolor-hightlight) r g b / 20%);
 	--wui-form-input-bordercolor-focus: var(--wuiplugin-theme-utilitycolor-hightlight);
 	--wui-form-input-bordercolor-invalid: var(--wuiplugin-theme-utilitycolor-warning);

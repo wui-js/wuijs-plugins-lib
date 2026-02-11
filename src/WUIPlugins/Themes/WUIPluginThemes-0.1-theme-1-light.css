@@ -217,7 +217,7 @@
 	--wui-form-label-textcolor-disabled: #d5dce3;
 	--wui-form-input-height: 30px;
 	--wui-form-input-borderwidth: 1px;
-	--wui-form-input-borderradius: 15px;
+	--wui-form-input-borderradius: 10px;
 	--wui-form-input-bordercolor-out: rgb(from #1e90ff r g b / 20%);
 	--wui-form-input-bordercolor-focus: #1e90ff;
 	--wui-form-input-bordercolor-invalid: #f44343;
