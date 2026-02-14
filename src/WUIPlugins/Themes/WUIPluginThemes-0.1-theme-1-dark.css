@@ -249,9 +249,11 @@
 	--wui-form-range-thumb-bgcolor-disabled: #4b5563;
 	--wui-form-range-trackbar-height: 7px;
 	--wui-form-range-trackbar-borderwidth: 1px;
-	--wui-form-range-trackbar-bordercolor: #374151;
+	--wui-form-range-trackbar-bordercolor-out: #374151;
+	--wui-form-range-trackbar-bordercolor-focus: #1e90ff;
+	--wui-form-range-trackbar-bordercolor-disabled: #4b5563;
 	--wui-form-range-trackbar-bgcolor-out: #374151;
-	--wui-form-range-trackbar-bgcolor-over: #1e90ff;
+	--wui-form-range-trackbar-bgcolor-focus: #1e90ff;
 	--wui-form-range-trackbar-bgcolor-disabled: #4b5563;
 	--wui-form-select-opener-iconsize: 30px;
 	--wui-form-select-opener-iconcolor-out: #fff;
@@ -274,9 +276,6 @@
 	--wui-form-message-textcolor: #f3f4f6;
 	--wui-form-message-highlight-bgcolor: #1e90ff;
 	--wui-form-message-highlight-textcolor: #000;
-
-	--wui-form-button-height: 30px;
-
 	--wui-form-mobile-field-bordercolor: rgb(from #1e90ff r g b / 10%);
 	--wui-form-mobile-label-textcolor: #ccc;
 	--wui-form-mobile-input-height: 40px;
