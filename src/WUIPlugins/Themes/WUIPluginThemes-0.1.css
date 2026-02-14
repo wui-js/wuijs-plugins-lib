@@ -328,7 +328,7 @@
 	--wui-form-range-trackbar-bordercolor-focus: var(--wuiplugin-theme-utilitycolor-hightlight);
 	--wui-form-range-trackbar-bordercolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
 	--wui-form-range-trackbar-bgcolor-out: var(--wuiplugin-theme-bgcolor-over);
-	--wui-form-range-trackbar-bgcolor-focus: var(--wuiplugin-theme-utilitycolor-hightlight);
+	--wui-form-range-trackbar-bgcolor-focus: var(--wuiplugin-theme-bgcolor-over);
 	--wui-form-range-trackbar-bgcolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
 	--wui-form-select-opener-iconsize: var(--wuiplugin-theme-input-opener-iconsize);
 	--wui-form-select-opener-iconcolor-out: var(--wuiplugin-theme-graycolor-min);
