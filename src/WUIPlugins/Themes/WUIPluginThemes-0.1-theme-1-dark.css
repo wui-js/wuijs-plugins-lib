@@ -486,7 +486,7 @@
 
 	--wui-button-default-minwidth: 200px;
 	--wui-button-default-height: 34px;
-	--wui-button-default-bordercolor-out: #4b5563;
+	--wui-button-default-bordercolor-out: rgb(from #1e90ff r g b / 20%);
 	--wui-button-default-bordercolor-over: #1e90ff;
 	--wui-button-default-bordercolor-selected: #1e90ff;
 	--wui-button-default-bordercolor-disabled: #4b5563;
