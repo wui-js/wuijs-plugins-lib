@@ -169,6 +169,8 @@
 
 	--wui-table-shadowcolor: #1f2937;
 	--wui-table-borderradius: 10px;
+	--wui-table-scroll-bgcolor-out: rgb(from #4b5563 r g b / 20%);
+	--wui-table-scroll-bgcolor-over: rgb(from #4b5563 r g b / 40%);
 	--wui-table-column-bordercolor-width: 1px;
 	--wui-table-column-bordercolor-out: rgb(from #1e90ff r g b / 10%);
 	--wui-table-column-bordercolor-over: #1e90ff;

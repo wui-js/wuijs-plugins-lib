@@ -244,6 +244,8 @@
 
 	--wui-table-shadowcolor: var(--wuiplugin-theme-shadowcolor-low);
 	--wui-table-borderradius: var(--wuiplugin-theme-borderradius-low);
+	--wui-table-scroll-bgcolor-out: rgb(from var(--wuiplugin-theme-bgcolor-scroll) r g b / 20%);
+	--wui-table-scroll-bgcolor-over: rgb(from var(--wuiplugin-theme-bgcolor-scroll) r g b / 40%);
 	--wui-table-column-bordercolor-width: 1px;
 	--wui-table-column-bordercolor-out: rgb(from var(--wuiplugin-theme-utilitycolor-hightlight) r g b / 10%);
 	--wui-table-column-bordercolor-over: var(--wuiplugin-theme-utilitycolor-hightlight);
