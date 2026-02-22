@@ -12,8 +12,6 @@
 
 	/* wui-icon */
 
-	--wui-icon-size: 24px;
-	--wui-icon-smallsize: 14px;
 	--wui-icon-bgcolor-out: rgb(from #353a40 r g b / 70%);
 	--wui-icon-bgcolor-over: #353a40;
 

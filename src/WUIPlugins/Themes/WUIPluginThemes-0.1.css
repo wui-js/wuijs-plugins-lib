@@ -87,8 +87,6 @@
 
 	/* wui-icon */
 
-	--wui-icon-size: 24px;
-	--wui-icon-smallsize: 14px;
 	--wui-icon-bgcolor-out: rgb(from var(--wuiplugin-theme-bgcolor-icon) r g b / 70%);
 	--wui-icon-bgcolor-over: var(--wuiplugin-theme-bgcolor-icon);
 
