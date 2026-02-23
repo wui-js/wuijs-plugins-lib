@@ -35,7 +35,7 @@ WUIJS Plugins Lib es una biblioteca JavaScript/CSS de código abierto que propor
 | Nombre Plugin                           | Version | Descripción |
 | --------------------------------------- | -------:| ----------- |
 | [WUIPluginThemes](#WUIPluginThemes)     | `0.1`   | Plugin para el manejo de temas prediseñados y modo claro y oscuro. |
-| [WUIPluginSelector](#WUIPluginSelector) | `0.2`   | Modal selector basado en WUIModal. |
+| [WUIPluginSelector](#WUIPluginSelector) | `0.2`   | Selector modal basado en WUIModal. |
 
 ### Mapa de Directorios
 
@@ -238,26 +238,23 @@ Las variables primitivas se definen con dos variantes de sufijo: `{variable}-lig
 | `--wuiplugin-theme-input-opener-iconsize` | `30px`                                  | Tamaño del ícono de apertura en campos de formulario. |
 | `--wuiplugin-theme-transition-delay`      | `0.4s`                                  | Duración de la transición de esquema de color. |
 
+#### Herramienta de generación de temas
 
+El script `tools/css-theme-maker.py` genera archivos CSS pregenerados resolviendo todas las referencias a `var()` del archivo fuente, produciendo un CSS plano por cada modo de color.
 
+```bash
+python tools/css-theme-maker.py
 
+python tools/css-theme-maker.py --css <ruta-css> -o <directorio-salida> -t <nombre-tema>
+```
 
+| Opción          | Predeterminado                                     | Descripción |
+| --------------- | -------------------------------------------------- | ----------- |
+| `--css`         | `../src/WUIPlugins/Themes/WUIPluginThemes-0.1.css` | Ruta al archivo CSS fuente. |
+| `-o`, `--out`   | `../src/WUIPlugins/Themes/`                        | Directorio de salida para los archivos generados. |
+| `-t`, `--theme` | `theme-1`                                          | Nombre del tema a extraer y resolver. |
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+Los archivos de salida siguen el patrón `{nombre-base}-{tema}-light.css` y `{nombre-base}-{tema}-dark.css`.
 
 #### Implementación
 
@@ -311,20 +308,10 @@ Para generar los archivos CSS pregenerados del nuevo tema:
 python tools/css-theme-maker.py -t theme-2
 ```
 
-#### Herramienta de generación de temas
+<a name="WUIPluginSelector"></a>
 
-El script `tools/css-theme-maker.py` genera archivos CSS pregenerados resolviendo todas las referencias a `var()` del archivo fuente, produciendo un CSS plano por cada modo de color.
+### WUIPluginSelector
 
-```bash
-python tools/css-theme-maker.py
+Version: `0.2`
 
-python tools/css-theme-maker.py --css <ruta-css> -o <directorio-salida> -t <nombre-tema>
-```
-
-| Opción          | Predeterminado                                     | Descripción |
-| --------------- | -------------------------------------------------- | ----------- |
-| `--css`         | `../src/WUIPlugins/Themes/WUIPluginThemes-0.1.css` | Ruta al archivo CSS fuente. |
-| `-o`, `--out`   | `../src/WUIPlugins/Themes/`                        | Directorio de salida para los archivos generados. |
-| `-t`, `--theme` | `theme-1`                                          | Nombre del tema a extraer y resolver. |
-
-Los archivos de salida siguen el patrón `{nombre-base}-{tema}-light.css` y `{nombre-base}-{tema}-dark.css`.
+Selector modal basado en WUIModal.

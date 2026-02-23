@@ -241,18 +241,23 @@ Primitive variables are defined with two suffix variants: `{variable}-light` for
 | `--wuiplugin-theme-input-opener-iconsize` | `30px`                                  | Opener icon size for form fields. |
 | `--wuiplugin-theme-transition-delay`      | `0.4s`                                  | Color scheme transition duration. |
 
+#### Theme Generation Tool
 
+The `tools/css-theme-maker.py` script generates pre-generated CSS files by resolving all `var()` references in the source file, producing a flat CSS file for each color mode.
 
+```bash
+python tools/css-theme-maker.py
 
+python tools/css-theme-maker.py --css <css-path> -o <output-directory> -t <theme-name>
+```
 
+| Option          | Default                                            | Description |
+| --------------- | -------------------------------------------------- | ----------- |
+| `--css`         | `../src/WUIPlugins/Themes/WUIPluginThemes-0.1.css` | Path to the source CSS file. |
+| `-o`, `--out`   | `../src/WUIPlugins/Themes/`                        | Output directory for generated files. |
+| `-t`, `--theme` | `theme-1`                                          | Name of the theme to extract and resolve. |
 
-
-
-
-
-
-
-
+Output files follow the pattern `{base-name}-{theme}-light.css` and `{base-name}-{theme}-dark.css`.
 
 #### Implementation
 
@@ -305,24 +310,6 @@ To generate the pre-generated CSS files for the new theme:
 ```bash
 python tools/css-theme-maker.py -t theme-2
 ```
-
-#### Theme Generation Tool
-
-The `tools/css-theme-maker.py` script generates pre-generated CSS files by resolving all `var()` references in the source file, producing a flat CSS file for each color mode.
-
-```bash
-python tools/css-theme-maker.py
-
-python tools/css-theme-maker.py --css <css-path> -o <output-directory> -t <theme-name>
-```
-
-| Option          | Default                                            | Description |
-| --------------- | -------------------------------------------------- | ----------- |
-| `--css`         | `../src/WUIPlugins/Themes/WUIPluginThemes-0.1.css` | Path to the source CSS file. |
-| `-o`, `--out`   | `../src/WUIPlugins/Themes/`                        | Output directory for generated files. |
-| `-t`, `--theme` | `theme-1`                                          | Name of the theme to extract and resolve. |
-
-Output files follow the pattern `{base-name}-{theme}-light.css` and `{base-name}-{theme}-dark.css`.
 
 <a name="WUIPluginSelector"></a>
 
