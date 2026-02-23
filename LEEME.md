@@ -43,8 +43,9 @@ WUIJS Plugins Lib es una biblioteca JavaScript/CSS de código abierto que propor
 wuijs-lib/
 ├── imgs/
 │   └── logo/
-└── src/
-    └── WUI/
+├── src/
+│   └── WUI/
+└── tools/
 ```
 
 | Ruta                              | Descripción |
@@ -53,6 +54,7 @@ wuijs-lib/
 | [imgs/logo](imgs/logo/)           | Logotipo e isotipo del proyecto en formato SVG y PNG. |
 | [src](src/)                       | Fuentes principales de la última versión. |
 | [src/WUIPlugins](src/WUIPlugins/) | Librería WUI JS Plugins. |
+| [tools](tools/)                   | Herramientas complementarias. |
 
 <a name="install"></a>
 
@@ -114,7 +116,7 @@ WUIPluginThemes provee variables de tema para los siguientes componentes de WUIJ
 
 También provee variables para el plugin `wuiplugin-selector`.
 
-#### Instalación del plugin
+#### Implementación
 
 **Usando el archivo fuente principal:**
 
@@ -145,37 +147,37 @@ Aplica la clase `wuiplugin-themes` en el elemento raíz de la aplicación (norma
 
 **Clase base:**
 
-| Clase | Descripción |
-| ----- | ----------- |
+| Clase              | Descripción |
+| ------------------ | ----------- |
 | `wuiplugin-themes` | **Obligatoria.** Debe estar presente en el elemento raíz. Activa las variables CSS de los componentes de WUIJS Lib. |
 
 **Clases de tema:**
 
-| Clase | Descripción |
-| ----- | ----------- |
-| `theme-1` | Tema predeterminado. |
+| Clase           | Descripción |
+| --------------- | ----------- |
+| `theme-1`       | Tema predeterminado. |
 | `theme-default` | Alias de `theme-1`. |
 
 **Clases de modo de color:**
 
-| Clase | `color-scheme` | Descripción |
-| ----- | -------------- | ----------- |
-| `light` | `light` | Fuerza el modo claro. |
-| `dark` | `dark` | Fuerza el modo oscuro. |
-| `system` | `light dark` | Modo automático mediante la función CSS `light-dark()`. Se adapta al esquema preferido del sistema operativo. |
+| Clase    | `color-scheme` | Descripción |
+| -------- | -------------- | ----------- |
+| `light`  | `light`        | Fuerza el modo claro. |
+| `dark`   | `dark`         | Fuerza el modo oscuro. |
+| `system` | `light dark`   | Modo automático mediante la función CSS `light-dark()`. Se adapta al esquema preferido del sistema operativo. |
 
 > [!NOTE]
 > El modo `system` requiere soporte del navegador para la función CSS `light-dark()` (disponible en navegadores modernos a partir de 2024).
 
 **Clase de transición:**
 
-| Clase | Descripción |
-| ----- | ----------- |
+| Clase        | Descripción |
+| ------------ | ----------- |
 | `transition` | Activa la transición de fondo durante el cambio de esquema. La agrega y elimina automáticamente el método `setScheme()`. No debe usarse manualmente. |
 
 #### Constructor
 
-```javascript
+```js
 const themes = new WUIPluginThemes();
 ```
 
@@ -183,18 +185,18 @@ No requiere argumentos.
 
 #### Propiedades
 
-| Nombre | Tipo | Descripción |
-| ------ | ---- | ----------- |
+| Nombre                    | Tipo     | Descripción |
+| ------------------------- | -------- | ----------- |
 | `WUIPluginThemes.version` | `string` | Versión del plugin. Valor: `"0.1"`. |
 
 #### Métodos Públicos
 
-| Método | Parámetros | Retorno | Descripción |
-| ------ | ---------- | ------- | ----------- |
-| `getScheme()` | — | `string` | Retorna el valor actual de `color-scheme` del elemento `<html>`. |
-| `getCurrentScheme()` | — | `string` | Retorna el esquema de color preferido del sistema operativo. |
-| `getTheme()` | — | `string` | Retorna el nombre del tema activo desde las clases de `document.body`. |
-| `setScheme(value)` | `value: string` | — | Establece el esquema de color de la aplicación. |
+| Método           | Return type | Descripción |
+| ---------------- | ----------- | ----------- |
+| getScheme        | `string`    | `getScheme()`<br><br>Retorna el valor actual de `color-scheme` del elemento `<html>`. |
+| getCurrentScheme | `string`    | `getCurrentScheme()`<br><br>Retorna el esquema de color preferido del sistema operativo. |
+| getTheme         | `string`    | `getTheme()`<br><br>Retorna el nombre del tema activo desde las clases de `document.body`. |
+| setScheme        | `void`      | `setScheme(scheme)`<br><br>Establece el esquema de color de la aplicación. |
 
 ---
 
@@ -202,7 +204,7 @@ No requiere argumentos.
 
 Retorna el valor de la propiedad CSS `color-scheme` definida en el elemento `<html>`.
 
-```javascript
+```js
 const scheme = themes.getScheme();
 ```
 
@@ -216,7 +218,7 @@ const scheme = themes.getScheme();
 
 Retorna el esquema de color preferido del sistema operativo, independientemente del esquema configurado en la aplicación.
 
-```javascript
+```js
 const scheme = themes.getCurrentScheme();
 ```
 
@@ -230,7 +232,7 @@ const scheme = themes.getCurrentScheme();
 
 Retorna el nombre del tema activo según las clases CSS presentes en `document.body`.
 
-```javascript
+```js
 const theme = themes.getTheme();
 ```
 
@@ -240,11 +242,11 @@ const theme = themes.getTheme();
 
 ---
 
-**`setScheme(value)`**
+**`setScheme(scheme)`**
 
 Establece el esquema de color de la aplicación. Actualiza las clases CSS en `document.body` y el atributo `color-scheme` en el elemento `<html>`. Si el esquema nuevo difiere del actual, activa automáticamente la transición de fondo.
 
-```javascript
+```js
 themes.setScheme("light");
 themes.setScheme("dark");
 themes.setScheme("system");
