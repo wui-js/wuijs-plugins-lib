@@ -240,7 +240,7 @@ Las variables primitivas se definen con dos variantes de sufijo: `{variable}-lig
 
 #### Herramienta de generación de temas
 
-El script `tools/css-theme-maker.py` genera archivos CSS pregenerados resolviendo todas las referencias a `var()` del archivo fuente, produciendo un CSS plano por cada modo de color.
+El script `tools/css-theme-maker.py` crea archivos SVG estandarizados resolviendo todas las referencias a `var()` del archivo fuente, produciendo un CSS plano por cada modo de color.
 
 ```bash
 python tools/css-theme-maker.py

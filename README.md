@@ -243,7 +243,7 @@ Primitive variables are defined with two suffix variants: `{variable}-light` for
 
 #### Theme Generation Tool
 
-The `tools/css-theme-maker.py` script generates pre-generated CSS files by resolving all `var()` references in the source file, producing a flat CSS file for each color mode.
+The `tools/css-theme-maker.py` make standardized SVG files by resolving all `var()` references in the source file, producing a flat CSS file for each color mode.
 
 ```bash
 python tools/css-theme-maker.py
@@ -251,7 +251,7 @@ python tools/css-theme-maker.py
 python tools/css-theme-maker.py --css <css-path> -o <output-directory> -t <theme-name>
 ```
 
-| Option          | Default                                            | Description |
+| Option          | Default value                                      | Description |
 | --------------- | -------------------------------------------------- | ----------- |
 | `--css`         | `../src/WUIPlugins/Themes/WUIPluginThemes-0.1.css` | Path to the source CSS file. |
 | `-o`, `--out`   | `../src/WUIPlugins/Themes/`                        | Output directory for generated files. |
