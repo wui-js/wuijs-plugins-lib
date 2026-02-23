@@ -110,11 +110,29 @@ WUIPluginThemes provee un sistema de temas para aplicaciones web mediante dos ca
 
 #### Componentes cubiertos
 
-WUIPluginThemes provee variables de tema para los siguientes componentes de WUIJS Lib:
+WUIPluginThemes provee soporte de temas para los siguientes componentes de WUIJS Lib:
 
-`wui-scrolly`, `wui-icon`, `wui-loader`, `wui-tooltip`, `wui-modal`, `wui-paging`, `wui-slider`, `wui-tabs`, `wui-menubar`, `wui-list`, `wui-table`, `wui-form`, `wui-selectpicker`, `wui-datepicker`, `wui-timepicker`, `wui-colorpicker`, `wui-switch`, `wui-intensity`, `wui-button`
+- `wui-scrolly`
+- `wui-icon`
+- `wui-loader`
+- `wui-tooltip`
+- `wui-modal`
+- `wui-paging`
+- `wui-slider`
+- `wui-tabs`
+- `wui-menubar`
+- `wui-list`
+- `wui-table`
+- `wui-form`
+- `wui-selectpicker`
+- `wui-datepicker`
+- `wui-timepicker`
+- `wui-colorpicker`
+- `wui-switch`
+- `wui-intensity`
+- `wui-button`
 
-También provee variables para el plugin `wuiplugin-selector`.
+También provee soporte de temas para el plugin `wuiplugin-selector`.
 
 #### Implementación
 
@@ -208,8 +226,8 @@ Retorna el valor de la propiedad CSS `color-scheme` definida en el elemento `<ht
 const scheme = themes.getScheme();
 ```
 
-| Retorno | Tipo | Valores posibles |
-| ------- | ---- | ---------------- |
+| Retorno                 | Tipo     | Valores posibles |
+| ----------------------- | -------- | ---------------- |
 | Esquema de color actual | `string` | `"light"`, `"dark"`, `"light dark"`, `""` |
 
 ---
@@ -222,8 +240,8 @@ Retorna el esquema de color preferido del sistema operativo, independientemente 
 const scheme = themes.getCurrentScheme();
 ```
 
-| Retorno | Tipo | Valores posibles |
-| ------- | ---- | ---------------- |
+| Retorno                       | Tipo     | Valores posibles |
+| ----------------------------- | -------- | ---------------- |
 | Esquema preferido del sistema | `string` | `"light"`, `"dark"` |
 
 ---
@@ -236,8 +254,8 @@ Retorna el nombre del tema activo según las clases CSS presentes en `document.b
 const theme = themes.getTheme();
 ```
 
-| Retorno | Tipo | Valores posibles |
-| ------- | ---- | ---------------- |
+| Retorno                | Tipo     | Valores posibles |
+| ---------------------- | -------- | ---------------- |
 | Nombre del tema activo | `string` | `"theme-1"`, `"theme-default"`, `""` |
 
 ---
@@ -252,17 +270,17 @@ themes.setScheme("dark");
 themes.setScheme("system");
 ```
 
-| Parámetro | Tipo | Descripción |
-| --------- | ---- | ----------- |
-| `value` | `string` | Esquema de color deseado. No distingue mayúsculas de minúsculas. |
+| Parámetro | Tipo     | Descripción |
+| --------- | -------- | ----------- |
+| `scheme`  | `string` | Esquema de color deseado. No distingue mayúsculas de minúsculas. |
 
 **Valores aceptados:**
 
-| Valor | Clase aplicada en `<body>` | `color-scheme` en `<html>` |
-| ----- | -------------------------- | -------------------------- |
-| `"light"` · `"only light"` | `light` | `light` |
-| `"dark"` · `"only dark"` | `dark` | `dark` |
-| `"system"` · `"light dark"` · `"dark light"` | `system` | `light dark` |
+| Valor                                        | Clase aplicada en `<body>` | `color-scheme` en `<html>` |
+| -------------------------------------------- | -------------------------- | -------------------------- |
+| `"light"` · `"only light"`                   | `light`                    | `light` |
+| `"dark"` · `"only dark"`                     | `dark`                     | `dark` |
+| `"system"` · `"light dark"` · `"dark light"` | `system`                   | `light dark` |
 
 La duración de la transición está controlada por la variable CSS `--wuiplugin-theme-transition-delay` (valor por defecto: `0.4s`).
 
@@ -272,46 +290,46 @@ Las variables primitivas se definen con dos variantes de sufijo: `{variable}-lig
 
 **Colores (con variante `-light` y `-dark`):**
 
-| Variable base | Descripción |
-| ------------- | ----------- |
-| `--wuiplugin-theme-graycolor-max` | Color gris máximo (blanco en claro, negro en oscuro). |
-| `--wuiplugin-theme-graycolor-high` | Color gris alto. |
-| `--wuiplugin-theme-graycolor-half` | Color gris medio. |
-| `--wuiplugin-theme-graycolor-low` | Color gris bajo. |
-| `--wuiplugin-theme-graycolor-min` | Color gris mínimo (negro en claro, blanco en oscuro). |
-| `--wuiplugin-theme-shadowcolor-high` | Color de sombra fuerte. |
-| `--wuiplugin-theme-shadowcolor-low` | Color de sombra suave. |
-| `--wuiplugin-theme-bordercolor-max` | Color de borde máximo. |
-| `--wuiplugin-theme-bordercolor-high` | Color de borde alto. |
-| `--wuiplugin-theme-bordercolor-low` | Color de borde bajo. |
-| `--wuiplugin-theme-bgcolor-overlay` | Color de fondo del overlay. |
-| `--wuiplugin-theme-bgcolor-box` | Color de fondo de cuadros de diálogo y paneles. |
-| `--wuiplugin-theme-bgcolor-out` | Color de fondo en estado normal. |
-| `--wuiplugin-theme-bgcolor-over` | Color de fondo en estado hover o seleccionado. |
-| `--wuiplugin-theme-bgcolor-scroll` | Color de la barra de desplazamiento. |
-| `--wuiplugin-theme-bgcolor-icon` | Color de relleno de íconos. |
-| `--wuiplugin-theme-bgcolor-highcontrast` | Color de fondo de alto contraste (tooltips, etc.). |
-| `--wuiplugin-theme-textcolor-title` | Color de texto de títulos. |
-| `--wuiplugin-theme-textcolor-active` | Color de texto en estado activo. |
-| `--wuiplugin-theme-textcolor-focus` | Color de texto en estado de foco. |
+| Variable base                               | Descripción |
+| ------------------------------------------- | ----------- |
+| `--wuiplugin-theme-graycolor-max`           | Color gris máximo (blanco en claro, negro en oscuro). |
+| `--wuiplugin-theme-graycolor-high`          | Color gris alto. |
+| `--wuiplugin-theme-graycolor-half`          | Color gris medio. |
+| `--wuiplugin-theme-graycolor-low`           | Color gris bajo. |
+| `--wuiplugin-theme-graycolor-min`           | Color gris mínimo (negro en claro, blanco en oscuro). |
+| `--wuiplugin-theme-shadowcolor-high`        | Color de sombra fuerte. |
+| `--wuiplugin-theme-shadowcolor-low`         | Color de sombra suave. |
+| `--wuiplugin-theme-bordercolor-max`         | Color de borde máximo. |
+| `--wuiplugin-theme-bordercolor-high`        | Color de borde alto. |
+| `--wuiplugin-theme-bordercolor-low`         | Color de borde bajo. |
+| `--wuiplugin-theme-bgcolor-overlay`         | Color de fondo del overlay. |
+| `--wuiplugin-theme-bgcolor-box`             | Color de fondo de cuadros de diálogo y paneles. |
+| `--wuiplugin-theme-bgcolor-out`             | Color de fondo en estado normal. |
+| `--wuiplugin-theme-bgcolor-over`            | Color de fondo en estado hover o seleccionado. |
+| `--wuiplugin-theme-bgcolor-scroll`          | Color de la barra de desplazamiento. |
+| `--wuiplugin-theme-bgcolor-icon`            | Color de relleno de íconos. |
+| `--wuiplugin-theme-bgcolor-highcontrast`	  | Color de fondo de alto contraste (tooltips, etc.). |
+| `--wuiplugin-theme-textcolor-title`         | Color de texto de títulos. |
+| `--wuiplugin-theme-textcolor-active`        | Color de texto en estado activo. |
+| `--wuiplugin-theme-textcolor-focus`         | Color de texto en estado de foco. |
 | `--wuiplugin-theme-utilitycolor-hightlight` | Color de acento principal (links, botones, selecciones). |
-| `--wuiplugin-theme-utilitycolor-warning` | Color de advertencia o error. |
-| `--wuiplugin-theme-utilitycolor-disabled` | Color de elementos deshabilitados. |
-| `--wuiplugin-theme-intencitycolor-low` | Color de intensidad baja. |
-| `--wuiplugin-theme-intencitycolor-half` | Color de intensidad media. |
-| `--wuiplugin-theme-intencitycolor-high` | Color de intensidad alta. |
+| `--wuiplugin-theme-utilitycolor-warning`    | Color de advertencia o error. |
+| `--wuiplugin-theme-utilitycolor-disabled`   | Color de elementos deshabilitados. |
+| `--wuiplugin-theme-intencitycolor-low`      | Color de intensidad baja. |
+| `--wuiplugin-theme-intencitycolor-half`     | Color de intensidad media. |
+| `--wuiplugin-theme-intencitycolor-high`     | Color de intensidad alta. |
 
 **Tipografía y métricas (comunes, sin variante de modo):**
 
-| Variable | Valor por defecto | Descripción |
-| -------- | ----------------- | ----------- |
-| `--wuiplugin-theme-borderradius-low` | `10px` | Radio de borde bajo. |
-| `--wuiplugin-theme-borderradius-half` | `15px` | Radio de borde medio. |
-| `--wuiplugin-theme-borderradius-high` | `17px` | Radio de borde alto. |
-| `--wuiplugin-theme-borderradius-round` | `50%` | Radio de borde circular. |
-| `--wuiplugin-theme-titlefont` | `Arial, Helvetica, Verdana, sans-serif` | Familia tipográfica para títulos. |
-| `--wuiplugin-theme-input-opener-iconsize` | `30px` | Tamaño del ícono de apertura en campos de formulario. |
-| `--wuiplugin-theme-transition-delay` | `0.4s` | Duración de la transición de esquema de color. |
+| Variable                                  | Valor por defecto                       | Descripción |
+| ----------------------------------------- | --------------------------------------- | ----------- |
+| `--wuiplugin-theme-borderradius-low`      | `10px`                                  | Radio de borde bajo. |
+| `--wuiplugin-theme-borderradius-half`     | `15px`                                  | Radio de borde medio. |
+| `--wuiplugin-theme-borderradius-high`     | `17px`                                  | Radio de borde alto. |
+| `--wuiplugin-theme-borderradius-round`    | `50%`                                   | Radio de borde circular. |
+| `--wuiplugin-theme-titlefont`             | `Arial, Helvetica, Verdana, sans-serif` | Familia tipográfica para títulos. |
+| `--wuiplugin-theme-input-opener-iconsize` | `30px`                                  | Tamaño del ícono de apertura en campos de formulario. |
+| `--wuiplugin-theme-transition-delay`      | `0.4s`                                  | Duración de la transición de esquema de color. |
 
 #### Personalización de temas
 
@@ -348,10 +366,10 @@ python tools/css-theme-maker.py
 python tools/css-theme-maker.py --css <ruta-css> -o <directorio-salida> -t <nombre-tema>
 ```
 
-| Opción | Predeterminado | Descripción |
-| ------ | -------------- | ----------- |
-| `--css` | `../src/WUIPlugins/Themes/WUIPluginThemes-0.1.css` | Ruta al archivo CSS fuente. |
-| `-o`, `--out` | `../src/WUIPlugins/Themes/` | Directorio de salida para los archivos generados. |
-| `-t`, `--theme` | `theme-1` | Nombre del tema a extraer y resolver. |
+| Opción          | Predeterminado                                     | Descripción |
+| --------------- | -------------------------------------------------- | ----------- |
+| `--css`         | `../src/WUIPlugins/Themes/WUIPluginThemes-0.1.css` | Ruta al archivo CSS fuente. |
+| `-o`, `--out`   | `../src/WUIPlugins/Themes/`                        | Directorio de salida para los archivos generados. |
+| `-t`, `--theme` | `theme-1`                                          | Nombre del tema a extraer y resolver. |
 
 Los archivos de salida siguen el patrón `{nombre-base}-{tema}-light.css` y `{nombre-base}-{tema}-dark.css`.
