@@ -248,11 +248,11 @@ python tools/css-theme-maker.py
 python tools/css-theme-maker.py --css <ruta-css> -o <directorio-salida> -t <nombre-tema>
 ```
 
-| Opción          | Predeterminado                                     | Descripción |
-| --------------- | -------------------------------------------------- | ----------- |
-| `--css`         | `../src/WUIPlugins/Themes/WUIPluginThemes-0.1.css` | Ruta al archivo CSS fuente. |
-| `-o`, `--out`   | `../src/WUIPlugins/Themes/`                        | Directorio de salida para los archivos generados. |
-| `-t`, `--theme` | `theme-1`                                          | Nombre del tema a extraer y resolver. |
+| Opción             | Predeterminado                                     | Descripció	n |
+| ------------------ | -------------------------------------------------- | ----------- |
+| `--css`            | `../src/WUIPlugins/Themes/WUIPluginThemes-0.1.css` | Ruta al archivo CSS fuente. |
+| `-o`,<br>`--out`   | `../src/WUIPlugins/Themes/`                        | Directorio de salida para los archivos generados. |
+| `-t`,<br>`--theme` | `theme-1`                                          | Nombre del tema a extraer y resolver. |
 
 Los archivos de salida siguen el patrón `{nombre-base}-{tema}-light.css` y `{nombre-base}-{tema}-dark.css`.
 

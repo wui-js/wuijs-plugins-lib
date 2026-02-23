@@ -251,11 +251,11 @@ python tools/css-theme-maker.py
 python tools/css-theme-maker.py --css <css-path> -o <output-directory> -t <theme-name>
 ```
 
-| Option          | Default value                                      | Description |
-| --------------- | -------------------------------------------------- | ----------- |
-| `--css`         | `../src/WUIPlugins/Themes/WUIPluginThemes-0.1.css` | Path to the source CSS file. |
-| `-o`, `--out`   | `../src/WUIPlugins/Themes/`                        | Output directory for generated files. |
-| `-t`, `--theme` | `theme-1`                                          | Name of the theme to extract and resolve. |
+| Option             | Default value                                      | Description |
+| ------------------ | -------------------------------------------------- | ----------- |
+| `--css`            | `../src/WUIPlugins/Themes/WUIPluginThemes-0.1.css` | Path to the source CSS file. |
+| `-o`,<br>`--out`   | `../src/WUIPlugins/Themes/`                        | Output directory for generated files. |
+| `-t`,<br>`--theme` | `theme-1`                                          | Name of the theme to extract and resolve. |
 
 Output files follow the pattern `{base-name}-{theme}-light.css` and `{base-name}-{theme}-dark.css`.
 
