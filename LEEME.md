@@ -323,6 +323,9 @@ WUIPluginSelector extiende `WUIModal` e implementa un selector de lista de opcio
 Está optimizado para entornos móviles e intercepta el evento táctil sobre elementos `<select>` nativos para reemplazar el selector del sistema por un panel de selección personalizado.
 También puede utilizarse de forma programática independientemente de un input nativo `<select>` en entornos responsivos.
 
+> [!NOTE]
+> La documentación completa de `WUIModal` se encuentra en el proyecto wuijs-lib en el enlace: [https://github.com/wuijsproject/wuijs-lib/blob/main/README.md#WUIModal](https://github.com/wuijsproject/wuijs-lib/blob/main/README.md#WUIModal).
+
 #### Dependencias
 
 | Clase       | Versión | Descripción |
@@ -505,9 +508,9 @@ Código JS:
 const init = () => {
 	const selector = new WUIPluginSelector({
 		selector: ".wui-modal.my-selector",
-		acceptText: "Aceptar",
-		cancelText: "Cancelar",
-		emptyText: "— Selecciona —"
+		acceptText: "aceptar",
+		cancelText: "cancelar",
+		emptyText: "— selecciona —"
 	});
 	selector.init();
 	selector.prepareInput(document.querySelector(".my-select"), {
