@@ -122,6 +122,7 @@ WUIPluginThemes provee soporte de temas para los siguientes componentes de WUIJS
 - `wui-switch`
 - `wui-intensity`
 - `wui-button`
+- `wuiplugin-selector`
 
 También provee soporte de temas para el plugin `wuiplugin-selector`.
 
@@ -312,6 +313,210 @@ python tools/css-theme-maker.py -t theme-2
 
 ### WUIPluginSelector
 
-Version: `0.2`
+Versión: `0.2`
 
-Selector modal basado en WUIModal.
+Selector modal de lista de opciones basado en WUIModal.
+
+#### Descripción
+
+WUIPluginSelector extiende `WUIModal` e implementa un selector de lista de opciones de tipo modal.
+Está optimizado para entornos móviles e intercepta el evento táctil sobre elementos `<select>` nativos para reemplazar el selector del sistema por un panel de selección personalizado.
+También puede utilizarse de forma programática independientemente de un input nativo `<select>` en entornos responsivos.
+
+#### Dependencias
+
+| Clase       | Versión | Descripción |
+| ----------- | :-----: | ----------- |
+| `WUIModal`  | `0.2`   | Clase base del modal. Requerida. |
+| `WUIButton` | `0.2`   | Utilizada internamente para los botones de aceptar y cancelar. Requerida. |
+| `WUIIcon`   | `0.1`   | Requerida para el ícono de las opciones seleccionadas. |
+
+#### Fuentes
+
+| Tipo | Archivo |
+| ---- | ------- |
+| CSS  | [src/WUIPlugins/Selector/WUIPluginSelector-0.2.css](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/WUIPlugins/Selector/WUIPluginSelector-0.2.css) |
+| JS   | [src/WUIPlugins/Selector/WUIPluginSelector-0.2.js](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/WUIPlugins/Selector/WUIPluginSelector-0.2.js) |
+
+#### Constructor
+
+| Tipo              | Descripción |
+| ----------------- | ----------- |
+| WUIPluginSelector | `WUIPluginSelector([properties])`<br><br>Parámetros:<br>**• properties:** `object` *opcional* |
+
+#### Propiedades de la Clase
+
+| Nombre  | Tipo     | Descripción |
+| ------- | -------- | ----------- |
+| version | `string` | Versión del plugin. |
+
+#### Propiedades de la Instancia
+
+| Propiedad       | Tipo             | Valor predeterminado | Descripción |
+| --------------- | ---------------- | -------------------- | ----------- |
+| value           | `string`         | `""`                 | (get/set)<br>Valor actual seleccionado. En selección múltiple, los valores se unen con `separatorValue`. |
+| options         | `array`          | `[]`                 | (get/set)<br>Array de objetos de opción. Ver estructura en la sección de implementación. |
+| multiple        | `boolean`        | `false`              | (get/set)<br>Indica si la selección es múltiple. Afecta cómo se actualizan las opciones del `<select>` vinculado al aceptar. |
+| separatorValue  | `string`         | `","`                | (get/set)<br>Separador usado para unir los valores seleccionados en la propiedad `value` y en el parámetro `values` del callback `acceptOnClick`. |
+| separatorText   | `string`         | `", "`               | (get/set)<br>Separador usado para unir los textos seleccionados en el parámetro `texts` del callback `acceptOnClick`. |
+| emptyText       | `string`         | `""`                 | (get/set)<br>Texto alternativo para opciones con `value` vacío. |
+| selecteableText | `boolean`        | `false`              | (get/set)<br>Si es `true`, permite al usuario seleccionar y copiar el texto de las opciones. Se aplica únicamente a las opciones seleccionadas. |
+| acceptButton    | `WUIButton`      | `null`               | (get/set)<br>Instancia del botón de aceptar. Se asigna automáticamente en `init()`. El setter solo acepta instancias de `WUIButton`. |
+| acceptVisible   | `boolean`        | `true`               | (get/set)<br>Indica si el botón de aceptar es visible. Se restablece a `true` al cerrar el selector. |
+| acceptData      | `object`         | `{}`                 | (get/set)<br>Atributos `data-*` a aplicar en el botón de aceptar (por ejemplo `{ key: "buttons.accept" }` para WUILanguage). |
+| acceptText      | `string`         | `""`                 | (get/set)<br>Texto del botón de aceptar. |
+| acceptOnClick   | `function\|null` | `null`               | (get/set)<br>Función ejecutada al pulsar el botón de aceptar. Firma: `acceptOnClick(indexes, values, texts)`. Se restablece a `null` al cerrar el selector. |
+| cancelButton    | `WUIButton`      | `null`               | (get/set)<br>Instancia del botón de cancelar. Se asigna automáticamente en `init()`. El setter solo acepta instancias de `WUIButton`. |
+| cancelVisible   | `boolean`        | `true`               | (get/set)<br>Indica si el botón de cancelar es visible. Se restablece a `true` al cerrar el selector. |
+| cancelData      | `object`         | `{}`                 | (get/set)<br>Atributos `data-*` a aplicar en el botón de cancelar. |
+| cancelText      | `string`         | `""`                 | (get/set)<br>Texto del botón de cancelar. |
+| cancelOnClick   | `function\|null` | `null`               | (get/set)<br>Función ejecutada al pulsar el botón de cancelar. Se restablece a `null` al cerrar el selector. |
+| onSelect        | `function\|null` | `null`               | (get/set)<br>Función ejecutada al pulsar una opción de la lista. Firma: `onSelect(value, index)`. Se restablece a `null` al cerrar el selector. |
+
+Además, hereda todas las propiedades de `WUIModal` (`selector`, `openDelay`, `onStartOpen`, `onOpen`, `onScrolling`, `onStartClose`, `onClose`, etc.).
+
+#### Métodos
+
+| Método         | Return type | Descripción |
+| -------------- | ----------- | ----------- |
+| init           | `void`      | `init()`<br><br>Construye la estructura HTML interna del selector si no existe (o la carga si ya existe en el DOM), inicializa el modal base e instancia los botones de aceptar y cancelar. |
+| prepareInput   | `void`      | `prepareInput(input[, options])`<br><br>Vincula el selector a un elemento `<select>` nativo para reemplazar su comportamiento en pantallas móviles. Parámetros:<br>**• input:** `HTMLSelectElement`. Elemento a vincular.<br>**• options:** `object` *opcional*. Opciones de configuración:<br>&nbsp;&nbsp;&nbsp;**- emptyText:** `string` *(predeterminado: `this.emptyText`)* – Texto para opciones de valor vacío.<br>&nbsp;&nbsp;&nbsp;**- direction:** `"ltr"\|"rtl"` *(predeterminado: `"ltr"`)* – Dirección del texto del input.<br>&nbsp;&nbsp;&nbsp;**- force:** `boolean` *(predeterminado: `false`)* – Si `true`, activa el selector en todos los tamaños de pantalla, no solo en móvil (≤767px).<br><br>Al abrirse, puebla automáticamente `this.options` con los `<option>` del `<select>` y establece la selección actual. Al aceptar, actualiza el valor del `<select>` y dispara su evento `change`. |
+| open           | `void`      | `open()`<br><br>Abre el selector. Renderiza la lista de opciones desde `this.options` y desplaza la vista hasta la primera opción seleccionada. Muestra u oculta los botones según `acceptVisible` y `cancelVisible`. |
+| close          | `void`      | `close()`<br><br>Cierra el selector y restaura las opciones del `<select>` vinculado si existe. Restablece `acceptVisible`, `cancelVisible`, `acceptOnClick`, `cancelOnClick`, `onOpen`, `onClose` y `onSelect` a sus valores predeterminados, y desvincula el input. |
+| destroy        | `void`      | `destroy()`<br><br>Destructor. Elimina todos los elementos HTML internos y libera las propiedades del objeto. |
+
+Los métodos de instancia de `WUIModal` (`getElement()`, `getBox()`, `getFooter()`, `getStatus()`, `isOpen()`, `responsive()`) también están disponibles.
+
+#### Clases CSS
+
+| Clase                | Elemento     | Descripción |
+| -------------------- | ------------ | ----------- |
+| `wuiplugin-selector` | `.wui-modal` | Clase principal del plugin. Identifica el componente. |
+| `mobile`             | `.wui-modal` | Activa la presentación modal de tipo móvil en WUIModal. Agregada automáticamente por `init()`. |
+| `priority`           | `.wui-modal` | Asigna prioridad de apilamiento (z-index) al modal. Agregada automáticamente por `init()`. |
+
+#### Variables CSS
+
+| Variable                                         | Descripción |
+| ------------------------------------------------ | ----------- |
+| `--wuiplugin-selector-box-width`                 | Ancho de la caja del selector. |
+| `--wuiplugin-selector-box-bgcolor`               | Color de fondo de la caja del selector. |
+| `--wuiplugin-selector-option-bordercolor-out`    | Color de borde de la opción en estado normal. |
+| `--wuiplugin-selector-option-bordercolor-over`   | Color de borde de la opción en estado hover. |
+| `--wuiplugin-selector-option-bgcolor-out`        | Color de fondo de la opción en estado normal. |
+| `--wuiplugin-selector-option-bgcolor-over`       | Color de fondo de la opción en estado hover. |
+| `--wuiplugin-selector-option-iconcolor-out`      | Color del ícono de la opción en estado normal. |
+| `--wuiplugin-selector-option-iconcolor-over`     | Color del ícono de la opción en estado hover. |
+| `--wuiplugin-selector-option-iconcolor-disabled` | Color del ícono de la opción deshabilitada. |
+| `--wuiplugin-selector-option-textcolor-out`      | Color del texto de la opción en estado normal. |
+| `--wuiplugin-selector-option-textcolor-over`     | Color del texto de la opción en estado hover. |
+| `--wuiplugin-selector-option-textcolor-selected` | Color del texto de la opción seleccionada (solo cuando `selecteableText = true`). |
+| `--wuiplugin-selector-option-textcolor-disabled` | Color del texto de la opción deshabilitada. |
+| `--wuiplugin-selector-button-bordercolor`        | Color del borde del pie de botones en modo móvil. |
+
+> [!NOTE]
+> Los valores predeterminados de estas variables también estan soportados por WUIPluginThemes. Ver sección [WUIPluginThemes](#WUIPluginThemes).
+
+#### Estructura HTML
+
+El elemento contenedor debe ser un `<div>` con la clase `wui-modal wuiplugin-selector`. La estructura interna es construida automáticamente por `init()`:
+
+```html
+<div class="wui-modal wuiplugin-selector mobile priority">
+	<div class="box">
+		<div class="options">
+			<div class="option [selected] [disabled]">
+				<div class="icon wui-icon check-line"></div>
+				<div class="text [selecteable]">Texto de la opción</div>
+			</div>
+		</div>
+		<div class="footer">
+			<button class="wui-button cancel flat wui-language"></button>
+			<button class="wui-button submit wui-language"></button>
+		</div>
+	</div>
+</div>
+```
+
+#### Implementación
+
+Cabecera HTML:
+
+```html
+<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Icon/WUIIcon-0.1.css">
+<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Modal/WUIModal-0.2.css">
+<link type="text/css" rel="stylesheet" href="./Libraries/WUI/Button/WUIButton-0.2.css">
+<link type="text/css" rel="stylesheet" href="./Libraries/WUIPlugins/Selector/WUIPluginSelector-0.2.css">
+<script type="text/javascript" src="./Libraries/WUI/Modal/WUIModal-0.2.js"></script>
+<script type="text/javascript" src="./Libraries/WUI/Button/WUIButton-0.2.js"></script>
+<script type="text/javascript" src="./Libraries/WUIPlugins/Selector/WUIPluginSelector-0.2.js"></script>
+```
+
+**Uso programático:**
+
+Código HTML:
+
+```html
+<div class="wui-modal wuiplugin-selector my-selector"></div>
+```
+
+Código JS:
+
+```js
+const init = () => {
+	const selector = new WUIPluginSelector({
+		selector: ".wui-modal.my-selector",
+		acceptText: "Aceptar",
+		cancelText: "Cancelar"
+	});
+	selector.init();
+	selector.options = [
+		{ icon: null, text: "Opción 1", value: "1", selected: false },
+		{ icon: null, text: "Opción 2", value: "2", selected: true },
+		{ icon: null, text: "Opción 3", value: "3", selected: false, enabled: false }
+	];
+	selector.acceptOnClick = (indexes, values, texts) => {
+		console.log(values);
+	};
+	selector.open();
+};
+
+window.addEventListener("DOMContentLoaded", init);
+```
+
+**Vinculado a un `<select>` nativo (`prepareInput`):**
+
+Código HTML:
+
+```html
+<select class="my-select">
+	<option value="">— Selecciona —</option>
+	<option value="1">Opción 1</option>
+	<option value="2">Opción 2</option>
+	<option value="3">Opción 3</option>
+</select>
+
+<div class="wui-modal wuiplugin-selector my-selector"></div>
+```
+
+Código JS:
+
+```js
+const init = () => {
+	const selector = new WUIPluginSelector({
+		selector: ".wui-modal.my-selector",
+		acceptText: "Aceptar",
+		cancelText: "Cancelar",
+		emptyText: "— Selecciona —"
+	});
+	selector.init();
+	selector.prepareInput(document.querySelector(".my-select"), {
+		force: false
+	});
+};
+
+window.addEventListener("DOMContentLoaded", init);
+```
+
+> [!NOTE]
+> `prepareInput` intercepta el `<select>` únicamente en pantallas móviles (≤767px) salvo que `force` sea `true`. En escritorio, el `<select>` conserva su comportamiento nativo.
