@@ -92,15 +92,6 @@ Versión: `0.1`
 
 Plugin para el manejo de temas prediseñados y modo claro y oscuro.
 
-#### Fuentes
-
-| Tipo | Archivo |
-| ---- | ------- |
-| CSS  | [src/WUIPlugins/Themes/WUIPluginThemes-0.1.css](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/WUIPlugins/Themes/WUIPluginThemes-0.1.css) |
-| JS   | [src/WUIPlugins/Themes/WUIPluginThemes-0.1.js](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/WUIPlugins/Themes/WUIPluginThemes-0.1.js) |
-| CSS  | [src/WUIPlugins/Themes/WUIPluginThemes-0.1-theme-1-light.css](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/WUIPlugins/Themes/WUIPluginThemes-0.1-theme-1-light.css) |
-| CSS  | [src/WUIPlugins/Themes/WUIPluginThemes-0.1-theme-1-dark.css](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/WUIPlugins/Themes/WUIPluginThemes-0.1-theme-1-dark.css) |
-
 #### Descripción
 
 WUIPluginThemes provee un sistema de temas para aplicaciones web mediante dos capas de variables CSS:
@@ -134,32 +125,39 @@ WUIPluginThemes provee soporte de temas para los siguientes componentes de WUIJS
 
 También provee soporte de temas para el plugin `wuiplugin-selector`.
 
-#### Implementación
+#### Fuentes
 
-**Usando el archivo fuente principal:**
+| Tipo | Archivo |
+| ---- | ------- |
+| CSS  | [src/WUIPlugins/Themes/WUIPluginThemes-0.1.css](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/WUIPlugins/Themes/WUIPluginThemes-0.1.css) |
+| JS   | [src/WUIPlugins/Themes/WUIPluginThemes-0.1.js](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/WUIPlugins/Themes/WUIPluginThemes-0.1.js) |
+| CSS  | [src/WUIPlugins/Themes/WUIPluginThemes-0.1-theme-1-light.css](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/WUIPlugins/Themes/WUIPluginThemes-0.1-theme-1-light.css) |
+| CSS  | [src/WUIPlugins/Themes/WUIPluginThemes-0.1-theme-1-dark.css](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/WUIPlugins/Themes/WUIPluginThemes-0.1-theme-1-dark.css) |
 
-```html
-<link rel="stylesheet" href="WUIPluginThemes-0.1.css">
-<script src="WUIPluginThemes-0.1.js" defer></script>
-```
+#### Constructor
 
-**Usando archivos pregenerados** (sin encadenamiento de `var()`, mayor compatibilidad):
+| Tipo            | Descripción |
+| --------------- | ----------- |
+| WUIPluginThemes | `WUIPluginThemes()` |
 
-```html
-<link rel="stylesheet" href="WUIPluginThemes-0.1-theme-1-light.css">
-<link rel="stylesheet" href="WUIPluginThemes-0.1-theme-1-dark.css">
-```
+#### Propiedades de la Clase
 
-> [!NOTE]
-> Al usar archivos pregenerados, ambos archivos pueden cargarse simultáneamente. El modo activo se determina por las clases CSS presentes en el elemento raíz.
+| Nombre  | Tipo     | Descripción |
+| ------- | -------- | ----------- |
+| version | `string` | Versión del plugin. |
 
-#### Configuración
+#### Propiedades de la Instancia
 
-Aplica la clase `wuiplugin-themes` en el elemento raíz de la aplicación (normalmente `<body>`), junto con la clase del tema y la clase del modo de color inicial:
+No posee propiedades de instancia.
 
-```html
-<body class="wuiplugin-themes theme-1 light">
-```
+#### Métodos
+
+| Método           | Return type | Descripción |
+| ---------------- | ----------- | ----------- |
+| getScheme        | `string`    | `getScheme()`<br><br>Retorna el valor de la propiedad CSS `color-scheme` definida en el elemento `<html>`. Valores posibles: `"light"`, `"dark"`, `"light dark"`, `""`. |
+| getCurrentScheme | `string`    | `getCurrentScheme()`<br><br>Retorna el esquema de color preferido del sistema operativo, independientemente del esquema configurado en la aplicación. Valores posibles: `"light"`, `"dark"`. |
+| getTheme         | `string`    | `getTheme()`<br><br>Retorna el nombre del tema activo según las clases CSS presentes en `document.body`. Valores posibles: `"theme-1"`, `"theme-default"`, `""`. |
+| setScheme        | `void`      | `setScheme(scheme)`<br><br>Establece el esquema de color de la aplicación. Actualiza las clases CSS en `document.body` y el atributo `color-scheme` en el elemento `<html>`. Si el esquema nuevo difiere del actual, activa automáticamente la transición de fondo. La duración de la transición está controlada por la variable CSS `--wuiplugin-theme-transition-delay` (valor por defecto: `0.4s`). Valores posibles: `"light"`, `"dark"`, `"light dark"`, `"system"`. |
 
 #### Clases CSS
 
@@ -192,97 +190,6 @@ Aplica la clase `wuiplugin-themes` en el elemento raíz de la aplicación (norma
 | Clase        | Descripción |
 | ------------ | ----------- |
 | `transition` | Activa la transición de fondo durante el cambio de esquema. La agrega y elimina automáticamente el método `setScheme()`. No debe usarse manualmente. |
-
-#### Constructor
-
-```js
-const themes = new WUIPluginThemes();
-```
-
-No requiere argumentos.
-
-#### Propiedades
-
-| Nombre                    | Tipo     | Descripción |
-| ------------------------- | -------- | ----------- |
-| `WUIPluginThemes.version` | `string` | Versión del plugin. Valor: `"0.1"`. |
-
-#### Métodos Públicos
-
-| Método           | Return type | Descripción |
-| ---------------- | ----------- | ----------- |
-| getScheme        | `string`    | `getScheme()`<br><br>Retorna el valor actual de `color-scheme` del elemento `<html>`. |
-| getCurrentScheme | `string`    | `getCurrentScheme()`<br><br>Retorna el esquema de color preferido del sistema operativo. |
-| getTheme         | `string`    | `getTheme()`<br><br>Retorna el nombre del tema activo desde las clases de `document.body`. |
-| setScheme        | `void`      | `setScheme(scheme)`<br><br>Establece el esquema de color de la aplicación. |
-
----
-
-**`getScheme()`**
-
-Retorna el valor de la propiedad CSS `color-scheme` definida en el elemento `<html>`.
-
-```js
-const scheme = themes.getScheme();
-```
-
-| Retorno                 | Tipo     | Valores posibles |
-| ----------------------- | -------- | ---------------- |
-| Esquema de color actual | `string` | `"light"`, `"dark"`, `"light dark"`, `""` |
-
----
-
-**`getCurrentScheme()`**
-
-Retorna el esquema de color preferido del sistema operativo, independientemente del esquema configurado en la aplicación.
-
-```js
-const scheme = themes.getCurrentScheme();
-```
-
-| Retorno                       | Tipo     | Valores posibles |
-| ----------------------------- | -------- | ---------------- |
-| Esquema preferido del sistema | `string` | `"light"`, `"dark"` |
-
----
-
-**`getTheme()`**
-
-Retorna el nombre del tema activo según las clases CSS presentes en `document.body`.
-
-```js
-const theme = themes.getTheme();
-```
-
-| Retorno                | Tipo     | Valores posibles |
-| ---------------------- | -------- | ---------------- |
-| Nombre del tema activo | `string` | `"theme-1"`, `"theme-default"`, `""` |
-
----
-
-**`setScheme(scheme)`**
-
-Establece el esquema de color de la aplicación. Actualiza las clases CSS en `document.body` y el atributo `color-scheme` en el elemento `<html>`. Si el esquema nuevo difiere del actual, activa automáticamente la transición de fondo.
-
-```js
-themes.setScheme("light");
-themes.setScheme("dark");
-themes.setScheme("system");
-```
-
-| Parámetro | Tipo     | Descripción |
-| --------- | -------- | ----------- |
-| `scheme`  | `string` | Esquema de color deseado. No distingue mayúsculas de minúsculas. |
-
-**Valores aceptados:**
-
-| Valor                                        | Clase aplicada en `<body>` | `color-scheme` en `<html>` |
-| -------------------------------------------- | -------------------------- | -------------------------- |
-| `"light"` · `"only light"`                   | `light`                    | `light` |
-| `"dark"` · `"only dark"`                     | `dark`                     | `dark` |
-| `"system"` · `"light dark"` · `"dark light"` | `system`                   | `light dark` |
-
-La duración de la transición está controlada por la variable CSS `--wuiplugin-theme-transition-delay` (valor por defecto: `0.4s`).
 
 #### Variables CSS
 
@@ -330,6 +237,54 @@ Las variables primitivas se definen con dos variantes de sufijo: `{variable}-lig
 | `--wuiplugin-theme-titlefont`             | `Arial, Helvetica, Verdana, sans-serif` | Familia tipográfica para títulos. |
 | `--wuiplugin-theme-input-opener-iconsize` | `30px`                                  | Tamaño del ícono de apertura en campos de formulario. |
 | `--wuiplugin-theme-transition-delay`      | `0.4s`                                  | Duración de la transición de esquema de color. |
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Implementación
+
+**Usando el archivo fuente principal:**
+
+```html
+<link rel="stylesheet" href="WUIPluginThemes-0.1.css">
+<script src="WUIPluginThemes-0.1.js" defer></script>
+```
+
+**Usando archivos pregenerados** (sin encadenamiento de `var()`, mayor compatibilidad):
+
+```html
+<link rel="stylesheet" href="WUIPluginThemes-0.1-theme-1-light.css">
+<link rel="stylesheet" href="WUIPluginThemes-0.1-theme-1-dark.css">
+```
+
+> [!NOTE]
+> Al usar archivos pregenerados, ambos archivos pueden cargarse simultáneamente. El modo activo se determina por las clases CSS presentes en el elemento raíz.
+
+#### Configuración
+
+Aplica la clase `wuiplugin-themes` en el elemento raíz de la aplicación (normalmente `<body>`), junto con la clase del tema y la clase del modo de color inicial:
+
+```html
+<body class="wuiplugin-themes theme-1 light">
+```
 
 #### Personalización de temas
 
