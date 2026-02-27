@@ -83,7 +83,8 @@
 
 	/* wui-scrolly */
 
-	--wui-scrolly-paging-bgcolor: var(--wuiplugin-theme-bgcolor-over);
+	--wui-scrolly-paging-bgcolor-hidden: rgb(from var(--wuiplugin-theme-graycolor-low) r g b / 60%);
+	--wui-scrolly-paging-bgcolor-visible: rgb(from var(--wuiplugin-theme-graycolor-low) r g b / 90%);
 
 	/* wui-icon */
 
@@ -144,9 +145,8 @@
 
 	/* wui-slider */
 
-	--wui-slider-dots-bgcolor: transparent;
-	--wui-slider-dot-bgcolor: rgb(from var(--wuiplugin-theme-graycolor-max) r g b / 60%);
-	--wui-slider-dot-bgcolor-selected: rgb(from var(--wuiplugin-theme-graycolor-max) r g b / 90%);
+	--wui-slider-paging-bgcolor-hidden: rgb(from var(--wuiplugin-theme-graycolor-max) r g b / 60%);
+	--wui-slider-paging-bgcolor-visible: rgb(from var(--wuiplugin-theme-graycolor-max) r g b / 90%);
 
 	/* wui-tabs */
 

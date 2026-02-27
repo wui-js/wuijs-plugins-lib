@@ -8,7 +8,8 @@
 
 	/* wui-scrolly */
 
-	--wui-scrolly-paging-bgcolor: #f6f6fa;
+	--wui-scrolly-paging-bgcolor-hidden: rgb(from #444 r g b / 60%);
+	--wui-scrolly-paging-bgcolor-visible: rgb(from #444 r g b / 90%);
 
 	/* wui-icon */
 
@@ -69,9 +70,8 @@
 
 	/* wui-slider */
 
-	--wui-slider-dots-bgcolor: transparent;
-	--wui-slider-dot-bgcolor: rgb(from #fff r g b / 60%);
-	--wui-slider-dot-bgcolor-selected: rgb(from #fff r g b / 90%);
+	--wui-slider-paging-bgcolor-hidden: rgb(from #fff r g b / 60%);
+	--wui-slider-paging-bgcolor-visible: rgb(from #fff r g b / 90%);
 
 	/* wui-tabs */
 
