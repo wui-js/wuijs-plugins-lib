@@ -145,8 +145,8 @@
 
 	/* wui-slider */
 
-	--wui-slider-paging-bgcolor-hidden: rgb(from var(--wuiplugin-theme-graycolor-low) r g b / 20%);
-	--wui-slider-paging-bgcolor-visible: rgb(from var(--wuiplugin-theme-graycolor-low) r g b / 80%);
+	--wui-slider-paging-bgcolor-hidden: rgb(from var(--wuiplugin-theme-graycolor-max) r g b / 20%);
+	--wui-slider-paging-bgcolor-visible: rgb(from var(--wuiplugin-theme-graycolor-max) r g b / 80%);
 
 	/* wui-tabs */
 
