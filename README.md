@@ -9,7 +9,7 @@
 
 Library version: `0.1.0` ([Change Log](./CHANGELOG.md))
 
-Document version: `0.1.0.20260223.0`
+Document version: `0.1.0.20260307.0`
 
 Licence: `Apache License 2.0`
 
@@ -197,40 +197,41 @@ It does not have instance properties.
 
 #### CSS Variables
 
-Primitive variables are defined with two suffix variants: `{variable}-light` for light mode and `{variable}-dark` for dark mode. Values without a suffix are common to both modes.
+Primitive variables are defined with two suffix variants: `{variable}-light` for light mode and `{variable}-dark` for dark mode.
+Values without a suffix are common to both modes.
 
-**Colors (with `-light` and `-dark` variants):**
+**Colors (with variations by color mode):**
 
-| Base variable                               | Description |
-| ------------------------------------------- | ----------- |
-| `--wuiplugin-theme-graycolor-max`           | Maximum gray (white in light, black in dark). |
-| `--wuiplugin-theme-graycolor-high`          | High gray. |
-| `--wuiplugin-theme-graycolor-half`          | Mid gray. |
-| `--wuiplugin-theme-graycolor-low`           | Low gray. |
-| `--wuiplugin-theme-graycolor-min`           | Minimum gray (black in light, white in dark). |
-| `--wuiplugin-theme-shadowcolor-high`        | Strong shadow color. |
-| `--wuiplugin-theme-shadowcolor-low`         | Soft shadow color. |
-| `--wuiplugin-theme-bordercolor-max`         | Maximum border color. |
-| `--wuiplugin-theme-bordercolor-high`        | High border color. |
-| `--wuiplugin-theme-bordercolor-low`         | Low border color. |
-| `--wuiplugin-theme-bgcolor-overlay`         | Overlay background color. |
-| `--wuiplugin-theme-bgcolor-box`             | Dialog and panel background color. |
-| `--wuiplugin-theme-bgcolor-out`             | Background color in normal state. |
-| `--wuiplugin-theme-bgcolor-over`            | Background color in hover or selected state. |
-| `--wuiplugin-theme-bgcolor-scroll`          | Scrollbar color. |
-| `--wuiplugin-theme-bgcolor-icon`            | Icon fill color. |
-| `--wuiplugin-theme-bgcolor-highcontrast`    | High-contrast background color (tooltips, etc.). |
-| `--wuiplugin-theme-textcolor-title`         | Title text color. |
-| `--wuiplugin-theme-textcolor-active`        | Active state text color. |
-| `--wuiplugin-theme-textcolor-focus`         | Focused state text color. |
-| `--wuiplugin-theme-utilitycolor-hightlight` | Primary accent color (links, buttons, selections). |
-| `--wuiplugin-theme-utilitycolor-warning`    | Warning or error color. |
-| `--wuiplugin-theme-utilitycolor-disabled`   | Disabled element color. |
-| `--wuiplugin-theme-intencitycolor-low`      | Low intensity color. |
-| `--wuiplugin-theme-intencitycolor-half`     | Medium intensity color. |
-| `--wuiplugin-theme-intencitycolor-high`     | High intensity color. |
+| Base variable                                             | Description |
+| --------------------------------------------------------- | ----------- |
+| `--wuiplugin-theme-graycolor-max-(light\|dark)`           | Maximum gray (white in light, black in dark). |
+| `--wuiplugin-theme-graycolor-high-(light\|dark)`          | High gray. |
+| `--wuiplugin-theme-graycolor-half-(light\|dark)`          | Mid gray. |
+| `--wuiplugin-theme-graycolor-low-(light\|dark)`           | Low gray. |
+| `--wuiplugin-theme-graycolor-min-(light\|dark)`           | Minimum gray (black in light, white in dark). |
+| `--wuiplugin-theme-shadowcolor-high-(light\|dark)`        | Strong shadow color. |
+| `--wuiplugin-theme-shadowcolor-low-(light\|dark)`         | Soft shadow color. |
+| `--wuiplugin-theme-bordercolor-max-(light\|dark)`         | Maximum border color. |
+| `--wuiplugin-theme-bordercolor-high-(light\|dark)`        | High border color. |
+| `--wuiplugin-theme-bordercolor-low-(light\|dark)`         | Low border color. |
+| `--wuiplugin-theme-bgcolor-overlay-(light\|dark)`         | Overlay background color. |
+| `--wuiplugin-theme-bgcolor-box-(light\|dark)`             | Dialog and panel background color. |
+| `--wuiplugin-theme-bgcolor-out-(light\|dark)`             | Background color in normal state. |
+| `--wuiplugin-theme-bgcolor-over-(light\|dark)`            | Background color in hover or selected state. |
+| `--wuiplugin-theme-bgcolor-scroll-(light\|dark)`          | Scrollbar color. |
+| `--wuiplugin-theme-bgcolor-icon-(light\|dark)`            | Icon fill color. |
+| `--wuiplugin-theme-bgcolor-highcontrast-(light\|dark)`    | High-contrast background color (tooltips, etc.). |
+| `--wuiplugin-theme-textcolor-title-(light\|dark)`         | Title text color. |
+| `--wuiplugin-theme-textcolor-active-(light\|dark)`        | Active state text color. |
+| `--wuiplugin-theme-textcolor-focus-(light\|dark)`         | Focused state text color. |
+| `--wuiplugin-theme-utilitycolor-hightlight-(light\|dark)` | Primary accent color (links, buttons, selections). |
+| `--wuiplugin-theme-utilitycolor-warning-(light\|dark)`    | Warning or error color. |
+| `--wuiplugin-theme-utilitycolor-disabled-(light\|dark)`   | Disabled element color. |
+| `--wuiplugin-theme-intencitycolor-low-(light\|dark)`      | Low intensity color. |
+| `--wuiplugin-theme-intencitycolor-half-(light\|dark)`     | Medium intensity color. |
+| `--wuiplugin-theme-intencitycolor-high-(light\|dark)`     | High intensity color. |
 
-**Typography and metrics (common, no mode variant):**
+**Typography and metrics (common, no color mode variant):**
 
 | Variable                                  | Default value                           | Description |
 | ----------------------------------------- | --------------------------------------- | ----------- |
@@ -262,30 +263,94 @@ Output files follow the pattern `{base-name}-{theme}-light.css` and `{base-name}
 
 #### Implementation
 
-**Using the main source file:**
+There are two implementation modes:
 
-```html
-<link rel="stylesheet" href="WUIPluginThemes-0.1.css">
-<script src="WUIPluginThemes-0.1.js" defer></script>
-```
+**Using pre-generated files**:
+Use only the predefined CSS files (`WUIPluginThemes-0.1-theme-*-[light|dark].css`).
+Recommended if dynamic switching between light and dark modes is not required.
 
-**Using pre-generated files** (no `var()` chaining, better compatibility):
+HTML head:
 
 ```html
 <link rel="stylesheet" href="WUIPluginThemes-0.1-theme-1-light.css">
-<link rel="stylesheet" href="WUIPluginThemes-0.1-theme-1-dark.css">
 ```
 
-> [!NOTE]
-> When using pre-generated files, both files can be loaded simultaneously. The active mode is determined by the CSS classes present on the root element.
+HTML code:
+
+```html
+<body class="wuiplugin-themes theme-1 light"></body>
+```
+
+**Using the main source file:**
+It requires the implementation of the JS class `WUIPluginThemes` and the source CSS file (`WUIPluginThemes-0.1.css`).
+Additionally, the viewer where it is displayed must support the CSS function `light-dark()` [https://www.w3schools.com/cssref/func_light-dark.php](https://www.w3schools.com/cssref/func_light-dark.php)
+
+CSS code:
+
+```css
+html,
+body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: Arial, Helvetica, Verdana, sans-serif;
+	font-size: 14px;
+}
+
+nav {
+	display: flex;
+	margin: 10px;
+	align-items: center;
+	gap: 10px;
+}
+```
+
+HTML head:
+
+```html
+<link rel="stylesheet" href="./Libraries/WUI/Switch/WUISwitch-0.3.css">
+<link rel="stylesheet" href="./Libraries/WUIPlugins/Themes/WUIPluginThemes-0.1.css">
+<script type="text/javascript" src="./Libraries/WUI/Switch/WUISwitch-0.3.js"></script>
+<script type="text/javascript" src="./Libraries/WUIPlugins/Themes/WUIPluginThemes-0.1.js"></script>
+```
+
+HTML code:
+
+```html
+<body class="wuiplugin-themes theme-1 light">
+	<nav>
+		<div class="wui-switch my-switch">
+			<input type="checkbox" name="mySwitch">
+		</div>
+	</nav>
+</body>
+```
+
+JS code:
+
+```js
+const init = () => {
+	const themes = new WUIPluginThemes();
+	const switchbox = new WUISwitch({
+		selector: ".wui-switch.my-switch",
+		value: "1",
+		activated: false,
+		onChange: (value, activated) => {
+			themes.setScheme(activated ? "dark" : "light");
+		}
+	});
+	switchbox.init();
+}
+
+window.addEventListener("DOMContentLoaded", init);
+```
 
 #### Setup
 
 Apply the `wuiplugin-themes` class to the root element of the application (usually `<body>`), along with the theme class and the initial color mode class:
-
-```html
-<body class="wuiplugin-themes theme-1 light">
-```
 
 #### Theme Customization
 
