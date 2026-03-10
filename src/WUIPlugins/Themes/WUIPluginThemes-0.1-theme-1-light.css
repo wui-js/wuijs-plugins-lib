@@ -1,7 +1,8 @@
 /*
- * WUIPluginThemes - v0.1
+ * WUIPluginThemes - v0.1 - Theme 1 (default)
  * Author: Sergio E. Belmar (wuijs.project@gmail.com)
  * Copyright (c) Sergio E. Belmar (wuijs.project@gmail.com)
+ * Theme: theme-1 (default)
  */
 
 .wuiplugin-themes.theme-1.light {
@@ -70,8 +71,8 @@
 
 	/* wui-slider */
 
-	--wui-slider-paging-bgcolor-hidden: rgb(from #444 r g b / 20%);
-	--wui-slider-paging-bgcolor-visible: rgb(from #444 r g b / 80%);
+	--wui-slider-paging-bgcolor-hidden: rgb(from #fff r g b / 20%);
+	--wui-slider-paging-bgcolor-visible: rgb(from #fff r g b / 80%);
 
 	/* wui-tabs */
 

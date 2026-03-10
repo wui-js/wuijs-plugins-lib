@@ -6,7 +6,7 @@
 
 Versión librería: `0.1.0` ([Change Log](./REGISTRODECAMBIO.md))
 
-Versión documentación: `0.1.0.20260307.0`
+Versión documentación: `0.1.0.20260309.0`
 
 Licencia: `Apache License 2.0`
 
@@ -247,14 +247,15 @@ El script `tools/css-theme-maker.py` crea archivos SVG estandarizados resolviend
 ```bash
 python tools/css-theme-maker.py
 
-python tools/css-theme-maker.py --css <ruta-css> -o <directorio-salida> -t <nombre-tema>
+python tools/css-theme-maker.py -c <ruta-css-fuente> -s <ruta-css-settings> -o <directorio-salida> -t <nombre-tema>
 ```
 
-| Opción             | Predeterminado                                     | Descripció	n |
-| ------------------ | -------------------------------------------------- | ----------- |
-| `--css`            | `../src/WUIPlugins/Themes/WUIPluginThemes-0.1.css` | Ruta al archivo CSS fuente. |
-| `-o`,<br>`--out`   | `../src/WUIPlugins/Themes/`                        | Directorio de salida para los archivos generados. |
-| `-t`,<br>`--theme` | `theme-1`                                          | Nombre del tema a extraer y resolver. |
+| Opción                | Predeterminado                                             | Descripción |
+| --------------------- | ---------------------------------------------------------- | ----------- |
+| `-c`,<br>`--source`   | `../src/WUIPlugins/Themes/WUIPluginThemes-0.1.css`         | Ruta al archivo CSS fuente. |
+| `-s`,<br>`--settings` | `../src/WUIPlugins/Themes/WUIPluginThemes-0.1-theme-1.css` | Ruta al archivo CSS de configuración. |
+| `-o`,<br>`--out`      | `../src/WUIPlugins/Themes/`                                | Directorio de salida para los archivos generados. |
+| `-t`,<br>`--theme`    | `theme-1`                                                  | Nombre del tema a extraer y resolver. |
 
 Los archivos de salida siguen el patrón `{nombre-base}-{tema}-light.css` y `{nombre-base}-{tema}-dark.css`.
 
@@ -282,15 +283,6 @@ Código HTML:
 Requiere la implementación de la clase JS `WUIPluginThemes` y el archivo CSS fuente (`WUIPluginThemes-0.1.css`).
 Adicionalmente el visualizador donde se despliegue debe tener soporte par la fiunción CSS `light-dark()` [https://www.w3schools.com/cssref/func_light-dark.php](https://www.w3schools.com/cssref/func_light-dark.php)
 
-Cabecera HTML:
-
-```html
-<link rel="stylesheet" href="./Libraries/WUI/Switch/WUISwitch-0.3.css">
-<link rel="stylesheet" href="./Libraries/WUIPlugins/Themes/WUIPluginThemes-0.1.css">
-<script type="text/javascript" src="./Libraries/WUI/Switch/WUISwitch-0.3.js"></script>
-<script type="text/javascript" src="./Libraries/WUIPlugins/Themes/WUIPluginThemes-0.1.js"></script>
-```
-
 Código CSS:
 
 ```css
@@ -307,6 +299,16 @@ nav {
 	align-items: center;
 	gap: 10px;
 }
+```
+
+Cabecera HTML:
+
+```html
+<link rel="stylesheet" href="./Libraries/WUI/Switch/WUISwitch-0.3.css">
+<link rel="stylesheet" href="./Libraries/WUIPlugins/Themes/WUIPluginThemes-0.1.css">
+<link rel="stylesheet" href="./Libraries/WUIPlugins/Themes/WUIPluginThemes-0.1-theme-1.css">
+<script type="text/javascript" src="./Libraries/WUI/Switch/WUISwitch-0.3.js"></script>
+<script type="text/javascript" src="./Libraries/WUIPlugins/Themes/WUIPluginThemes-0.1.js"></script>
 ```
 
 Código HTML:
@@ -340,34 +342,43 @@ const init = () => {
 window.addEventListener("DOMContentLoaded", init);
 ```
 
-#### Configuración
-
-Aplica la clase `wuiplugin-themes` en el elemento raíz de la aplicación (normalmente `<body>`), junto con la clase del tema y la clase del modo de color inicial:
+> [!TIP]
+> Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-switchmode](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-switchmode).
 
 #### Personalización de temas
 
-Para crear un tema adicional, define una nueva regla CSS sobreescribiendo las variables primitivas que desees cambiar:
+Para crear un tema adicional, se debe definir una nueva regla CSS con todas las variables primitivas:
 
 ```css
-.wuiplugin-themes:is(.theme-2) {
-    --wuiplugin-theme-utilitycolor-hightlight-light: #e91e63;
-    --wuiplugin-theme-utilitycolor-hightlight-dark: #f06292;
-    --wuiplugin-theme-bgcolor-out-light: #fff8f9;
-    --wuiplugin-theme-bgcolor-out-dark: #1a0a0d;
+.wuiplugin-themes.my-theme {
+    
+	/* light mode */
+
+	/* ... */
+
+	/* dark mode */
+
+	/* ... */
+
+	/* common */
+
+	/* ... */
 }
 ```
 
 Activa el nuevo tema en el elemento raíz:
 
 ```html
-<body class="wuiplugin-themes theme-2 light">
+<body class="wuiplugin-themes my-theme light">
 ```
 
 Para generar los archivos CSS pregenerados del nuevo tema:
 
 ```bash
-python tools/css-theme-maker.py -t theme-2
+python tools/css-theme-maker.py --settings ./my-theme.css --theme my-theme --out ./
 ```
+
+La ejecución de esta herramienta crea los archivos `WUIPluginThemes-0.1-theme-my-theme-light.css` y `WUIPluginThemes-0.1-theme-my-theme-dark.css` en el directorio actual.
 
 <a name="WUIPluginSelector"></a>
 
