@@ -96,8 +96,8 @@ Plugin para el manejo de temas prediseñados y modo claro y oscuro.
 
 WUIPluginThemes provee un sistema de temas para aplicaciones web mediante dos capas de variables CSS:
 
-- **Primitivas** (`--wuiplugin-theme-*`): tokens de color, tipografía y espaciado, con variantes explícitas para modo claro (`-light`) y oscuro (`-dark`), además de valores comunes sin sufijo.
-- **Componentes** (`--wui-*` y `--wuiplugin-*`): variables consumidas por los componentes de WUIJS Lib, definidas como referencias a las primitivas mediante `var()`.
+- **Configuración de temas** (`--wuiplugin-theme-*`): tokens de color, tipografía y espaciado, con variantes explícitas para modo claro (`-light`) y oscuro (`-dark`), además de valores comunes sin sufijo.
+- **Variables de componentes** (`--wui-*` y `--wuiplugin-*`): variables consumidas por los componentes de WUIJS Lib, definidas como referencias a las primitivas mediante `var()`.
 
 #### Componentes cubiertos
 
