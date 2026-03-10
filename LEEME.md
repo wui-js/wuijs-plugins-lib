@@ -96,8 +96,8 @@ Plugin para el manejo de temas prediseñados y modo claro y oscuro.
 
 WUIPluginThemes provee un sistema de temas para aplicaciones web mediante dos capas de variables CSS:
 
-- **Configuración de temas** (`--wuiplugin-theme-*`): tokens de color, tipografía y espaciado, con variantes explícitas para modo claro (`-light`) y oscuro (`-dark`), además de valores comunes sin sufijo.
-- **Variables de componentes** (`--wui-*` y `--wuiplugin-*`): variables consumidas por los componentes de WUIJS Lib, definidas como referencias a las primitivas mediante `var()`.
+- **Configuración de tema** (`--wuiplugin-theme-*`): tokens de color, tipografía y espaciado, con variantes explícitas para modo claro (`-light`) y oscuro (`-dark`), además de valores comunes sin sufijo.
+- **Variables de componentes** (`--wui-*` y `--wuiplugin-*`): variables consumidas por los componentes de WUIJS Lib, definidas como referencias a las variables de configuración del tema mediante la función `var()`.
 
 #### Componentes cubiertos
 
@@ -194,7 +194,7 @@ No posee propiedades de instancia.
 
 #### Variables CSS
 
-Las variables primitivas se definen con dos variantes de sufijo: `{variable}-light` para modo claro y `{variable}-dark` para modo oscuro.
+Las variables de configuración de tema se definen con dos variantes de sufijo: `{variable}-light` para modo claro y `{variable}-dark` para modo oscuro.
 Los valores sin sufijo son comunes a ambos modos.
 
 **Colores (con variante por modo de color):**
@@ -347,7 +347,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 #### Personalización de temas
 
-Para crear un tema adicional, se debe definir una nueva regla CSS con todas las variables primitivas:
+Para crear un tema adicional, se debe definir una nueva regla CSS con todas las variables de configuración de tema:
 
 ```css
 .wuiplugin-themes.my-theme {

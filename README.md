@@ -100,7 +100,7 @@ Plugin for managing pre-designed themes and light and dark modes.
 WUIPluginThemes provides a theming system for web applications through two layers of CSS variables:
 
 - **Theme settings** (`--wuiplugin-theme-*`): color, typography, and spacing tokens with explicit light (`-light`) and dark (`-dark`) mode variants, plus common values without a mode suffix.
-- **Component variables** (`--wui-*` and `--wuiplugin-*`): variables consumed by WUIJS Lib components, defined as references to the primitives via `var()`.
+- **Component variables** (`--wui-*` and `--wuiplugin-*`): variables consumed by WUIJS Lib components, defined as references to the theme settings via `var()`.
 
 #### Covered Components
 
@@ -197,7 +197,7 @@ It does not have instance properties.
 
 #### CSS Variables
 
-Primitive variables are defined with two suffix variants: `{variable}-light` for light mode and `{variable}-dark` for dark mode.
+The theme setting variables are defined with two suffix variants: `{variable}-light` for light mode and `{variable}-dark` for dark mode.
 Values without a suffix are common to both modes.
 
 **Colors (with variations by color mode):**
@@ -350,7 +350,7 @@ window.addEventListener("DOMContentLoaded", init);
 
 #### Theme Customization
 
-To create an additional theme, a new CSS rule must be defined with all the primitive variables:
+To create an additional theme, a new CSS rule must be defined with all the theme setting variables:
 
 ```css
 .wuiplugin-themes.my-theme {
