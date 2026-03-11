@@ -23,6 +23,7 @@ Autor: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 *   [Plugins](#plugins)
 	*   [WUIPluginThemes](#WUIPluginThemes)
 	*   [WUIPluginSelector](#WUIPluginSelector)
+*   [Demos](#demos) (CodeSandbox)
 
 <a name="overview"></a>
 
@@ -337,6 +338,9 @@ body.wuiplugin-themes.theme-1 {
 > [!TIP]
 > Para mantener el estándar propuesto por la documentación de la librería WUIJS, esta personalización puede realizarse en el archivo `WUI.css`.
 
+> [!TIP]
+> Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-customtheme](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-customtheme).
+
 ```html
 <body class="wuiplugin-themes theme-1 light"></body>
 ```
@@ -646,3 +650,17 @@ window.addEventListener("DOMContentLoaded", init);
 
 > [!NOTE]
 > `prepareInput` intercepta el `<select>` únicamente en pantallas móviles (≤767px) salvo que `force` sea `true`. En escritorio, el `<select>` conserva su comportamiento nativo.
+
+<a name="demos"></a>
+
+## Demos
+
+Esta sección recoge los ejemplos de las implementaciones de la documentación y otros demos complementarios, todos disponibles en el repositorio **WUI/JS Lab** [https://github.com/wuijsproject/wuijs-lab](https://github.com/wuijsproject/wuijs-lab).
+
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-switchmode](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-switchmode)<br>
+	Esta demostración muestra el uso de la funcionalidad de cambiar entre modo claro y oscuro de WUIPluginsThemes.<br><br>
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-customtheme](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-customtheme)<br>
+	Esta demostración muestra el uso de los temas predefinidos personalizados de WUIPluginsThemes.<br><br>
+
+> [!NOTE]
+> Todos los demos del repositorio [wuijs-lab](https://github.com/wuijsproject/wuijs-lab) se pueden revisar en CodeSandbox en el enlace [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos).

@@ -26,6 +26,7 @@ Author: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 *   [Plugins](#plugins)
 	*   [WUIPluginThemes](#WUIPluginThemes)
 	*   [WUIPluginSelector](#WUIPluginSelector)
+*   [Demos](#demos) (CodeSandbox)
 
 <a name="overview"></a>
 
@@ -340,6 +341,9 @@ body.wuiplugin-themes.theme-1 {
 > [!TIP]
 > To maintain the standard proposed by the WUIJS library documentation, this customization can be done in the `WUI.css` file.
 
+> [!TIP]
+> You can check this functional example in CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-customtheme](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-customtheme).
+
 #### Customization of your own themes
 
 To create an additional theme, a new CSS rule must be defined with all the theme setting variables:
@@ -645,3 +649,17 @@ window.addEventListener("DOMContentLoaded", init);
 
 > [!NOTE]
 > `prepareInput` intercepts the `<select>` only on mobile screens (≤767px) unless `force` is `true`. On desktop, the `<select>` retains its native behavior.
+
+<a name="demos"></a>
+
+## Demos
+
+This section contains examples of the implementations from the documentation and other complementary demos, all available in the **WUI/JS Lab** repository [https://github.com/wuijsproject/wuijs-lab](https://github.com/wuijsproject/wuijs-lab).
+
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-switchmode](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-switchmode)<br>
+	This demo shows the use of WUIPluginsThemes's switch light and dark mode functionality.<br><br>
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-customtheme](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-customtheme)<br>
+	This demo shows the use of WUIPluginsThemes's custom predefined themes.<br><br>
+
+> [!NOTE]
+> All demos from the [wuijs-lab](https://github.com/wuijsproject/wuijs-lab) repository can be reviewed on CodeSandbox at the following link [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos).
