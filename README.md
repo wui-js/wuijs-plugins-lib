@@ -9,7 +9,7 @@
 
 Library version: `0.1.0` ([Change Log](./CHANGELOG.md))
 
-Document version: `0.1.0.20260309.0`
+Document version: `0.1.0.20260311.0`
 
 Licence: `Apache License 2.0`
 
@@ -163,37 +163,11 @@ It does not have instance properties.
 | getTheme         | `string`    | `getTheme()`<br><br>Returns the active theme name based on the CSS classes present on `document.body`. Possible values: `"theme-1"`, `"theme-default"`, `""`. |
 | setScheme        | `void`      | `setScheme(scheme)`<br><br>Sets the application's color scheme. Updates the CSS classes on `document.body` and the `color-scheme` attribute on the `<html>` element. If the new scheme differs from the current one, automatically activates the background transition. The transition duration is controlled by the CSS variable `--wuiplugin-theme-transition-delay` (default value: `0.4s`). Possible values: `"light"`, `"dark"`, `"light dark"`, `"system"`. |
 
-#### CSS Classes
+#### Predefined themes
 
-**Base class:**
-
-| Class              | Description |
-| ------------------ | ----------- |
-| `wuiplugin-themes` | **Required.** Must be present on the root element. Activates the CSS variables for WUIJS Lib components. |
-
-**Theme classes:**
-
-| Class           | Description |
-| --------------- | ----------- |
-| `theme-1`       | Default theme. |
-| `theme-default` | Alias for `theme-1`. |
-
-**Color mode classes:**
-
-| Class    | `color-scheme` | Description |
-| -------- | -------------- | ----------- |
-| `light`  | `light`        | Forces light mode. |
-| `dark`   | `dark`         | Forces dark mode. |
-| `system` | `light dark`   | Automatic mode via the CSS `light-dark()` function. Adapts to the operating system's preferred color scheme. |
-
-> [!NOTE]
-> The `system` mode requires browser support for the CSS `light-dark()` function (available in modern browsers since 2024).
-
-**Transition class:**
-
-| Class        | Description |
-| ------------ | ----------- |
-| `transition` | Activates the background transition during a scheme change. Added and removed automatically by `setScheme()`. Must not be used manually. |
+| Name      | Description |
+| --------- | ----------- |
+| `theme-1` | Default theme. |
 
 #### CSS Variables
 
@@ -266,7 +240,7 @@ Output files follow the pattern `{base-name}-{theme}-light.css` and `{base-name}
 
 There are two implementation modes:
 
-**Using pre-generated files**:
+**Using pre-generated CSS files**:
 Use only the predefined CSS files (`WUIPluginThemes-0.1-theme-*-[light|dark].css`).
 Recommended if dynamic switching between light and dark modes is not required.
 
@@ -282,8 +256,8 @@ HTML code:
 <body class="wuiplugin-themes theme-1 light"></body>
 ```
 
-**Using the main source file:**
-It requires the implementation of the JS class `WUIPluginThemes` and the source CSS file (`WUIPluginThemes-0.1.css`).
+**Using JS class instantiation:**
+It requires the implementation of the JS class `WUIPluginThemes`, the source CSS file `WUIPluginThemes-0.1.css` and a CSS file with the theme settings `WUIPluginThemes-0.1-[theme-name].css`.
 Additionally, the viewer where it is displayed must support the CSS function `light-dark()` [https://www.w3schools.com/cssref/func_light-dark.php](https://www.w3schools.com/cssref/func_light-dark.php)
 
 CSS code:
@@ -348,7 +322,24 @@ window.addEventListener("DOMContentLoaded", init);
 > [!TIP]
 > You can check this functional example in CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-switchmode](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-switchmode).
 
-#### Theme Customization
+#### Customizing predefined themes
+
+```css
+body.wuiplugin-themes.theme-1 {
+	--wuiplugin-theme-utilitycolor-hightlight-light: #e91e63;
+    --wuiplugin-theme-utilitycolor-hightlight-dark: #f06292;
+    --wuiplugin-theme-bgcolor-out-light: #fff8f9;
+    --wuiplugin-theme-bgcolor-out-dark: #1a0a0d;
+}
+```
+
+> [!IMPORTANT]
+> For the changes to be applied, it is important to include the root element, in this case `<body>`, with the class `wuiplugin-themes` and the theme name. This way, the definition will have greater specificity and will be applied to the definitions of the specified theme.
+
+> [!TIP]
+> To maintain the standard proposed by the WUIJS library documentation, this customization can be done in the `WUI.css` file.
+
+#### Customization of your own themes
 
 To create an additional theme, a new CSS rule must be defined with all the theme setting variables:
 
@@ -357,15 +348,71 @@ To create an additional theme, a new CSS rule must be defined with all the theme
     
 	/* light mode */
 
-	/* ... */
+	--wuiplugin-theme-graycolor-max-light: #fff;
+	--wuiplugin-theme-graycolor-high-light: #ccc;
+	--wuiplugin-theme-graycolor-half-light: #888;
+	--wuiplugin-theme-graycolor-low-light: #444;
+	--wuiplugin-theme-graycolor-min-light: #000;
+	--wuiplugin-theme-shadowcolor-high-light: #304d63;
+	--wuiplugin-theme-shadowcolor-low-light: #959da5;
+	--wuiplugin-theme-bordercolor-max-light: #b5bbc1;
+	--wuiplugin-theme-bordercolor-high-light: #d5dce3;
+	--wuiplugin-theme-bordercolor-low-light: #f0f0f3;
+	--wuiplugin-theme-bgcolor-overlay-light: #010203;
+	--wuiplugin-theme-bgcolor-box-light: #efeff6;
+	--wuiplugin-theme-bgcolor-out-light: #fdfdfe;
+	--wuiplugin-theme-bgcolor-over-light: #f6f6fa;
+	--wuiplugin-theme-bgcolor-scroll-light: #353a40;
+	--wuiplugin-theme-bgcolor-icon-light: #353a40;
+	--wuiplugin-theme-bgcolor-highcontrast-light: #1f2429;
+	--wuiplugin-theme-textcolor-title-light: #000;
+	--wuiplugin-theme-textcolor-active-light: #2d3a47;
+	--wuiplugin-theme-textcolor-focus-light: #1f2937;
+	--wuiplugin-theme-utilitycolor-hightlight-light: #1e90ff;
+	--wuiplugin-theme-utilitycolor-warning-light: #f44343;
+	--wuiplugin-theme-utilitycolor-disabled-light: #d5dce3;
+	--wuiplugin-theme-intencitycolor-low-light: mediumaquamarine;
+	--wuiplugin-theme-intencitycolor-half-light: darkorange;
+	--wuiplugin-theme-intencitycolor-high-light: orangered;
 
 	/* dark mode */
 
-	/* ... */
+	--wuiplugin-theme-graycolor-max-dark: #000;
+	--wuiplugin-theme-graycolor-high-dark: #444;
+	--wuiplugin-theme-graycolor-half-dark: #888;
+	--wuiplugin-theme-graycolor-low-dark: #ccc;
+	--wuiplugin-theme-graycolor-min-dark: #fff;
+	--wuiplugin-theme-shadowcolor-high-dark: #2f3a48;
+	--wuiplugin-theme-shadowcolor-low-dark: #1f2937;
+	--wuiplugin-theme-bordercolor-max-dark: #4b5563;
+	--wuiplugin-theme-bordercolor-high-dark: #4b5563;
+	--wuiplugin-theme-bordercolor-low-dark: #374151;
+	--wuiplugin-theme-bgcolor-overlay-dark: #000;
+	--wuiplugin-theme-bgcolor-box-dark: #2f3a48;
+	--wuiplugin-theme-bgcolor-out-dark: #1f2937;
+	--wuiplugin-theme-bgcolor-over-dark: #374151;
+	--wuiplugin-theme-bgcolor-scroll-dark: #4b5563;
+	--wuiplugin-theme-bgcolor-icon-dark: #d1d5db;
+	--wuiplugin-theme-bgcolor-highcontrast-dark: #f9fafb;
+	--wuiplugin-theme-textcolor-title-dark: #fff;
+	--wuiplugin-theme-textcolor-active-dark: #f3f4f6;
+	--wuiplugin-theme-textcolor-focus-dark: #fff;
+	--wuiplugin-theme-utilitycolor-hightlight-dark: #1e90ff;
+	--wuiplugin-theme-utilitycolor-warning-dark: #f44343;
+	--wuiplugin-theme-utilitycolor-disabled-dark: #4b5563;
+	--wuiplugin-theme-intencitycolor-low-dark: mediumaquamarine;
+	--wuiplugin-theme-intencitycolor-half-dark: darkorange;
+	--wuiplugin-theme-intencitycolor-high-dark: orangered;
 
 	/* common */
 
-	/* ... */
+	--wuiplugin-theme-borderradius-low: 10px;
+	--wuiplugin-theme-borderradius-half: 15px;
+	--wuiplugin-theme-borderradius-high: 17px;
+	--wuiplugin-theme-borderradius-round: 50%;
+	--wuiplugin-theme-titlefont: Arial, Helvetica, Verdana, sans-serif;
+	--wuiplugin-theme-input-opener-iconsize: 30px;
+	--wuiplugin-theme-transition-delay: .4s;
 }
 ```
 
@@ -375,7 +422,7 @@ Activate the new theme on the root element:
 <body class="wuiplugin-themes my-theme light">
 ```
 
-To generate the pre-generated CSS files for the new theme:
+To make the pre-generated CSS files for the new theme:
 
 ```bash
 python tools/css-theme-maker.py --settings ./my-theme.css --theme my-theme --out ./
