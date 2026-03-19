@@ -230,13 +230,13 @@ def main():
         print("Check that the theme selector exists in that file.")
 
     # Parse component variables from the base CSS file
-    base_header, components = parse_css_file(args.css)
+    base_header, components = parse_css_file(args.source)
 
     # Use the settings file header for the output files
     header = sett_header if sett_header else base_header
 
     # Extract base name for output files (from the base CSS path)
-    base_name = os.path.basename(args.css)
+    base_name = os.path.basename(args.source)
     if base_name.endswith('.css'):
         base_name = base_name[:-4]
 

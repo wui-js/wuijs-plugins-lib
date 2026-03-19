@@ -155,7 +155,7 @@
 	--wui-list-row-textcolor-disabled: #4b5563;
 	--wui-list-innerrow-borderwidth: 1px;
 	--wui-list-innerrow-bordercolor: #374151;
-	--wui-list-innerrow-bgcolor: #374151;
+	--wui-list-innerrow-bgcolor: rgb(from #374151 r g b / 20%);
 	--wui-list-innerrow-textcolor: rgb(from #f3f4f6 r g b / 60%);
 	--wui-list-buttons-bgcolor: transparent;
 	--wui-list-button-size: 48px;

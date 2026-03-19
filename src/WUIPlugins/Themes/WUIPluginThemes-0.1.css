@@ -156,7 +156,7 @@
 	--wui-list-row-textcolor-disabled: var(--wuiplugin-theme-utilitycolor-disabled);
 	--wui-list-innerrow-borderwidth: 1px;
 	--wui-list-innerrow-bordercolor: var(--wuiplugin-theme-bordercolor-low);
-	--wui-list-innerrow-bgcolor: var(--wuiplugin-theme-bgcolor-over);
+	--wui-list-innerrow-bgcolor: rgb(from var(--wuiplugin-theme-bgcolor-over) r g b / 20%);
 	--wui-list-innerrow-textcolor: rgb(from var(--wuiplugin-theme-textcolor-active) r g b / 60%);
 	--wui-list-buttons-bgcolor: transparent;
 	--wui-list-button-size: 48px;
