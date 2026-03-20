@@ -233,12 +233,12 @@ python tools/css-theme-maker.py
 python tools/css-theme-maker.py -c <css-source-path> -s <css-settings-path> -o <output-directory> -t <theme-name>
 ```
 
-| Option                | Default value                                              | Description |
-| --------------------- | ---------------------------------------------------------- | ----------- |
+| Option                | Default value                                               | Description |
+| --------------------- | ----------------------------------------------------------- | ----------- |
 | `-c`,<br>`--source`   | `../src/wuiplugins/themes/wuiplugin-themes-0.2.css`         | Path to the source CSS file. |
 | `-s`,<br>`--settings` | `../src/wuiplugins/themes/wuiplugin-themes-0.2-theme-1.css` | Path to the settings CSS file. |
 | `-o`,<br>`--out`      | `../src/wuiplugins/themes/`                                 | Output directory for generated files. |
-| `-t`,<br>`--theme`    | `theme-1`                                                  | Name of the theme to extract and resolve. |
+| `-t`,<br>`--theme`    | `theme-1`                                                   | Name of the theme to extract and resolve. |
 
 Output files follow the pattern `{base-name}-{theme}-light.css` and `{base-name}-{theme}-dark.css`.
 

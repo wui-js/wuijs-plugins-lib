@@ -235,7 +235,7 @@ python tools/css-theme-maker.py -c <ruta-css-fuente> -s <ruta-css-settings> -o <
 | `-c`,<br>`--source`   | `../src/wuiplugins/themes/wuiplugin-themes-0.2.css`         | Ruta al archivo CSS fuente. |
 | `-s`,<br>`--settings` | `../src/wuiplugins/themes/wuiplugin-themes-0.2-theme-1.css` | Ruta al archivo CSS de configuración. |
 | `-o`,<br>`--out`      | `../src/wuiplugins/themes/`                                 | Directorio de salida para los archivos generados. |
-| `-t`,<br>`--theme`    | `theme-1`                                                  | Nombre del tema a extraer y resolver. |
+| `-t`,<br>`--theme`    | `theme-1`                                                   | Nombre del tema a extraer y resolver. |
 
 Los archivos de salida siguen el patrón `{nombre-base}-{tema}-light.css` y `{nombre-base}-{tema}-dark.css`.
 
