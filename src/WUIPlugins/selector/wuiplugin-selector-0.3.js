@@ -1,12 +1,12 @@
 /*
- * WUIPluginSelector - v0.2
+ * WUIPluginSelector - v0.3
  * Author: Sergio E. Belmar (wuijs.project@gmail.com)
  * Copyright (c) Sergio E. Belmar (wuijs.project@gmail.com)
  */
 
 class WUIPluginSelector extends WUIModal {
 
-	static version = "0.2";
+	static version = "0.3";
 	static #defaults = {
 		value: "",
 		options: [],

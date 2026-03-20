@@ -1,12 +1,12 @@
 /*
- * WUIPluginThemes - v0.1
+ * WUIPluginThemes - v0.2
  * Author: Sergio E. Belmar (wuijs.project@gmail.com)
  * Copyright (c) Sergio E. Belmar (wuijs.project@gmail.com)
  */
 
 class WUIPluginThemes {
 
-	static version = "0.1";
+	static version = "0.2";
 
 	getScheme() {
 		return getComputedStyle(document.documentElement).getPropertyValue("color-scheme").trim();
