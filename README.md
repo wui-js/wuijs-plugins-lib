@@ -9,7 +9,7 @@
 
 Library version: `0.3.0` ([Change Log](./CHANGELOG.md))
 
-Document version: `0.3.0.20260320.0`
+Document version: `0.3.0.20260321.0`
 
 Licence: `Apache License 2.0`
 
@@ -326,7 +326,7 @@ window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!TIP]
-> You can check this functional example in CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-switchmode](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-switchmode).
+> You can check this functional example in CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuiplugins/themes/switchmode](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuiplugins/themes/switchmode).
 
 #### Customizing predefined themes
 
@@ -346,7 +346,7 @@ body.wuiplugin-themes.theme-1 {
 > To maintain the standard proposed by the WUIJS library documentation, this customization can be done in the `WUI.css` file.
 
 > [!TIP]
-> You can check this functional example in CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-customtheme](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-customtheme).
+> You can check this functional example in CodeSandbox at the link: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuiplugins/themes/customtheme](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuiplugins/themes/customtheme).
 
 #### Customization of your own themes
 
@@ -660,10 +660,10 @@ window.addEventListener("DOMContentLoaded", init);
 
 This section contains examples of the implementations from the documentation and other complementary demos, all available in the **WUI/JS Lab** repository [https://github.com/wuijsproject/wuijs-lab](https://github.com/wuijsproject/wuijs-lab).
 
--	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-switchmode](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-switchmode)<br>
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuiplugins/themes/switchmode](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuiplugins/themes/switchmode)<br>
 	This demo shows the use of WUIPluginsThemes's switch light and dark mode functionality.<br><br>
--	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-customtheme](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/WUIPluginsThemes-customtheme)<br>
+-	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuiplugins/themes/customtheme](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuiplugins/themes/customtheme)<br>
 	This demo shows the use of WUIPluginsThemes's custom predefined themes.<br><br>
 
 > [!NOTE]
-> All demos from the [wuijs-lab](https://github.com/wuijsproject/wuijs-lab) repository can be reviewed on CodeSandbox at the following link [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos).
+> All demos from the [wuijs-lab](https://github.com/wuijsproject/wuijs-lab) repository can be reviewed on CodeSandbox at the following link [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/wuiplugins](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/wuiplugins).
