@@ -47,7 +47,7 @@ wuijs-lib/
 ├── legacy/
 │   └── WUIPlugins/
 ├── src/
-│   └── wuiplugins/
+│   └── wuipligin/
 └── tools/
 ```
 
@@ -58,7 +58,7 @@ wuijs-lib/
 | [legacy](legacy/)                       | Fuentes obsoletas con versiones anteriores. |
 | [legacy/WUIPlugins](legacy/WUIPlugins/) | Librería WUI JS Plugins. |
 | [src](src/)                             | Fuentes principales de la última versión. |
-| [src/wuiplugins](src/wuiplugins/)       | Librería WUI JS Plugins. |
+| [src/wuipligin](src/wuipligin/)       | Librería WUI JS Plugins. |
 | [tools](tools/)                         | Herramientas complementarias. |
 
 <a name="install"></a>
@@ -70,7 +70,7 @@ Para instalar la biblioteca WUIJS Plugins, debe ser clonada desde el repositorio
 ```bash
 cd ./downloads
 git clone https://git@github.com/wuijsproject/wuijs-plugins-lib.git
-cp -r ./wuijs-plugins-lib/src/wuiplugins ../src/libraries/
+cp -r ./wuijs-plugins-lib/src/wuipligin ../src/libraries/
 ```
 
 Opcionalmente puede ser descargada desde los mismos repositorios en formato ZIP.
@@ -79,11 +79,11 @@ Opcionalmente puede ser descargada desde los mismos repositorios en formato ZIP.
 cd ./downloads
 wget https://github.com/wuijsproject/wuijs-plugins-lib/archive/refs/heads/main.zip
 unzip main.zip
-cp -r ./wuijs-plugins-lib-main/src/wuiplugins ../src/libraries/
+cp -r ./wuijs-plugins-lib-main/src/wuipligin ../src/libraries/
 ```
 
 > [!TIP]
-> Es recomendable que el directorio `/wuiplugins` se aloje en el mismo directorio que la biblioteca principal `/WUI`.
+> Es recomendable que el directorio `/wuipligin` se aloje en el mismo directorio que la biblioteca principal `/WUI`.
 
 <a name="plugins"></a>
 
@@ -135,11 +135,11 @@ También provee soporte de temas para el plugin `wuiplugin-selector`.
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [src/wuiplugins/themes/wuiplugin-themes-0.2.css](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/wuiplugins/themes/wuiplugin-themes-0.2.css) |
-| JS   | [src/wuiplugins/themes/wuiplugin-themes-0.2.js](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/wuiplugins/themes/wuiplugin-themes-0.2.js) |
-| CSS  | [src/wuiplugins/themes/wuiplugin-themes-0.2-theme-1.css](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/wuiplugins/themes/wuiplugin-themes-0.2-theme-1.css) |
-| CSS  | [src/wuiplugins/themes/wuiplugin-themes-0.2-theme-1-light.css](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/wuiplugins/themes/wuiplugin-themes-0.2-theme-1-light.css) |
-| CSS  | [src/wuiplugins/themes/wuiplugin-themes-0.2-theme-1-dark.css](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/wuiplugins/themes/wuiplugin-themes-0.2-theme-1-dark.css) |
+| CSS  | [src/wuipligin/themes/wuiplugin-themes-0.2.css](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/wuipligin/themes/wuiplugin-themes-0.2.css) |
+| JS   | [src/wuipligin/themes/wuiplugin-themes-0.2.js](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/wuipligin/themes/wuiplugin-themes-0.2.js) |
+| CSS  | [src/wuipligin/themes/wuiplugin-themes-0.2-theme-1.css](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/wuipligin/themes/wuiplugin-themes-0.2-theme-1.css) |
+| CSS  | [src/wuipligin/themes/wuiplugin-themes-0.2-theme-1-light.css](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/wuipligin/themes/wuiplugin-themes-0.2-theme-1-light.css) |
+| CSS  | [src/wuipligin/themes/wuiplugin-themes-0.2-theme-1-dark.css](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/wuipligin/themes/wuiplugin-themes-0.2-theme-1-dark.css) |
 
 #### Constructor
 
@@ -232,9 +232,9 @@ python tools/css-theme-maker.py -c <ruta-css-fuente> -s <ruta-css-settings> -o <
 
 | Opción                | Predeterminado                                              | Descripción |
 | --------------------- | ----------------------------------------------------------- | ----------- |
-| `-c`,<br>`--source`   | `../src/wuiplugins/themes/wuiplugin-themes-0.2.css`         | Ruta al archivo CSS fuente. |
-| `-s`,<br>`--settings` | `../src/wuiplugins/themes/wuiplugin-themes-0.2-theme-1.css` | Ruta al archivo CSS de configuración. |
-| `-o`,<br>`--out`      | `../src/wuiplugins/themes/`                                 | Directorio de salida para los archivos generados. |
+| `-c`,<br>`--source`   | `../src/wuipligin/themes/wuiplugin-themes-0.2.css`         | Ruta al archivo CSS fuente. |
+| `-s`,<br>`--settings` | `../src/wuipligin/themes/wuiplugin-themes-0.2-theme-1.css` | Ruta al archivo CSS de configuración. |
+| `-o`,<br>`--out`      | `../src/wuipligin/themes/`                                 | Directorio de salida para los archivos generados. |
 | `-t`,<br>`--theme`    | `theme-1`                                                   | Nombre del tema a extraer y resolver. |
 
 Los archivos de salida siguen el patrón `{nombre-base}-{tema}-light.css` y `{nombre-base}-{tema}-dark.css`.
@@ -285,10 +285,10 @@ Cabecera HTML:
 
 ```html
 <link rel="stylesheet" href="./libraries/WUI/Switch/WUISwitch-0.3.css">
-<link rel="stylesheet" href="./libraries/wuiplugins/themes/wuiplugin-themes-0.2.css">
-<link rel="stylesheet" href="./libraries/wuiplugins/themes/wuiplugin-themes-0.2-theme-1.css">
+<link rel="stylesheet" href="./libraries/wuipligin/themes/wuiplugin-themes-0.2.css">
+<link rel="stylesheet" href="./libraries/wuipligin/themes/wuiplugin-themes-0.2-theme-1.css">
 <script type="text/javascript" src="./libraries/WUI/Switch/WUISwitch-0.3.js"></script>
-<script type="text/javascript" src="./libraries/wuiplugins/themes/wuiplugin-themes-0.2.js"></script>
+<script type="text/javascript" src="./libraries/wuipligin/themes/wuiplugin-themes-0.2.js"></script>
 ```
 
 Código HTML:
@@ -323,7 +323,7 @@ window.addEventListener("DOMContentLoaded", init);
 ```
 
 > [!TIP]
-> Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuiplugins/themes/switchmode](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuiplugins/themes/switchmode).
+> Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuipligin/themes/switchmode](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuipligin/themes/switchmode).
 
 #### Personalización de temas predefinidos
 
@@ -343,7 +343,7 @@ body.wuiplugin-themes.theme-1 {
 > Para mantener el estándar propuesto por la documentación de la librería WUIJS, esta personalización puede realizarse en el archivo `WUI.css`.
 
 > [!TIP]
-> Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuiplugins/themes/customtheme](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuiplugins/themes/customtheme).
+> Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuipligin/themes/customtheme](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuipligin/themes/customtheme).
 
 ```html
 <body class="wuiplugin-themes theme-1 light"></body>
@@ -469,8 +469,8 @@ También puede utilizarse de forma programática independientemente de un input 
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [src/wuiplugins/selector/wuiplugin-selector-0.3.css](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/wuiplugins/selector/wuiplugin-selector-0.3.css) |
-| JS   | [src/wuiplugins/selector/wuiplugin-selector-0.3.js](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/wuiplugins/selector/wuiplugin-selector-0.3.js) |
+| CSS  | [src/wuipligin/selector/wuiplugin-selector-0.3.css](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/wuipligin/selector/wuiplugin-selector-0.3.css) |
+| JS   | [src/wuipligin/selector/wuiplugin-selector-0.3.js](https://github.com/wuijsproject/wuijs-plugins-lib/blob/main/src/wuipligin/selector/wuiplugin-selector-0.3.js) |
 
 #### Constructor
 
@@ -580,10 +580,10 @@ Cabecera HTML:
 <link type="text/css" rel="stylesheet" href="./libraries/wui/icon/wui-icon-0.2.css">
 <link type="text/css" rel="stylesheet" href="./libraries/wui/modal/wui-modal-0.3.css">
 <link type="text/css" rel="stylesheet" href="./libraries/wui/button/wui-button-0.3.css">
-<link type="text/css" rel="stylesheet" href="./libraries/wuiplugins/selector/wuiplugin-selector-0.3.css">
+<link type="text/css" rel="stylesheet" href="./libraries/wuipligin/selector/wuiplugin-selector-0.3.css">
 <script type="text/javascript" src="./libraries/wui/modal/wui-modal-0.3.js"></script>
 <script type="text/javascript" src="./libraries/wui/button/wui-button-0.3.js"></script>
-<script type="text/javascript" src="./libraries/wuiplugins/selector/wuiplugin-selector-0.3.js"></script>
+<script type="text/javascript" src="./libraries/wuipligin/selector/wuiplugin-selector-0.3.js"></script>
 ```
 
 **Uso programático:**
@@ -661,10 +661,10 @@ window.addEventListener("DOMContentLoaded", init);
 
 Esta sección recoge los ejemplos de las implementaciones de la documentación y otros demos complementarios, todos disponibles en el repositorio **WUI/JS Lab** [https://github.com/wuijsproject/wuijs-lab](https://github.com/wuijsproject/wuijs-lab).
 
--	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuiplugins/themes/switchmode](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuiplugins/themes/switchmode)<br>
+1.	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuipligin/themes/switchmode](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuipligin/themes/switchmode)<br>
 	Esta demostración muestra el uso de la funcionalidad de cambiar entre modo claro y oscuro de WUIPluginsThemes.<br><br>
--	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuiplugins/themes/customtheme](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuiplugins/themes/customtheme)<br>
+2.	[https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuipligin/themes/customtheme](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-plugins-lib/tree/main/demos/wuipligin/themes/customtheme)<br>
 	Esta demostración muestra el uso de los temas predefinidos personalizados de WUIPluginsThemes.<br><br>
 
 > [!NOTE]
-> Todos los demos del repositorio [wuijs-lab](https://github.com/wuijsproject/wuijs-lab) se pueden revisar en CodeSandbox en el enlace [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/wuiplugins](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/wuiplugins).
+> Todos los demos del repositorio [wuijs-lab](https://github.com/wuijsproject/wuijs-lab) se pueden revisar en CodeSandbox en el enlace [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/wuipligin](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/wuipligin).

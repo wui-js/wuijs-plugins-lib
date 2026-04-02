@@ -4,7 +4,7 @@
 
 Features:
 
-1. Renamed source directories and files to lowercase (e.g. `src/WUIPlugins/Themes/WUIPluginTheme-0.1.js` → `src/wuiplugins/themes/wuiplugin-themes-0.2.js`).
+1. Renamed source directories and files to lowercase (e.g. `src/WUIPlugins/Themes/WUIPluginTheme-0.1.js` → `src/wuipligin/themes/wuiplugin-themes-0.2.js`).
 2. WUIPluginThemes version class update to 0.2.
 	- Renamed the directory and files to lowercase.
 3. WUIPluginSelector version class update to 0.3.
