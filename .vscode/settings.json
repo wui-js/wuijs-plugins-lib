@@ -1,12 +1,12 @@
 {
 	"workbench.colorCustomizations": {
-		"statusBar.background": "#00bfff",
-		"statusBar.foreground": "#15202b",
-		"statusBarItem.hoverBackground": "#0099cc",
-		"statusBarItem.remoteBackground": "#00bfff",
-		"statusBarItem.remoteForeground": "#15202b"
+		"statusBar.background": "#9933ff",
+		"statusBar.foreground": "#e7e7e7",
+		"statusBarItem.hoverBackground": "#b266ff",
+		"statusBarItem.remoteBackground": "#9933ff",
+		"statusBarItem.remoteForeground": "#e7e7e7"
 	},
-	"peacock.color": "DeepSkyBlue",
+	"peacock.color": "#9933ff",
 	"liveServer.settings.port": 5501,
 	"CodeGPT.apiKey": "Anthropic"
 }

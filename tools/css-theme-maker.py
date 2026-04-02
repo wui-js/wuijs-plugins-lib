@@ -3,9 +3,9 @@ import re
 import argparse
 
 # Default arguments
-default_source_path   = "../src/wuipligin/themes/wuiplugin-themes-0.2.css"
-default_settings_path = "../src/wuipligin/themes/wuiplugin-themes-0.2-theme-1.css"
-default_out_dir       = "../src/wuipligin/themes/"
+default_source_path   = "../src/wuiplugin/themes/wuiplugin-themes-0.2.css"
+default_settings_path = "../src/wuiplugin/themes/wuiplugin-themes-0.2-theme-1.css"
+default_out_dir       = "../src/wuiplugin/themes/"
 default_theme         = "theme-1"
 
 # Get arguments

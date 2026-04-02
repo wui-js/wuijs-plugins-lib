@@ -4,7 +4,7 @@
 
 Características:
 
-1. Se renombraron los directorios y archivos fuente a minúscula (ej: `src/WUIPlugins/Themes/WUIPluginTheme-0.1.js` → `src/wuipligin/themes/wuiplugin-themes-0.2.js`).
+1. Se renombraron los directorios y archivos fuente a minúscula (ej: `src/WUIPlugin/Themes/WUIPluginTheme-0.1.js` → `src/wuiplugin/themes/wuiplugin-themes-0.2.js`).
 2. Actualización versión clase WUIPluginThemes a 0.2.
 	- Se renombró el directorio y archivos a minúscula.
 3. Actualización versión clase WUIPluginSelector a 0.3.
