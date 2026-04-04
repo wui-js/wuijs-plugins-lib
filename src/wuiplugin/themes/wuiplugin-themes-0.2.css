@@ -46,7 +46,7 @@
 	--wui-modal-button-submit-textcolor-mobile: var(--wuiplugin-theme-utilitycolor-hightlight);
 	--wui-modal-button-warning-textcolor-mobile: var(--wuiplugin-theme-utilitycolor-warning);
 	--wui-modal-message-box-width: 280px;
-	--wui-modal-message-box-bgcolor: rgb(from var(--wuiplugin-theme-bgcolor-box) r g b / 80%);
+	--wui-modal-message-box-bgcolor: rgb(from var(--wuiplugin-theme-bgcolor-box) r g b / 100%);
 	--wui-modal-message-box-textcolor: var(--wuiplugin-theme-textcolor-active);
 	--wui-modal-message-mobile-box-width: 280px;
 	--wui-modal-message-mobile-footer-bordercolor: var(--wuiplugin-theme-bordercolor-high);
