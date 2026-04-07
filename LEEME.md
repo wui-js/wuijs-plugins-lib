@@ -668,3 +668,8 @@ Esta sección recoge los ejemplos de las implementaciones de la documentación y
 
 > [!NOTE]
 > Todos los demos del repositorio [wuijs-lab](https://github.com/wuijsproject/wuijs-lab) se pueden revisar en CodeSandbox en el enlace [https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/wuiplugin](https://codesandbox.io/p/sandbox/github/wuijsproject/wuijs-lab/tree/main/demos/wuiplugin).
+
+## Autor
+
+- **Sergio E. Belmar Valenzuela** - [sbelmar](https://github.com/sbelmar)
+- LinkedIn: [Sergio E. Belmar Valenzuela](https://www.linkedin.com/in/sbelmarv/)
