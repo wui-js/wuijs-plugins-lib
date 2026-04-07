@@ -1,5 +1,5 @@
 > [!NOTE]
-> Para la versión en español de este documento, consulte [LEEME.md](./LEEME.md).
+> Para la versión en Español de este documento, consulte [LEEME.md](./LEEME.md).
 
 # wuijs-plugins-lib
 
@@ -670,5 +670,6 @@ This section contains examples of the implementations from the documentation and
 
 ## Author
 
-- **Sergio E. Belmar Valenzuela** - [sbelmar](https://github.com/sbelmar)
-- LinkedIn: [Sergio E. Belmar Valenzuela](https://www.linkedin.com/in/sbelmarv/)
+**Sergio E. Belmar V.**
+- GitHub: [https://github.com/sbelmar](https://github.com/sbelmar)
+- LinkedIn: [https://www.linkedin.com/in/sbelmarv/](https://www.linkedin.com/in/sbelmarv/)
