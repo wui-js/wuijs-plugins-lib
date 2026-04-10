@@ -109,7 +109,7 @@ npm i @wui-js/plugins
 
 ### WUIPluginThemes
 
-Version: `0.2`
+Version: `0.3`
 
 Plugin for managing pre-designed themes and light and dark modes.
 

@@ -107,7 +107,7 @@ npm i @wui-js/plugins
 
 ### WUIPluginThemes
 
-Versión: `0.2`
+Versión: `0.3`
 
 Plugin para el manejo de temas prediseñados y modo claro y oscuro.
 
