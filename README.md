@@ -61,7 +61,7 @@ wuijs-lib/
 | [imgs](imgs/)                             | Images used in the documentation. |
 | [imgs/logo](imgs/logo/)                   | Project logo and isotype in SVG and PNG format. |
 | [legacy](legacy/)                         | Deprecated fonts with previous versions. |
-| [legacy/WUIPlugin](legacy/WUIPlugin/)     | WUI/JS Plugins Library. |
+| [legacy/wuiplugin](legacy/wuiplugin/)     | WUI/JS Plugins Library. |
 | [src](src/)                               | Main sources of the latest version. |
 | [src/wui-js](src/wui-js)                  | WUI/JS Library directory. |
 | [src/wui-js/plugins](src/wui-js/plugins/) | WUI/JS Plugins Library. |
