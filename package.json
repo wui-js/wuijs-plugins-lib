@@ -22,9 +22,9 @@
 	},
 	"license": "Apache-2.0",
 	"author": "Sergio E. Belmar V. <wuijs.project@gmail.com>",
-	"workspaces": [
-		"src/wui-js/themes"
-	],
+	"peerDependencies": {
+		"@wui-js/main": "*"
+	},
 	"files": [
 		"LICENSE",
 		"selector",

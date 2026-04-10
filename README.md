@@ -44,16 +44,14 @@ WUI/JS Plugins Lib is an open-source JavaScript/CSS library that provides a coll
 ### Directory Map
 
 ```bash
-wuijs-lib/
+wuijs-plugins-lib/
 ├── imgs/
 │   └── logo/
 ├── legacy/
 │   └── wuiplugin/
-├── src/
-│   └── wui-js/
-│       ├── plugins/
-│       └── themes/
-└── tools/
+└── src/
+    └── wui-js/
+        └── plugins/
 ```
 
 | Path                                      | Description |
@@ -65,8 +63,6 @@ wuijs-lib/
 | [src](src/)                               | Main sources of the latest version. |
 | [src/wui-js](src/wui-js)                  | WUI/JS Library directory. |
 | [src/wui-js/plugins](src/wui-js/plugins/) | WUI/JS Plugins Library. |
-| [src/wui-js/themes](src/wui-js/themes/)   | Theme library for the WUI/JS Themes plugin. |
-| [tools](tools/)                           | Complementary tools. |
 
 <a name="install"></a>
 
@@ -147,15 +143,18 @@ WUIPluginThemes provides theme support for the following WUI/JS Lib components:
 
 It also provides theme support for the `wuiplugin-selector` plugin.
 
+> [!NOTE]
+> Theme files (pre-generated CSS and theme settings) are distributed as a separate package: [wuijs-themes-lib](https://github.com/wui-js/wuijs-themes-lib). Install it with `npm i @wui-js/themes`.
+
 #### Sources
 
 | Type | File |
 | ---- | ---- |
 | CSS  | [src/wui-js/plugins/themes/wuiplugin-themes-0.3.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/wuiplugin-themes-0.3.css) |
 | JS   | [src/wui-js/plugins/themes/wuiplugin-themes-0.3.js](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/wuiplugin-themes-0.3.js) |
-| CSS  | [src/wui-js/themes/default/theme-0.2.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/themes/default/theme-0.2.css) |
-| CSS  | [src/wui-js/themes/default/light-0.2.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/themes/default/light-0.2.css) |
-| CSS  | [src/wui-js/themes/default/dark-0.2.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/themes/default/dark-0.2.css) |
+| CSS  | [wuijs-themes-lib: src/wui-js/themes/default/theme-0.2.css](https://github.com/wui-js/wuijs-themes-lib/blob/main/src/wui-js/themes/default/theme-0.2.css) |
+| CSS  | [wuijs-themes-lib: src/wui-js/themes/default/light-0.2.css](https://github.com/wui-js/wuijs-themes-lib/blob/main/src/wui-js/themes/default/light-0.2.css) |
+| CSS  | [wuijs-themes-lib: src/wui-js/themes/default/dark-0.2.css](https://github.com/wui-js/wuijs-themes-lib/blob/main/src/wui-js/themes/default/dark-0.2.css) |
 
 #### Constructor
 
@@ -238,22 +237,8 @@ Values without a suffix are common to both modes.
 
 #### Theme Generation Tool
 
-The `tools/css-theme-maker.py` makes standardized CSS files by resolving all `var()` references in the source file, producing a flat CSS file for each color mode.
-
-```bash
-python tools/css-theme-maker.py
-
-python tools/css-theme-maker.py -p <plugin-css-path> -d <themes-directory> -n <theme-name> -v <theme-version>
-```
-
-| Option                 | Default value                                           | Description |
-| ---------------------- | ------------------------------------------------------- | ----------- |
-| `-p`,<br>`--plugin`    | `../src/wui-js/plugins/themes/wuiplugin-themes-0.3.css` | Path to the themes plugin CSS source file. |
-| `-d`,<br>`--directory` | `../src/wui-js/themes`                                  | Themes base directory. |
-| `-n`,<br>`--name`      | `default`                                               | Theme name. |
-| `-v`,<br>`--version`   | `0.2`                                                   | Theme version. |
-
-Output files are generated in `{directory}/{name}/` with the names `light-{version}.css` and `dark-{version}.css`.
+> [!NOTE]
+> The theme generation tool `css-theme-maker.py` has been moved to [wuijs-themes-lib](https://github.com/wui-js/wuijs-themes-lib). See its documentation for usage details.
 
 #### Implementation
 
@@ -261,7 +246,7 @@ There are two implementation modes:
 
 **Using pre-generated CSS files**:
 
-Use only the predefined CSS files (`[light|dark]-{version}.css`) located in the theme directory (`src/wui-js/themes/{name}/`).
+Use only the predefined CSS files (`[light|dark]-{version}.css`) from [wuijs-themes-lib](https://github.com/wui-js/wuijs-themes-lib), located in `node_modules/@wui-js/themes/{name}/` or at `src/wui-js/themes/{name}/` if installed from source.
 Recommended if dynamic switching between light and dark modes is not required.
 
 HTML head:
@@ -278,7 +263,7 @@ HTML code:
 
 **Using JS class instantiation:**
 
-It requires the implementation of the JS class `WUIPluginThemes`, the source CSS file `wuiplugin-themes-0.3.css` and the theme settings CSS file `wui-js/themes/{name}/theme-{version}.css`.
+It requires the implementation of the JS class `WUIPluginThemes`, the source CSS file `wuiplugin-themes-0.3.css` and the theme settings CSS file `theme-{version}.css` from [wuijs-themes-lib](https://github.com/wui-js/wuijs-themes-lib).
 Additionally, the viewer where it is displayed must support the CSS function `light-dark()` [https://www.w3schools.com/cssref/func_light-dark.php](https://www.w3schools.com/cssref/func_light-dark.php)
 
 CSS code:
@@ -446,13 +431,11 @@ Activate the new theme on the root element:
 <body class="wuiplugin-themes my-theme light">
 ```
 
-To make the pre-generated CSS files for the new theme:
+To make the pre-generated CSS files for the new theme, use the `css-theme-maker.py` tool from [wuijs-themes-lib](https://github.com/wui-js/wuijs-themes-lib):
 
 ```bash
-python tools/css-theme-maker.py --settings ./my-theme.css --theme my-theme --out ./
+python tools/css-theme-maker.py -n my-theme -v 1.0
 ```
-
-Running this tool creates the files `wuiplugin-themes-0.3-theme-my-theme-light.css` and `wuiplugin-themes-0.3-theme-my-theme-dark.css` in the current directory.
 
 <a name="WUIPluginSelector"></a>
 
