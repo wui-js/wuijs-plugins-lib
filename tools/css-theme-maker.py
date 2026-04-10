@@ -3,20 +3,20 @@ import re
 import argparse
 
 # Default arguments
-default_source_path   = "../src/wuiplugin/themes/wuiplugin-themes-0.2.css"
-default_settings_path = "../src/wuiplugin/themes/wuiplugin-themes-0.2-theme-1.css"
-default_out_dir       = "../src/wuiplugin/themes/"
-default_theme         = "theme-1"
+default_source_path = "../src/wui-js/plugins/themes/wuiplugin-themes-0.2.css"
+default_themes_dir  = "../src/wui-js/themes"
+default_name        = "default"
+default_version     = "0.2"
 
 # Get arguments
 parser = argparse.ArgumentParser(
     description="Make CSS themes from WUIPluginThemes CSS files.",
     formatter_class=argparse.ArgumentDefaultsHelpFormatter
 )
-parser.add_argument("-c", "--source",   type=str, help="Path to the source components CSS file.", default=default_source_path)
-parser.add_argument("-s", "--settings", type=str, help="Path to the settings theme CSS file.", default=default_settings_path)
-parser.add_argument("-o", "--out",      type=str, help="Output directory for CSS themes.", default=default_out_dir)
-parser.add_argument("-t", "--theme",    type=str, help="Theme name to extract and use in output.", default=default_theme)
+parser.add_argument("-p", "--plugin",    type=str, help="Path to the themes plugin CSS source file.", default=default_source_path)
+parser.add_argument("-d", "--directory", type=str, help="Themes base directory.", default=default_themes_dir)
+parser.add_argument("-n", "--name",      type=str, help="Theme name.", default=default_name)
+parser.add_argument("-v", "--version",   type=str, help="Theme version.", default=default_version)
 args = parser.parse_args()
 
 def resolve_value(value, lookup):
@@ -55,8 +55,9 @@ def parse_settings_file(filepath, target_theme):
     in_settings   = False
 
     # Regexes
-    # Matches:  .wuiplugin-themes:is(.theme-1, .theme-default) {
-    settings_start = re.compile(r'^\.wuiplugin-themes:is\((.+)\)\s*{')
+    # Matches:  .wuiplugin-themes.theme-default {
+    # or:       .wuiplugin-themes:is(.theme-1, .theme-default) {
+    settings_start = re.compile(r'^\.wuiplugin-themes(?::is\((.+)\)|(\.[\w-]+))\s*{')
     block_end      = re.compile(r'^\s*}\s*$')
     var_decl       = re.compile(r'^\s*(--[a-zA-Z0-9-]+):\s*(.+?);\s*$')
 
@@ -74,8 +75,8 @@ def parse_settings_file(filepath, target_theme):
         # Detect start of the target theme block
         sett_match = settings_start.match(line)
         if sett_match:
-            selectors = sett_match.group(1)
-            if f".{target_theme}" in selectors:
+            selectors = sett_match.group(1) or sett_match.group(2)
+            if f".{target_theme}" in selectors or target_theme in selectors:
                 in_settings = True
             continue
 
@@ -186,12 +187,19 @@ def generate_theme(mode, theme_name, header, settings, components, output_path):
             resolved_settings[base_name] = value
 
     # 2. Build output
+    output_filename = os.path.basename(output_path)
     output_lines = []
-    output_lines.extend(header)
+    for line in header:
+        line = re.sub(r'(@file\s+)\S+', lambda m: m.group(1) + output_filename, line)
+        output_lines.append(line)
     output_lines.append("\n")  # spacing
 
     class_name = f".wuiplugin-themes.{theme_name}.{mode} " + "{\n"
     output_lines.append(class_name)
+    output_lines.append("\n")
+    output_lines.append("    /* wuiplugin-theme */\n")
+    output_lines.append("\n")
+    output_lines.append(f'    --wuiplugin-theme-name: "{theme_name}";\n')
 
     # Lookup starts with resolved settings; grows with each resolved component var
     lookup = resolved_settings.copy()
@@ -219,34 +227,33 @@ def generate_theme(mode, theme_name, header, settings, components, output_path):
     print(f"Generated {output_path}")
 
 def main():
+    # Derive paths from --directory, --name and --version
+    out_dir       = os.path.join(args.directory, args.name)
+    settings_path = os.path.join(out_dir, f"theme-{args.version}.css")
+
     # Create output directory if it doesn't exist
-    os.makedirs(args.out, exist_ok=True)
+    os.makedirs(out_dir, exist_ok=True)
 
     # Parse setting variables from the theme file
-    sett_header, settings = parse_settings_file(args.settings, args.theme)
+    sett_header, settings = parse_settings_file(settings_path, args.name)
 
     if not settings:
-        print(f"Warning: No setting variables found for theme '{args.theme}' in '{args.settings}'.")
+        print(f"Warning: No setting variables found for theme '{args.name}' in '{settings_path}'.")
         print("Check that the theme selector exists in that file.")
 
     # Parse component variables from the base CSS file
-    base_header, components = parse_css_file(args.source)
+    base_header, components = parse_css_file(args.plugin)
 
     # Use the settings file header for the output files
     header = sett_header if sett_header else base_header
 
-    # Extract base name for output files (from the base CSS path)
-    base_name = os.path.basename(args.source)
-    if base_name.endswith('.css'):
-        base_name = base_name[:-4]
+    # Generate Light  →  e.g. light-0.2.css
+    light_file = os.path.join(out_dir, f"light-{args.version}.css")
+    generate_theme('light', args.name, header, settings, components, light_file)
 
-    # Generate Light  →  e.g. WUIPluginThemes-0.1-theme-1-light.css
-    light_file = os.path.join(args.out, f"{base_name}-{args.theme}-light.css")
-    generate_theme('light', args.theme, header, settings, components, light_file)
-
-    # Generate Dark   →  e.g. WUIPluginThemes-0.1-theme-1-dark.css
-    dark_file = os.path.join(args.out, f"{base_name}-{args.theme}-dark.css")
-    generate_theme('dark', args.theme, header, settings, components, dark_file)
+    # Generate Dark   →  e.g. dark-0.2.css
+    dark_file = os.path.join(out_dir, f"dark-{args.version}.css")
+    generate_theme('dark', args.name, header, settings, components, dark_file)
 
 if __name__ == "__main__":
     main()

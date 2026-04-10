@@ -1,11 +1,15 @@
 /*
- * @file wuiplugin-themes-0.2-theme-1.css
+ * @file theme-0.2.css
  * @version 0.2
  * @author Sergio E. Belmar V. (wuijs.project@gmail.com)
  * @copyright Sergio E. Belmar V. (wuijs.project@gmail.com)
  */
 
-.wuiplugin-themes:is(.theme-1, .theme-default) {
+.wuiplugin-themes.default {
+
+	/* settings */
+
+	--wuiplugin-theme-name: "default";
 
 	/* light mode */
 

@@ -1,5 +1,18 @@
 # Registro de Cambio
 
+## [v0.4.0] - 2026-04-09
+
+Características:
+
+> [!NOTE]
+> Se cambió el dueño del repositorio oficial de **@wuijsproject** a **@wui-js** con el fin de tener integridad entre las cuentas en GitHub y NPM.
+
+1. Habilitación de instalación vía NPM.
+2. Cambio de nombre del directorio fuente de `src/wuiplugins` a `src/wui-js/plugins` para dar soporte a integración con otras librerías del proyecto WUI/JS.
+3. Actualización versión clase WUIPluginThemes a 0.3.
+	- Se agregó la variable global CSS `--wuiplugin-theme-name` para identificar el tema activo.
+	- Se actualizó el método `getTheme()` para que devuelva el valor de la variable global CSS `--wuiplugin-theme-name` del tema activo.
+
 ## [v0.3.0] - 2026-03-20
 
 Características:
