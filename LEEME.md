@@ -48,7 +48,7 @@ wuijs-lib/
 ├── imgs/
 │   └── logo/
 ├── legacy/
-│   └── WUIPlugin/
+│   └── wuiplugin/
 ├── src/
 │   └── wui-js/
 │       ├── plugins/
