@@ -97,6 +97,8 @@ To install the WUI/JS library via npm:
 npm i @wui-js/plugins
 ```
 
+The resources will be available in the `./node_modules/@wui-js/plugins` path.
+
 <a name="plugins"></a>
 
 ## Plugins
@@ -152,9 +154,6 @@ It also provides theme support for the `wuiplugin-selector` plugin.
 | ---- | ---- |
 | CSS  | [src/wui-js/plugins/themes/wuiplugin-themes-0.3.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/wuiplugin-themes-0.3.css) |
 | JS   | [src/wui-js/plugins/themes/wuiplugin-themes-0.3.js](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/wuiplugin-themes-0.3.js) |
-| CSS  | [wuijs-themes-lib: src/wui-js/themes/default/theme-0.2.css](https://github.com/wui-js/wuijs-themes-lib/blob/main/src/wui-js/themes/default/theme-0.2.css) |
-| CSS  | [wuijs-themes-lib: src/wui-js/themes/default/light-0.2.css](https://github.com/wui-js/wuijs-themes-lib/blob/main/src/wui-js/themes/default/light-0.2.css) |
-| CSS  | [wuijs-themes-lib: src/wui-js/themes/default/dark-0.2.css](https://github.com/wui-js/wuijs-themes-lib/blob/main/src/wui-js/themes/default/dark-0.2.css) |
 
 #### Constructor
 
@@ -180,65 +179,6 @@ It does not have instance properties.
 | getCurrentScheme | `string`    | `getCurrentScheme()`<br><br>Returns the operating system's preferred color scheme, regardless of the scheme configured in the application. Possible values: `"light"`, `"dark"`. |
 | getTheme         | `string`    | `getTheme()`<br><br>Returns the active theme name based on the CSS classes present on `document.body`. |
 | setScheme        | `void`      | `setScheme(scheme)`<br><br>Sets the application's color scheme. Updates the CSS classes on `document.body` and the `color-scheme` attribute on the `<html>` element. If the new scheme differs from the current one, automatically activates the background transition. The transition duration is controlled by the CSS variable `--wuiplugin-theme-transition-delay` (default value: `0.4s`). Possible values: `"light"`, `"dark"`, `"light dark"`, `"system"`. |
-
-#### Predefined themes
-
-| Name      | Description |
-| --------- | ----------- |
-| `default` | Default theme. |
-
-#### CSS Variables
-
-The theme setting variables are defined with two suffix variants: `{variable}-light` for light mode and `{variable}-dark` for dark mode.
-Values without a suffix are common to both modes.
-
-**Colors (with variations by color mode):**
-
-| Base variable                                             | Description |
-| --------------------------------------------------------- | ----------- |
-| `--wuiplugin-theme-graycolor-max-(light\|dark)`           | Maximum gray (white in light, black in dark). |
-| `--wuiplugin-theme-graycolor-high-(light\|dark)`          | High gray. |
-| `--wuiplugin-theme-graycolor-half-(light\|dark)`          | Mid gray. |
-| `--wuiplugin-theme-graycolor-low-(light\|dark)`           | Low gray. |
-| `--wuiplugin-theme-graycolor-min-(light\|dark)`           | Minimum gray (black in light, white in dark). |
-| `--wuiplugin-theme-shadowcolor-high-(light\|dark)`        | Strong shadow color. |
-| `--wuiplugin-theme-shadowcolor-low-(light\|dark)`         | Soft shadow color. |
-| `--wuiplugin-theme-bordercolor-max-(light\|dark)`         | Maximum border color. |
-| `--wuiplugin-theme-bordercolor-high-(light\|dark)`        | High border color. |
-| `--wuiplugin-theme-bordercolor-low-(light\|dark)`         | Low border color. |
-| `--wuiplugin-theme-bgcolor-overlay-(light\|dark)`         | Overlay background color. |
-| `--wuiplugin-theme-bgcolor-box-(light\|dark)`             | Dialog and panel background color. |
-| `--wuiplugin-theme-bgcolor-out-(light\|dark)`             | Background color in normal state. |
-| `--wuiplugin-theme-bgcolor-over-(light\|dark)`            | Background color in hover or selected state. |
-| `--wuiplugin-theme-bgcolor-scroll-(light\|dark)`          | Scrollbar color. |
-| `--wuiplugin-theme-bgcolor-icon-(light\|dark)`            | Icon fill color. |
-| `--wuiplugin-theme-bgcolor-highcontrast-(light\|dark)`    | High-contrast background color (tooltips, etc.). |
-| `--wuiplugin-theme-textcolor-title-(light\|dark)`         | Title text color. |
-| `--wuiplugin-theme-textcolor-active-(light\|dark)`        | Active state text color. |
-| `--wuiplugin-theme-textcolor-focus-(light\|dark)`         | Focused state text color. |
-| `--wuiplugin-theme-utilitycolor-hightlight-(light\|dark)` | Primary accent color (links, buttons, selections). |
-| `--wuiplugin-theme-utilitycolor-warning-(light\|dark)`    | Warning or error color. |
-| `--wuiplugin-theme-utilitycolor-disabled-(light\|dark)`   | Disabled element color. |
-| `--wuiplugin-theme-intencitycolor-low-(light\|dark)`      | Low intensity color. |
-| `--wuiplugin-theme-intencitycolor-half-(light\|dark)`     | Medium intensity color. |
-| `--wuiplugin-theme-intencitycolor-high-(light\|dark)`     | High intensity color. |
-
-**Typography and metrics (common, no color mode variant):**
-
-| Variable                                  | Default value                           | Description |
-| ----------------------------------------- | --------------------------------------- | ----------- |
-| `--wuiplugin-theme-borderradius-low`      | `10px`                                  | Low border radius. |
-| `--wuiplugin-theme-borderradius-half`     | `15px`                                  | Medium border radius. |
-| `--wuiplugin-theme-borderradius-high`     | `17px`                                  | High border radius. |
-| `--wuiplugin-theme-borderradius-round`    | `50%`                                   | Circular border radius. |
-| `--wuiplugin-theme-titlefont`             | `Arial, Helvetica, Verdana, sans-serif` | Font family for titles. |
-| `--wuiplugin-theme-input-opener-iconsize` | `30px`                                  | Opener icon size for form fields. |
-| `--wuiplugin-theme-transition-delay`      | `0.4s`                                  | Color scheme transition duration. |
-
-#### Theme Generation Tool
-
-> [!NOTE]
-> The theme generation tool `css-theme-maker.py` has been moved to [wuijs-themes-lib](https://github.com/wui-js/wuijs-themes-lib). See its documentation for usage details.
 
 #### Implementation
 
