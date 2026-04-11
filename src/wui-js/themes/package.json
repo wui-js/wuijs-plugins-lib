@@ -1,0 +1,31 @@
+{
+	"name": "@wui-js/themes",
+	"version": "0.4.0",
+	"description": "WUI/JS Themes - Pre-designed theme files for WUI/JS Plugins Lib.",
+	"keywords": [
+		"ui",
+		"themes",
+		"css",
+		"wui",
+		"frontend",
+		"library"
+	],
+	"homepage": "https://wuijs.dev",
+	"bugs": {
+		"url": "https://github.com/wui-js/wuijs-plugins-lib/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/wui-js/wuijs-plugins-lib.git"
+	},
+	"license": "Apache-2.0",
+	"author": "Sergio E. Belmar V. <wuijs.project@gmail.com>",
+	"files": [
+		"LICENSE",
+		"**/*.css"
+	],
+	"scripts": {
+		"prepack": "cp ../../../LICENSE .",
+		"postpack": "rm -f LICENSE"
+	}
+}

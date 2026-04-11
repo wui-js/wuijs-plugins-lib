@@ -44,14 +44,16 @@ WUI/JS Plugins Lib es una librería JavaScript/CSS de código abierto que propor
 ### Mapa de Directorios
 
 ```bash
-wuijs-plugins-lib/
+wuijs-lib/
 ├── imgs/
 │   └── logo/
 ├── legacy/
 │   └── wuiplugin/
-└── src/
-    └── wui-js/
-        └── plugins/
+├── src/
+│   └── wui-js/
+│       ├── plugins/
+│       └── themes/
+└── tools/
 ```
 
 | Ruta                                      | Descripción |
@@ -63,6 +65,8 @@ wuijs-plugins-lib/
 | [src](src/)                               | Fuentes principales de la última versión. |
 | [src/wui-js](src/wui-js)                  | Directorio del proyecto WUI/JS. |
 | [src/wui-js/plugins](src/wui-js/plugins/) | Librería de plugins WUI/JS. |
+| [src/wui-js/themes](src/wui-js/themes/)   | Librería de temas para el plugin Themes de WUI/JS. |
+| [tools](tools/)                           | Herramientas complementarias. |
 
 <a name="install"></a>
 
@@ -91,13 +95,9 @@ cp -r ./wuijs-plugins-lib-main/src/wui-js/ ../src/libraries/
 
 **Opción 2: Instalar vía npm**
 
-Para instalar la librería WUI/JS mediante npm:
-
 ```bash
 npm i @wui-js/plugins
 ```
-
-Los recursos quedarán disponibles en la ruta `./node_modules/@wui-js/plugins`.
 
 <a name="plugins"></a>
 
@@ -145,15 +145,15 @@ WUIPluginThemes provee soporte de temas para los siguientes componentes de WUI/J
 
 También provee soporte de temas para el plugin `wuiplugin-selector`.
 
-> [!NOTE]
-> Los archivos de temas (CSS pregenerados y configuración) se distribuyen como paquete independiente: [wuijs-themes-lib](https://github.com/wui-js/wuijs-themes-lib). Instálalo con `npm i @wui-js/themes`.
-
 #### Fuentes
 
 | Tipo | Archivo |
 | ---- | ------- |
 | CSS  | [src/wui-js/plugins/themes/wuiplugin-themes-0.3.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/wuiplugin-themes-0.3.css) |
 | JS   | [src/wui-js/plugins/themes/wuiplugin-themes-0.3.js](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/wuiplugin-themes-0.3.js) |
+| CSS  | [src/wui-js/themes/default/theme-0.2.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/themes/default/theme-0.2.css) |
+| CSS  | [src/wui-js/themes/default/light-0.2.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/themes/default/light-0.2.css) |
+| CSS  | [src/wui-js/themes/default/dark-0.2.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/themes/default/dark-0.2.css) |
 
 #### Constructor
 
@@ -180,13 +180,86 @@ No posee propiedades de instancia.
 | getTheme         | `string`    | `getTheme()`<br><br>Retorna el nombre del tema activo según las clases CSS presentes en `document.body`. |
 | setScheme        | `void`      | `setScheme(scheme)`<br><br>Establece el esquema de color de la aplicación. Actualiza las clases CSS en `document.body` y el atributo `color-scheme` en el elemento `<html>`. Si el esquema nuevo difiere del actual, activa automáticamente la transición de fondo. La duración de la transición está controlada por la variable CSS `--wuiplugin-theme-transition-delay` (valor por defecto: `0.4s`). Valores posibles: `"light"`, `"dark"`, `"light dark"`, `"system"`. |
 
+#### Temas Predefinidos
+
+| Nombre    | Descripción |
+| --------- | ----------- |
+| `default` | Tema predeterminado. |
+
+#### Variables CSS
+
+Las variables de configuración de tema se definen con dos variantes de sufijo: `{variable}-light` para modo claro y `{variable}-dark` para modo oscuro.
+Los valores sin sufijo son comunes a ambos modos.
+
+**Colores (con variante por modo de color):**
+
+| Variable base                                             | Descripción |
+| --------------------------------------------------------- | ----------- |
+| `--wuiplugin-theme-graycolor-max-(light\|dark)`           | Color gris máximo (blanco en claro, negro en oscuro). |
+| `--wuiplugin-theme-graycolor-high-(light\|dark)`          | Color gris alto. |
+| `--wuiplugin-theme-graycolor-half-(light\|dark)`          | Color gris medio. |
+| `--wuiplugin-theme-graycolor-low-(light\|dark)`           | Color gris bajo. |
+| `--wuiplugin-theme-graycolor-min-(light\|dark)`           | Color gris mínimo (negro en claro, blanco en oscuro). |
+| `--wuiplugin-theme-shadowcolor-high-(light\|dark)`        | Color de sombra fuerte. |
+| `--wuiplugin-theme-shadowcolor-low-(light\|dark)`         | Color de sombra suave. |
+| `--wuiplugin-theme-bordercolor-max-(light\|dark)`         | Color de borde máximo. |
+| `--wuiplugin-theme-bordercolor-high-(light\|dark)`        | Color de borde alto. |
+| `--wuiplugin-theme-bordercolor-low-(light\|dark)`         | Color de borde bajo. |
+| `--wuiplugin-theme-bgcolor-overlay-(light\|dark)`         | Color de fondo del overlay. |
+| `--wuiplugin-theme-bgcolor-box-(light\|dark)`             | Color de fondo de cuadros de diálogo y paneles. |
+| `--wuiplugin-theme-bgcolor-out-(light\|dark)`             | Color de fondo en estado normal. |
+| `--wuiplugin-theme-bgcolor-over-(light\|dark)`            | Color de fondo en estado hover o seleccionado. |
+| `--wuiplugin-theme-bgcolor-scroll-(light\|dark)`          | Color de la barra de desplazamiento. |
+| `--wuiplugin-theme-bgcolor-icon-(light\|dark)`            | Color de relleno de íconos. |
+| `--wuiplugin-theme-bgcolor-highcontrast-(light\|dark)`	| Color de fondo de alto contraste (tooltips, etc.). |
+| `--wuiplugin-theme-textcolor-title-(light\|dark)`         | Color de texto de títulos. |
+| `--wuiplugin-theme-textcolor-active-(light\|dark)`        | Color de texto en estado activo. |
+| `--wuiplugin-theme-textcolor-focus-(light\|dark)`         | Color de texto en estado de foco. |
+| `--wuiplugin-theme-utilitycolor-hightlight-(light\|dark)` | Color de acento principal (links, botones, selecciones). |
+| `--wuiplugin-theme-utilitycolor-warning-(light\|dark)`    | Color de advertencia o error. |
+| `--wuiplugin-theme-utilitycolor-disabled-(light\|dark)`   | Color de elementos deshabilitados. |
+| `--wuiplugin-theme-intencitycolor-low-(light\|dark)`      | Color de intensidad baja. |
+| `--wuiplugin-theme-intencitycolor-half-(light\|dark)`     | Color de intensidad media. |
+| `--wuiplugin-theme-intencitycolor-high-(light\|dark)`     | Color de intensidad alta. |
+
+**Tipografía y métricas (comunes, sin variante por modo de color):**
+
+| Variable                                  | Valor por defecto                       | Descripción |
+| ----------------------------------------- | --------------------------------------- | ----------- |
+| `--wuiplugin-theme-borderradius-low`      | `10px`                                  | Radio de borde bajo. |
+| `--wuiplugin-theme-borderradius-half`     | `15px`                                  | Radio de borde medio. |
+| `--wuiplugin-theme-borderradius-high`     | `17px`                                  | Radio de borde alto. |
+| `--wuiplugin-theme-borderradius-round`    | `50%`                                   | Radio de borde circular. |
+| `--wuiplugin-theme-titlefont`             | `Arial, Helvetica, Verdana, sans-serif` | Familia tipográfica para títulos. |
+| `--wuiplugin-theme-input-opener-iconsize` | `30px`                                  | Tamaño del ícono de apertura en campos de formulario. |
+| `--wuiplugin-theme-transition-delay`      | `0.4s`                                  | Duración de la transición de esquema de color. |
+
+#### Herramienta de generación de temas
+
+El script `tools/css-theme-maker.py` crea archivos CSS estandarizados resolviendo todas las referencias a `var()` del archivo fuente, produciendo un CSS plano por cada modo de color.
+
+```bash
+python tools/css-theme-maker.py
+
+python tools/css-theme-maker.py -p <ruta-css-plugin> -d <directorio-temas> -n <nombre-tema> -v <versión-tema>
+```
+
+| Opción                 | Predeterminado                                          | Descripción |
+| ---------------------- | ------------------------------------------------------- | ----------- |
+| `-p`,<br>`--plugin`    | `../src/wui-js/plugins/themes/wuiplugin-themes-0.3.css` | Ruta al archivo CSS fuente del plugin themes. |
+| `-d`,<br>`--directory` | `../src/wui-js/themes`                                  | Directorio base de temas. |
+| `-n`,<br>`--name`      | `default`                                               | Nombre del tema. |
+| `-v`,<br>`--version`   | `0.2`                                                   | Versión del tema. |
+
+Los archivos de salida se generan en `{directorio}/{nombre}/` con los nombres `light-{versión}.css` y `dark-{versión}.css`.
+
 #### Implementación
 
 Existen dos modos de implementación:
 
 **Usando archivos CSS pregenerados:**
 
-Utiliza únicamente los archivos CSS predefinidos (`[light|dark]-{versión}.css`) de [wuijs-themes-lib](https://github.com/wui-js/wuijs-themes-lib), ubicados en `node_modules/@wui-js/themes/{nombre}/` o en `src/wui-js/themes/{nombre}/` si se instaló desde fuente.
+Utiliza únicamente los archivos CSS predefinidos (`[light|dark]-{versión}.css`) ubicados en el directorio del tema (`src/wui-js/themes/{nombre}/`).
 Recomendado si no se requiere cambiar entre modos claro y oscuro dinámicamente.
 
 Cabecera HTML:
@@ -203,7 +276,7 @@ Código HTML:
 
 **Usando instanciamiento de la clase JS:**
 
-Requiere la implementación de la clase JS `WUIPluginThemes`, el archivo CSS fuente `wuiplugin-themes-0.3.css` y el archivo CSS de configuración del tema `theme-{versión}.css` de [wuijs-themes-lib](https://github.com/wui-js/wuijs-themes-lib).
+Requiere la implementación de la clase JS `WUIPluginThemes`, el archivo CSS fuente `wuiplugin-themes-0.3.css` y el archivo CSS de configuración del tema `wui-js/themes/{nombre}/theme-{versión}.css`.
 Adicionalmente el visualizador donde se despliegue debe tener soporte para la función CSS `light-dark()` [https://www.w3schools.com/cssref/func_light-dark.php](https://www.w3schools.com/cssref/func_light-dark.php)
 
 Código CSS:
@@ -291,6 +364,97 @@ body.wuiplugin-themes.default {
 ```html
 <body class="wuiplugin-themes default light"></body>
 ```
+
+#### Personalización de temas propios
+
+Para crear un tema adicional, se debe definir una nueva regla CSS con todas las variables de configuración de tema:
+
+```css
+.wuiplugin-themes.my-theme {
+    
+	/* light mode */
+
+	--wuiplugin-theme-graycolor-max-light: #fff;
+	--wuiplugin-theme-graycolor-high-light: #ccc;
+	--wuiplugin-theme-graycolor-half-light: #888;
+	--wuiplugin-theme-graycolor-low-light: #444;
+	--wuiplugin-theme-graycolor-min-light: #000;
+	--wuiplugin-theme-shadowcolor-high-light: #304d63;
+	--wuiplugin-theme-shadowcolor-low-light: #959da5;
+	--wuiplugin-theme-bordercolor-max-light: #b5bbc1;
+	--wuiplugin-theme-bordercolor-high-light: #d5dce3;
+	--wuiplugin-theme-bordercolor-low-light: #f0f0f3;
+	--wuiplugin-theme-bgcolor-overlay-light: #010203;
+	--wuiplugin-theme-bgcolor-box-light: #efeff6;
+	--wuiplugin-theme-bgcolor-out-light: #fdfdfe;
+	--wuiplugin-theme-bgcolor-over-light: #f6f6fa;
+	--wuiplugin-theme-bgcolor-scroll-light: #353a40;
+	--wuiplugin-theme-bgcolor-icon-light: #353a40;
+	--wuiplugin-theme-bgcolor-highcontrast-light: #1f2429;
+	--wuiplugin-theme-textcolor-title-light: #000;
+	--wuiplugin-theme-textcolor-active-light: #2d3a47;
+	--wuiplugin-theme-textcolor-focus-light: #1f2937;
+	--wuiplugin-theme-utilitycolor-hightlight-light: #1e90ff;
+	--wuiplugin-theme-utilitycolor-warning-light: #f44343;
+	--wuiplugin-theme-utilitycolor-disabled-light: #d5dce3;
+	--wuiplugin-theme-intencitycolor-low-light: mediumaquamarine;
+	--wuiplugin-theme-intencitycolor-half-light: darkorange;
+	--wuiplugin-theme-intencitycolor-high-light: orangered;
+
+	/* dark mode */
+
+	--wuiplugin-theme-graycolor-max-dark: #000;
+	--wuiplugin-theme-graycolor-high-dark: #444;
+	--wuiplugin-theme-graycolor-half-dark: #888;
+	--wuiplugin-theme-graycolor-low-dark: #ccc;
+	--wuiplugin-theme-graycolor-min-dark: #fff;
+	--wuiplugin-theme-shadowcolor-high-dark: #2f3a48;
+	--wuiplugin-theme-shadowcolor-low-dark: #1f2937;
+	--wuiplugin-theme-bordercolor-max-dark: #4b5563;
+	--wuiplugin-theme-bordercolor-high-dark: #4b5563;
+	--wuiplugin-theme-bordercolor-low-dark: #374151;
+	--wuiplugin-theme-bgcolor-overlay-dark: #000;
+	--wuiplugin-theme-bgcolor-box-dark: #2f3a48;
+	--wuiplugin-theme-bgcolor-out-dark: #1f2937;
+	--wuiplugin-theme-bgcolor-over-dark: #374151;
+	--wuiplugin-theme-bgcolor-scroll-dark: #4b5563;
+	--wuiplugin-theme-bgcolor-icon-dark: #d1d5db;
+	--wuiplugin-theme-bgcolor-highcontrast-dark: #f9fafb;
+	--wuiplugin-theme-textcolor-title-dark: #fff;
+	--wuiplugin-theme-textcolor-active-dark: #f3f4f6;
+	--wuiplugin-theme-textcolor-focus-dark: #fff;
+	--wuiplugin-theme-utilitycolor-hightlight-dark: #1e90ff;
+	--wuiplugin-theme-utilitycolor-warning-dark: #f44343;
+	--wuiplugin-theme-utilitycolor-disabled-dark: #4b5563;
+	--wuiplugin-theme-intencitycolor-low-dark: mediumaquamarine;
+	--wuiplugin-theme-intencitycolor-half-dark: darkorange;
+	--wuiplugin-theme-intencitycolor-high-dark: orangered;
+
+	/* common */
+
+	--wuiplugin-theme-borderradius-low: 10px;
+	--wuiplugin-theme-borderradius-half: 15px;
+	--wuiplugin-theme-borderradius-high: 17px;
+	--wuiplugin-theme-borderradius-round: 50%;
+	--wuiplugin-theme-titlefont: Arial, Helvetica, Verdana, sans-serif;
+	--wuiplugin-theme-input-opener-iconsize: 30px;
+	--wuiplugin-theme-transition-delay: .4s;
+}
+```
+
+Activa el nuevo tema en el elemento raíz:
+
+```html
+<body class="wuiplugin-themes my-theme light">
+```
+
+Para crear los archivos CSS pregenerados del nuevo tema:
+
+```bash
+python tools/css-theme-maker.py --settings ./my-theme.css --theme my-theme --out ./
+```
+
+La ejecución de esta herramienta crea los archivos `wuiplugin-themes-0.3-theme-my-theme-light.css` y `wuiplugin-themes-0.3-theme-my-theme-dark.css` en el directorio actual.
 
 <a name="WUIPluginSelector"></a>
 
