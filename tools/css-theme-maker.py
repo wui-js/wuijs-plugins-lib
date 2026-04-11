@@ -3,8 +3,8 @@ import re
 import argparse
 
 # Default arguments
-default_source_path = "../src/wui-js/plugins/themes/wuiplugin-themes-0.2.css"
-default_themes_dir  = "../src/wui-js/themes"
+default_source_path = "../src/wui-js/plugins/themes/wuiplugin-themes-0.3.css"
+default_themes_dir  = "../src/wui-js/plugins/themes"
 default_name        = "default"
 default_version     = "0.2"
 
@@ -36,7 +36,7 @@ def resolve_value(value, lookup):
 
 def parse_settings_file(filepath, target_theme):
     """
-    Reads a theme CSS file (e.g. WUIPluginThemes-0.1-theme-1.css) and extracts
+    Reads a theme settings CSS file (e.g. settings-0.2.css) and extracts
     all setting CSS variable declarations inside the block that matches the
     given target_theme selector.
 
@@ -229,7 +229,7 @@ def generate_theme(mode, theme_name, header, settings, components, output_path):
 def main():
     # Derive paths from --directory, --name and --version
     out_dir       = os.path.join(args.directory, args.name)
-    settings_path = os.path.join(out_dir, f"theme-{args.version}.css")
+    settings_path = os.path.join(out_dir, f"settings-{args.version}.css")
 
     # Create output directory if it doesn't exist
     os.makedirs(out_dir, exist_ok=True)

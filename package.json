@@ -22,16 +22,13 @@
 	},
 	"license": "Apache-2.0",
 	"author": "Sergio E. Belmar V. <wuijs.project@gmail.com>",
-	"workspaces": [
-		"src/wui-js/themes"
-	],
 	"files": [
 		"LICENSE",
 		"selector",
 		"themes"
 	],
 	"scripts": {
-		"prepack": "cp README.md _README.bak && cp NPM.md README.md && cp -r src/wui-js/plugins/. .",
-		"postpack": "mv _README.bak README.md && ls src/wui-js/plugins/ | xargs rm -rf && cp src/wui-js/plugins/LICENSE ."
+		"prepack": "cp README.md _README.bak && cp NPM.md README.md && mv src/wui-js/plugins/LICENCE _LICENCE.bak 2>/dev/null; cp -r src/wui-js/plugins/. .",
+		"postpack": "mv _README.bak README.md && ls src/wui-js/plugins/ | xargs rm -rf && cp src/wui-js/plugins/LICENSE . && mv _LICENCE.bak src/wui-js/plugins/LICENCE 2>/dev/null; true"
 	}
 }

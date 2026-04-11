@@ -15,10 +15,6 @@ Licencia: `Apache License 2.0`
 
 Autor: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 
-> [!NOTE]
-> Las dos primeras secciones del número de versión de la biblioteca corresponde a la versión más alta de las clases que componen la biblioteca,
-> mientras que la tercera sección corresponde al número de modificación de la versión general.
-
 ## Índice
 
 *   [Descripción General](#overview)
@@ -51,8 +47,7 @@ wuijs-lib/
 │   └── wuiplugin/
 ├── src/
 │   └── wui-js/
-│       ├── plugins/
-│       └── themes/
+│       └── plugins/
 └── tools/
 ```
 
@@ -65,7 +60,6 @@ wuijs-lib/
 | [src](src/)                               | Fuentes principales de la última versión. |
 | [src/wui-js](src/wui-js)                  | Directorio del proyecto WUI/JS. |
 | [src/wui-js/plugins](src/wui-js/plugins/) | Librería de plugins WUI/JS. |
-| [src/wui-js/themes](src/wui-js/themes/)   | Librería de temas para el plugin Themes de WUI/JS. |
 | [tools](tools/)                           | Herramientas complementarias. |
 
 <a name="install"></a>
@@ -95,9 +89,13 @@ cp -r ./wuijs-plugins-lib-main/src/wui-js/ ../src/libraries/
 
 **Opción 2: Instalar vía npm**
 
+Para instalar la librería WUI/JS mediante npm:
+
 ```bash
 npm i @wui-js/plugins
 ```
+
+Los recursos quedarán disponibles en la ruta `./node_modules/@wui-js/plugins`.
 
 <a name="plugins"></a>
 
@@ -113,10 +111,7 @@ Plugin para el manejo de temas prediseñados y modo claro y oscuro.
 
 #### Descripción
 
-WUIPluginThemes provee un sistema de temas para aplicaciones web mediante dos capas de variables CSS:
-
-- **Configuración de tema** (`--wuiplugin-theme-*`): tokens de color, tipografía y espaciado, con variantes explícitas para modo claro (`-light`) y oscuro (`-dark`), además de valores comunes sin sufijo.
-- **Variables de componentes** (`--wui-*` y `--wuiplugin-*`): variables consumidas por los componentes de WUI/JS Lib, definidas como referencias a las variables de configuración del tema mediante la función `var()`.
+WUIPluginThemes provee un sistema de temas para aplicaciones web mediante dos capas de variables CSS.
 
 #### Componentes cubiertos
 
@@ -151,9 +146,9 @@ También provee soporte de temas para el plugin `wuiplugin-selector`.
 | ---- | ------- |
 | CSS  | [src/wui-js/plugins/themes/wuiplugin-themes-0.3.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/wuiplugin-themes-0.3.css) |
 | JS   | [src/wui-js/plugins/themes/wuiplugin-themes-0.3.js](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/wuiplugin-themes-0.3.js) |
-| CSS  | [src/wui-js/themes/default/theme-0.2.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/themes/default/theme-0.2.css) |
-| CSS  | [src/wui-js/themes/default/light-0.2.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/themes/default/light-0.2.css) |
-| CSS  | [src/wui-js/themes/default/dark-0.2.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/themes/default/dark-0.2.css) |
+| CSS  | [src/wui-js/plugins/themes/default/settings-0.2.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/default/settings-0.2.css) |
+| CSS  | [src/wui-js/plugins/themes/default/light-0.2.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/default/light-0.2.css) |
+| CSS  | [src/wui-js/plugins/themes/default/dark-0.2.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/default/dark-0.2.css) |
 
 #### Constructor
 
@@ -188,7 +183,7 @@ No posee propiedades de instancia.
 
 #### Variables CSS
 
-Las variables de configuración de tema se definen con dos variantes de sufijo: `{variable}-light` para modo claro y `{variable}-dark` para modo oscuro.
+Las variables de configuración de tema se definen en el archivo `src/wui-js/plugins/themes/{theme-name}/{version}.css` y se organizan en dos variantes de sufijo: `{variable}-light` para modo claro y `{variable}-dark` para modo oscuro.
 Los valores sin sufijo son comunes a ambos modos.
 
 **Colores (con variante por modo de color):**
@@ -234,38 +229,19 @@ Los valores sin sufijo son comunes a ambos modos.
 | `--wuiplugin-theme-input-opener-iconsize` | `30px`                                  | Tamaño del ícono de apertura en campos de formulario. |
 | `--wuiplugin-theme-transition-delay`      | `0.4s`                                  | Duración de la transición de esquema de color. |
 
-#### Herramienta de generación de temas
-
-El script `tools/css-theme-maker.py` crea archivos CSS estandarizados resolviendo todas las referencias a `var()` del archivo fuente, produciendo un CSS plano por cada modo de color.
-
-```bash
-python tools/css-theme-maker.py
-
-python tools/css-theme-maker.py -p <ruta-css-plugin> -d <directorio-temas> -n <nombre-tema> -v <versión-tema>
-```
-
-| Opción                 | Predeterminado                                          | Descripción |
-| ---------------------- | ------------------------------------------------------- | ----------- |
-| `-p`,<br>`--plugin`    | `../src/wui-js/plugins/themes/wuiplugin-themes-0.3.css` | Ruta al archivo CSS fuente del plugin themes. |
-| `-d`,<br>`--directory` | `../src/wui-js/themes`                                  | Directorio base de temas. |
-| `-n`,<br>`--name`      | `default`                                               | Nombre del tema. |
-| `-v`,<br>`--version`   | `0.2`                                                   | Versión del tema. |
-
-Los archivos de salida se generan en `{directorio}/{nombre}/` con los nombres `light-{versión}.css` y `dark-{versión}.css`.
-
 #### Implementación
 
 Existen dos modos de implementación:
 
-**Usando archivos CSS pregenerados:**
+**Usando archivos CSS generados:**
 
-Utiliza únicamente los archivos CSS predefinidos (`[light|dark]-{versión}.css`) ubicados en el directorio del tema (`src/wui-js/themes/{nombre}/`).
+Utiliza únicamente los archivos CSS generados (`[light|dark]-{versión}.css`) ubicados en el directorio del tema (`src/wui-js/plugins/themes/{nombre}/`).
 Recomendado si no se requiere cambiar entre modos claro y oscuro dinámicamente.
 
 Cabecera HTML:
 
 ```html
-<link rel="stylesheet" href="./libreries/wui-js/themes/default/light-0.2.css">
+<link rel="stylesheet" href="./libreries/wui-js/plugins/themes/default/light-0.2.css">
 ```
 
 Código HTML:
@@ -276,7 +252,7 @@ Código HTML:
 
 **Usando instanciamiento de la clase JS:**
 
-Requiere la implementación de la clase JS `WUIPluginThemes`, el archivo CSS fuente `wuiplugin-themes-0.3.css` y el archivo CSS de configuración del tema `wui-js/themes/{nombre}/theme-{versión}.css`.
+Requiere la implementación de la clase JS `WUIPluginThemes`, el archivo CSS fuente `wuiplugin-themes-0.3.css` y el archivo CSS de configuración del tema `wui-js/plugins/themes/{nombre}/settings-{versión}.css`.
 Adicionalmente el visualizador donde se despliegue debe tener soporte para la función CSS `light-dark()` [https://www.w3schools.com/cssref/func_light-dark.php](https://www.w3schools.com/cssref/func_light-dark.php)
 
 Código CSS:
@@ -302,7 +278,7 @@ Cabecera HTML:
 ```html
 <link rel="stylesheet" href="./libraries/wui-js/main/switch/wui-switch-0.4.css">
 <link rel="stylesheet" href="./libraries/wui-js/plugins/themes/wuiplugin-themes-0.3.css">
-<link rel="stylesheet" href="./libraries/wui-js/themes/default/theme-0.2.css">
+<link rel="stylesheet" href="./libraries/wui-js/plugins/themes/default/settings-0.2.css">
 <script type="text/javascript" src="./libraries/wui-js/main/switch/wui-switch-0.4.js"></script>
 <script type="text/javascript" src="./libraries/wui-js/plugins/themes/wuiplugin-themes-0.3.js"></script>
 ```
@@ -341,6 +317,45 @@ window.addEventListener("DOMContentLoaded", init);
 > [!TIP]
 > Puede revisar este ejemplo funcional en CodeSandbox en el enlace: [https://codesandbox.io/p/sandbox/github/wui-js/wuijs-lab/tree/main/demos/plugin/themes/switchmode](https://codesandbox.io/p/sandbox/github/wui-js/wuijs-lab/tree/main/demos/plugin/themes/switchmode).
 
+#### Herramienta de clonación de temas
+
+El script `tools/clone-theme.py` crea un nuevo tema copiando el archivo de configuración de un tema existente y reemplazando su selector CSS. Es el punto de partida recomendado antes de ejecutar `css-theme-maker.py`.
+
+```bash
+python ./clone-theme.py -n <nombre-nuevo-tema>
+
+python ./clone-theme.py -d <directorio-temas> -s <tema-origen> -n <nombre-nuevo-tema> -v <versión-tema>
+```
+
+| Opción                 | Predeterminado                                          | Descripción |
+| ---------------------- | ------------------------------------------------------- | ----------- |
+| `-p`,<br>`--plugin`    | `../src/wui-js/plugins/themes/wuiplugin-themes-0.3.css` | Ruta al archivo CSS fuente del plugin themes. |
+| `-d`,<br>`--directory` | `../src/wui-js/plugins/themes`                          | Directorio base de temas. |
+| `-s`,<br>`--source`    | `default`                                               | Nombre del tema a clonar. |
+| `-n`,<br>`--name`      | _(requerido)_                                           | Nombre del nuevo tema. |
+| `-v`,<br>`--version`   | `0.1`                                                   | Versión del tema. |
+
+El archivo de salida se genera en `{directorio}/{nombre}/settings-{versión}.css` con el selector CSS actualizado al nuevo nombre.
+
+#### Herramienta de generación de temas
+
+El script `tools/css-theme-maker.py` crea archivos CSS estandarizados resolviendo todas las referencias a `var()` del archivo fuente, produciendo un CSS plano por cada modo de color. Lee la configuración de variables desde el archivo `{directorio}/{nombre}/settings-{versión}.css`.
+
+```bash
+python ./css-theme-maker.py
+
+python ./css-theme-maker.py -p <ruta-css-plugin> -d <directorio-temas> -n <nombre-tema> -v <versión-tema>
+```
+
+| Opción                 | Predeterminado                                          | Descripción |
+| ---------------------- | ------------------------------------------------------- | ----------- |
+| `-p`,<br>`--plugin`    | `../src/wui-js/plugins/themes/wuiplugin-themes-0.3.css` | Ruta al archivo CSS fuente del plugin themes. |
+| `-d`,<br>`--directory` | `../src/wui-js/plugins/themes`                          | Directorio base de temas. |
+| `-n`,<br>`--name`      | `default`                                               | Nombre del tema. |
+| `-v`,<br>`--version`   | `0.2`                                                   | Versión del tema. |
+
+Los archivos de salida se generan en `{directorio}/{nombre}/` con los nombres `light-{versión}.css` y `dark-{versión}.css`.
+
 #### Personalización de temas predefinidos
 
 ```css
@@ -367,7 +382,19 @@ body.wuiplugin-themes.default {
 
 #### Personalización de temas propios
 
-Para crear un tema adicional, se debe definir una nueva regla CSS con todas las variables de configuración de tema:
+**Paso 1 — Clonar un tema existente como base:**
+
+Ejecuta desde el directorio `tools/`:
+
+```bash
+python clone-theme.py -n my-theme
+```
+
+Esto crea `src/wui-js/plugins/themes/my-theme/settings-0.2.css` con el selector actualizado a `.wuiplugin-themes.my-theme` y todas las variables del tema `default` como punto de partida.
+
+**Paso 2 — Editar las variables del nuevo tema:**
+
+Modifica `src/wui-js/plugins/themes/my-theme/settings-0.2.css` con los valores deseados. La estructura del archivo es:
 
 ```css
 .wuiplugin-themes.my-theme {
@@ -442,19 +469,27 @@ Para crear un tema adicional, se debe definir una nueva regla CSS con todas las 
 }
 ```
 
-Activa el nuevo tema en el elemento raíz:
+**Paso 3 — Activar el tema:**
+
+Para el modo dinámico, activa el tema en el elemento raíz e incluye el archivo de configuración en la cabecera HTML:
 
 ```html
 <body class="wuiplugin-themes my-theme light">
 ```
 
-Para crear los archivos CSS pregenerados del nuevo tema:
-
-```bash
-python tools/css-theme-maker.py --settings ./my-theme.css --theme my-theme --out ./
+```html
+<link rel="stylesheet" href="./libraries/wui-js/plugins/themes/my-theme/settings-0.2.css">
 ```
 
-La ejecución de esta herramienta crea los archivos `wuiplugin-themes-0.3-theme-my-theme-light.css` y `wuiplugin-themes-0.3-theme-my-theme-dark.css` en el directorio actual.
+**Paso 4 — Generar archivos pregenerados (modo estático):**
+
+Ejecuta desde el directorio `tools/`:
+
+```bash
+python css-theme-maker.py -n my-theme
+```
+
+Los archivos `light-0.2.css` y `dark-0.2.css` se generan en `src/wui-js/plugins/themes/my-theme/`.
 
 <a name="WUIPluginSelector"></a>
 
