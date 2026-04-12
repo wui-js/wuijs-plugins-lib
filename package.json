@@ -21,6 +21,9 @@
 		"url": "git+https://github.com/wui-js/wuijs-plugins-lib.git"
 	},
 	"license": "Apache-2.0",
+	"publishConfig": {
+		"access": "public"
+	},
 	"author": "Sergio E. Belmar V. <wuijs.project@gmail.com>",
 	"files": [
 		"LICENSE",
