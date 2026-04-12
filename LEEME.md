@@ -7,7 +7,7 @@
 	<img src="https://github.com/wui-js/wuijs-plugins-lib/blob/main/imgs/logo/wuijs-plugins-logotype-color.svg" width="220" height="220">
 </div>
 
-Versión librería: `0.4.0` ([Change Log](./REGISTRODECAMBIO.md))
+Versión librería: `0.4.0` ([Registro de cambios](./REGISTRODECAMBIOS.md))
 
 Versión documentación: `0.4.0.20260409.0`
 
