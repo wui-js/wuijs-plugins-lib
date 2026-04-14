@@ -28,7 +28,7 @@ Author: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 
 ## Overview
 
-WUI/JS Plugins Lib is an open-source JavaScript/CSS library that provides a collection of plugins for WUI/JS Lib classes, making it easier to quickly develop web applications.
+WUI/JS Plugins Lib is an open-source JavaScript/CSS library that provides a collection of plugins for WUI/JS Main Lib classes, making it easier to quickly develop web applications.
 
 ### About the WUI/JS Project
 
@@ -69,7 +69,7 @@ wuijs-lib/
 | [legacy](legacy/)                         | Deprecated fonts with previous versions. |
 | [legacy/wuiplugin](legacy/wuiplugin/)     | WUI/JS Plugins Library. |
 | [src](src/)                               | Main sources of the latest version. |
-| [src/wui-js](src/wui-js)                  | WUI/JS Library directory. |
+| [src/wui-js](src/wui-js)                  | WUI/JS Main Library directory. |
 | [src/wui-js/plugins](src/wui-js/plugins/) | WUI/JS Plugins Library. |
 | [tools](tools/)                           | Complementary tools. |
 
@@ -126,7 +126,7 @@ WUIPluginThemes provides a theming system for web applications through two layer
 
 #### Covered Components
 
-WUIPluginThemes provides theme support for the following WUI/JS Lib components:
+WUIPluginThemes provides theme support for the following WUI/JS Main Lib components:
 
 - `wui-scrolly`
 - `wui-icon`
