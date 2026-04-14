@@ -37,7 +37,7 @@ WUI/JS Plugins Lib is part of the WUI/JS project, which currently consists of 3 
 -	[https://github.com/wui-js/wuijs-main-lib](https://github.com/wui-js/wuijs-main-lib)<br>
 	UI main library.<br><br>
 -	[https://github.com/wui-js/wuijs-plugins-lib](https://github.com/wui-js/wuijs-plugins-lib)<br>
-	UI main library plugins.<br><br>
+	UI plugins library.<br><br>
 -	[https://github.com/wui-js/wuijs-lab](https://github.com/wui-js/wuijs-lab)<br>
 	Repository with demos and usage examples of both the main UI library classes and the plugins.<br><br>
 
