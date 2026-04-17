@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> The GitHub account `wuiproject` was migrated to `wui-js` to match the name with the NPM account.
+
 > [!NOTE]
 > Para la versión en Español de este documento, consulte [LEEME.md](./LEEME.md).
 
@@ -7,13 +10,13 @@
 	<img src="https://github.com/wui-js/wuijs-plugins-lib/blob/main/imgs/logo/wuijs-plugins-logotype-color.svg" width="220" height="220">
 </div>
 
-Library version: `0.4.0` ([Change Log](./CHANGELOG.md))
+**Library version**: `0.4.0` ([Change Log](./CHANGELOG.md))
 
-Document version: `0.4.0.20260409.0`
+**Document version**: `0.4.0.20260417.0`
 
-Licence: `Apache License 2.0`
+**Licence**: `Apache License 2.0`
 
-Author: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
+**Author**: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 
 ## Index
 
@@ -55,23 +58,25 @@ wuijs-lib/
 ├── imgs/
 │   └── logo/
 ├── legacy/
-│   └── wuiplugin/
+│   └── wui-js/
+│       └── plugins/
 ├── src/
 │   └── wui-js/
 │       └── plugins/
 └── tools/
 ```
 
-| Path                                      | Description |
-| ----------------------------------------- | ----------- |
-| [imgs](imgs/)                             | Images used in the documentation. |
-| [imgs/logo](imgs/logo/)                   | Project logo and isotype in SVG and PNG format. |
-| [legacy](legacy/)                         | Deprecated fonts with previous versions. |
-| [legacy/wuiplugin](legacy/wuiplugin/)     | WUI/JS Plugins Library. |
-| [src](src/)                               | Main sources of the latest version. |
-| [src/wui-js](src/wui-js)                  | WUI/JS Main Library directory. |
-| [src/wui-js/plugins](src/wui-js/plugins/) | WUI/JS Plugins Library. |
-| [tools](tools/)                           | Complementary tools. |
+| Path                                            | Description |
+| ----------------------------------------------- | ----------- |
+| [imgs](imgs/)                                   | Images used in the documentation. |
+| [imgs/logo](imgs/logo/)                         | Project logo and isotype in SVG and PNG format. |
+| [legacy](legacy/)                               | Deprecated fonts with previous versions. |
+| [legacy/wui-js](legacy/wui-js)                  | WUI/JS Project directory. |
+| [legacy/wui-js/plugins](legacy/wui-js/plugins/) | WUI/JS Plugins library. |
+| [src](src/)                                     | Main sources of the latest version. |
+| [src/wui-js](src/wui-js)                        | WUI/JS Project directory. |
+| [src/wui-js/plugins](src/wui-js/plugins/)       | WUI/JS Plugins library. |
+| [tools](tools/)                                 | Complementary tools. |
 
 <a name="install"></a>
 

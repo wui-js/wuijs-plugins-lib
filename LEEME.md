@@ -1,3 +1,6 @@
+> [!IMPORTANT]
+> La cuenta de GitHub `wuiproject` se migró a `wui-js` para que coincidiera con el nombre de la cuenta de NPM.
+
 > [!NOTE]
 > For the English version of this document, see [README.md](./README.md).
 
@@ -7,13 +10,13 @@
 	<img src="https://github.com/wui-js/wuijs-plugins-lib/blob/main/imgs/logo/wuijs-plugins-logotype-color.svg" width="220" height="220">
 </div>
 
-Versión librería: `0.4.0` ([Registro de cambios](./REGISTRODECAMBIOS.md))
+**Versión librería**: `0.4.0` ([Registro de cambios](./REGISTRODECAMBIOS.md))
 
-Versión documentación: `0.4.0.20260409.0`
+**Versión documentación**: `0.4.0.20260417.0`
 
-Licencia: `Apache License 2.0`
+**Licencia**: `Apache License 2.0`
 
-Autor: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
+**Autor**: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
 
 ## Índice
 
@@ -55,23 +58,25 @@ wuijs-lib/
 ├── imgs/
 │   └── logo/
 ├── legacy/
-│   └── wuiplugin/
+│   └── wui-js/
+│       └── plugins/
 ├── src/
 │   └── wui-js/
 │       └── plugins/
 └── tools/
 ```
 
-| Ruta                                      | Descripción |
-| ----------------------------------------- | ----------- |
-| [imgs](imgs/)                             | Imágenes utilizadas en la documentación. |
-| [imgs/logo](imgs/logo/)                   | Logotipo e isotipo del proyecto en formato SVG y PNG. |
-| [legacy](legacy/)                         | Fuentes obsoletas con versiones anteriores. |
-| [legacy/wuiplugin](legacy/wuiplugin/)     | Librería WUI/JS Plugins. |
-| [src](src/)                               | Fuentes principales de la última versión. |
-| [src/wui-js](src/wui-js)                  | Directorio del proyecto WUI/JS. |
-| [src/wui-js/plugins](src/wui-js/plugins/) | Librería de plugins WUI/JS. |
-| [tools](tools/)                           | Herramientas complementarias. |
+| Ruta                                            | Descripción |
+| ----------------------------------------------- | ----------- |
+| [imgs](imgs/)                                   | Imágenes utilizadas en la documentación. |
+| [imgs/logo](imgs/logo/)                         | Logotipo e isotipo del proyecto en formato SVG y PNG. |
+| [legacy](legacy/)                               | Fuentes obsoletas con versiones anteriores. |
+| [legacy/wui-js](legacy/wui-js)                  | Directorio del proyecto WUI/JS. |
+| [legacy/wui-js/plugins](legacy/wui-js/plugins/) | Librería WUI/JS Plugins. |
+| [src](src/)                                     | Fuentes principales de la última versión. |
+| [src/wui-js](src/wui-js)                        | Directorio del proyecto WUI/JS. |
+| [src/wui-js/plugins](src/wui-js/plugins/)       | Librería WUI/JS Plugins. |
+| [tools](tools/)                                 | Herramientas complementarias. |
 
 <a name="install"></a>
 
