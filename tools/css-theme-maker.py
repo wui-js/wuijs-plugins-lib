@@ -3,10 +3,10 @@ import re
 import argparse
 
 # Default arguments
-default_source_path = "../src/wui-js/plugins/themes/wuiplugin-themes-0.3.css"
+default_source_path = "../src/wui-js/plugins/themes/wuiplugin-themes-0.4.css"
 default_themes_dir  = "../src/wui-js/plugins/themes"
 default_name        = "default"
-default_version     = "0.2"
+default_version     = "0.3"
 
 # Get arguments
 parser = argparse.ArgumentParser(
@@ -197,9 +197,9 @@ def generate_theme(mode, theme_name, header, settings, components, output_path):
     class_name = f".wuiplugin-themes.{theme_name}.{mode} " + "{\n"
     output_lines.append(class_name)
     output_lines.append("\n")
-    output_lines.append("    /* wuiplugin-theme */\n")
+    output_lines.append("	/* wuiplugin-theme */\n")
     output_lines.append("\n")
-    output_lines.append(f'    --wuiplugin-theme-name: "{theme_name}";\n')
+    output_lines.append(f'	--wuiplugin-theme-name: "{theme_name}";\n')
 
     # Lookup starts with resolved settings; grows with each resolved component var
     lookup = resolved_settings.copy()

@@ -1,5 +1,16 @@
 # Registro de Cambios
 
+## [v0.5.2] - 2026-04-19
+
+Características:
+
+1. Se sincronizó la versión de la librería `wuijs-plugins-lib` con la de `wuijs-main-lib` con el fin de mantener la integridad del proyecto y mejorar la lectura de compatibilidad entre librerías.
+2. Actualización versión clase WUIPluginThemes a 0.4.
+	- Se agregó la variable CSS `--wui-modal-mobile-page-box-topmargin` para mejorar compatibilidad con pantallas iPhone.
+	- Se agregó la variable CSS `--wui-modal-mobile-page-box-borderradius-maximized` para mejorar compatibilidad con pantallas iPhone.
+	- Se agregó la variable CSS `--wui-menubar-mobile-bar-horizpadding` para mejorar compatibilidad con pantallas iPhone.
+	- Se agregó la variable CSS `--wui-menubar-mobile-bar-vertpadding` para mejorar compatibilidad con pantallas iPhone.
+
 ## [v0.4.0] - 2026-04-09
 
 Características:

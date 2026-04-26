@@ -1,8 +1,8 @@
 > [!IMPORTANT]
-> La cuenta de GitHub `wuiproject` se migró a `wui-js` para que coincidiera con el nombre de la cuenta de NPM.
+> La cuenta de GitHub `@wuiproject` se migró a `@wui-js` para que coincidiera con el nombre de la cuenta de NPM.
 
 > [!NOTE]
-> For the English version of this document, see [README.md](./README.md).
+> For the English version of this document, see [README-en.md](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/README-en.md)
 
 # wuijs-plugins-lib
 
@@ -10,9 +10,9 @@
 	<img src="https://github.com/wui-js/wuijs-plugins-lib/blob/main/imgs/logo/wuijs-plugins-logotype-color.svg" width="220" height="220">
 </div>
 
-**Versión librería**: `0.4.0` ([Registro de cambios](./REGISTRODECAMBIOS.md))
+**Versión librería**: `0.5.2` ([Registro de Cambios](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/CHANGELOG-es.md))
 
-**Versión documentación**: `0.4.0.20260417.0`
+**Versión documentación**: `0.5.2.20260425.0`
 
 **Licencia**: `Apache License 2.0`
 
@@ -48,7 +48,7 @@ WUI/JS Plugins Lib es parte del proyecto WUI/JS, que consta actualmente de 3 rep
 
 | Nombre Plugin                           | Versión | Descripción |
 | --------------------------------------- | -------:| ----------- |
-| [WUIPluginThemes](#WUIPluginThemes)     | `0.3`   | Plugin para el manejo de temas prediseñados y modo claro y oscuro. |
+| [WUIPluginThemes](#WUIPluginThemes)     | `0.4`   | Plugin para el manejo de temas prediseñados y modo claro y oscuro. |
 | [WUIPluginSelector](#WUIPluginSelector) | `0.3`   | Selector modal basado en WUIModal. |
 
 ### Mapa de Directorios
@@ -66,17 +66,17 @@ wuijs-lib/
 └── tools/
 ```
 
-| Ruta                                            | Descripción |
-| ----------------------------------------------- | ----------- |
-| [imgs](imgs/)                                   | Imágenes utilizadas en la documentación. |
-| [imgs/logo](imgs/logo/)                         | Logotipo e isotipo del proyecto en formato SVG y PNG. |
-| [legacy](legacy/)                               | Fuentes obsoletas con versiones anteriores. |
-| [legacy/wui-js](legacy/wui-js)                  | Directorio del proyecto WUI/JS. |
-| [legacy/wui-js/plugins](legacy/wui-js/plugins/) | Librería WUI/JS Plugins. |
-| [src](src/)                                     | Fuentes principales de la última versión. |
-| [src/wui-js](src/wui-js)                        | Directorio del proyecto WUI/JS. |
-| [src/wui-js/plugins](src/wui-js/plugins/)       | Librería WUI/JS Plugins. |
-| [tools](tools/)                                 | Herramientas complementarias. |
+| Ruta                                               | Descripción |
+| -------------------------------------------------- | ----------- |
+| [imgs](../imgs/)                                   | Imágenes utilizadas en la documentación. |
+| [imgs/logo](../imgs/logo/)                         | Logotipo e isotipo del proyecto en formato SVG y PNG. |
+| [legacy](../legacy/)                               | Fuentes obsoletas con versiones anteriores. |
+| [legacy/wui-js](../legacy/wui-js)                  | Directorio del proyecto WUI/JS. |
+| [legacy/wui-js/plugins](../legacy/wui-js/plugins/) | Librería WUI/JS Plugins. |
+| [src](../src/)                                     | Fuentes principales de la última versión. |
+| [src/wui-js](../src/wui-js)                        | Directorio del proyecto WUI/JS. |
+| [src/wui-js/plugins](../src/wui-js/plugins/)       | Librería WUI/JS Plugins. |
+| [tools](../tools/)                                 | Herramientas complementarias. |
 
 <a name="install"></a>
 
@@ -121,7 +121,7 @@ Los recursos quedarán disponibles en la ruta `./node_modules/@wui-js/plugins`.
 
 ### WUIPluginThemes
 
-Versión: `0.3`
+Versión: `0.4`
 
 Plugin para el manejo de temas prediseñados y modo claro y oscuro.
 
@@ -160,11 +160,11 @@ También provee soporte de temas para el plugin `wuiplugin-selector`.
 
 | Tipo | Archivo |
 | ---- | ------- |
-| CSS  | [src/wui-js/plugins/themes/wuiplugin-themes-0.3.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/wuiplugin-themes-0.3.css) |
-| JS   | [src/wui-js/plugins/themes/wuiplugin-themes-0.3.js](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/wuiplugin-themes-0.3.js) |
-| CSS  | [src/wui-js/plugins/themes/default/settings-0.2.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/default/settings-0.2.css) |
-| CSS  | [src/wui-js/plugins/themes/default/light-0.2.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/default/light-0.2.css) |
-| CSS  | [src/wui-js/plugins/themes/default/dark-0.2.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/default/dark-0.2.css) |
+| CSS  | [src/wui-js/plugins/themes/wuiplugin-themes-0.4.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/wuiplugin-themes-0.4.css) |
+| JS   | [src/wui-js/plugins/themes/wuiplugin-themes-0.4.js](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/wuiplugin-themes-0.4.js) |
+| CSS  | [src/wui-js/plugins/themes/default/settings-0.3.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/default/settings-0.3.css) |
+| CSS  | [src/wui-js/plugins/themes/default/light-0.3.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/default/light-0.3.css) |
+| CSS  | [src/wui-js/plugins/themes/default/dark-0.3.css](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/themes/default/dark-0.3.css) |
 
 #### Constructor
 
@@ -257,7 +257,7 @@ Recomendado si no se requiere cambiar entre modos claro y oscuro dinámicamente.
 Cabecera HTML:
 
 ```html
-<link rel="stylesheet" href="./libreries/wui-js/plugins/themes/default/light-0.2.css">
+<link rel="stylesheet" href="./libreries/wui-js/plugins/themes/default/light-0.3.css">
 ```
 
 Código HTML:
@@ -268,7 +268,7 @@ Código HTML:
 
 **Usando instanciamiento de la clase JS:**
 
-Requiere la implementación de la clase JS `WUIPluginThemes`, el archivo CSS fuente `wuiplugin-themes-0.3.css` y el archivo CSS de configuración del tema `wui-js/plugins/themes/{nombre}/settings-{versión}.css`.
+Requiere la implementación de la clase JS `WUIPluginThemes`, el archivo CSS fuente `wuiplugin-themes-0.4.css` y el archivo CSS de configuración del tema `wui-js/plugins/themes/{nombre}/settings-{versión}.css`.
 Adicionalmente el visualizador donde se despliegue debe tener soporte para la función CSS `light-dark()` [https://www.w3schools.com/cssref/func_light-dark.php](https://www.w3schools.com/cssref/func_light-dark.php)
 
 Código CSS:
@@ -293,10 +293,10 @@ Cabecera HTML:
 
 ```html
 <link rel="stylesheet" href="./libraries/wui-js/main/switch/wui-switch-0.4.css">
-<link rel="stylesheet" href="./libraries/wui-js/plugins/themes/wuiplugin-themes-0.3.css">
-<link rel="stylesheet" href="./libraries/wui-js/plugins/themes/default/settings-0.2.css">
+<link rel="stylesheet" href="./libraries/wui-js/plugins/themes/wuiplugin-themes-0.4.css">
+<link rel="stylesheet" href="./libraries/wui-js/plugins/themes/default/settings-0.3.css">
 <script type="text/javascript" src="./libraries/wui-js/main/switch/wui-switch-0.4.js"></script>
-<script type="text/javascript" src="./libraries/wui-js/plugins/themes/wuiplugin-themes-0.3.js"></script>
+<script type="text/javascript" src="./libraries/wui-js/plugins/themes/wuiplugin-themes-0.4.js"></script>
 ```
 
 Código HTML:
@@ -345,7 +345,7 @@ python ./clone-theme.py -d <directorio-temas> -s <tema-origen> -n <nombre-nuevo-
 
 | Opción                 | Predeterminado                                          | Descripción |
 | ---------------------- | ------------------------------------------------------- | ----------- |
-| `-p`,<br>`--plugin`    | `../src/wui-js/plugins/themes/wuiplugin-themes-0.3.css` | Ruta al archivo CSS fuente del plugin themes. |
+| `-p`,<br>`--plugin`    | `../src/wui-js/plugins/themes/wuiplugin-themes-0.4.css` | Ruta al archivo CSS fuente del plugin themes. |
 | `-d`,<br>`--directory` | `../src/wui-js/plugins/themes`                          | Directorio base de temas. |
 | `-s`,<br>`--source`    | `default`                                               | Nombre del tema a clonar. |
 | `-n`,<br>`--name`      | _(requerido)_                                           | Nombre del nuevo tema. |
@@ -365,7 +365,7 @@ python ./css-theme-maker.py -p <ruta-css-plugin> -d <directorio-temas> -n <nombr
 
 | Opción                 | Predeterminado                                          | Descripción |
 | ---------------------- | ------------------------------------------------------- | ----------- |
-| `-p`,<br>`--plugin`    | `../src/wui-js/plugins/themes/wuiplugin-themes-0.3.css` | Ruta al archivo CSS fuente del plugin themes. |
+| `-p`,<br>`--plugin`    | `../src/wui-js/plugins/themes/wuiplugin-themes-0.4.css` | Ruta al archivo CSS fuente del plugin themes. |
 | `-d`,<br>`--directory` | `../src/wui-js/plugins/themes`                          | Directorio base de temas. |
 | `-n`,<br>`--name`      | `default`                                               | Nombre del tema. |
 | `-v`,<br>`--version`   | `0.2`                                                   | Versión del tema. |
