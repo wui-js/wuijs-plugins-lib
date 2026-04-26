@@ -35,12 +35,14 @@ WUI/JS Plugins Lib es una librería JavaScript/CSS de código abierto que propor
 
 ### Acerca del Proyecto WUI/JS
 
-WUI/JS Plugins Lib es parte del proyecto WUI/JS, que consta actualmente de 3 repositorios:
+WUI/JS Plugins Lib es parte del proyecto WUI/JS, que consta actualmente de 4 repositorios:
 
 -	[https://github.com/wui-js/wuijs-main-lib](https://github.com/wui-js/wuijs-main-lib)<br>
 	Librería UI principal.<br><br>
 -	[https://github.com/wui-js/wuijs-plugins-lib](https://github.com/wui-js/wuijs-plugins-lib)<br>
 	Librería de complementos UI.<br><br>
+-	[https://github.com/wui-js/wuijs-environment-lib](https://github.com/wui-js/wuijs-environment-lib)<br>
+	Librería puente entre entornos web y motores de renderizado web nativos.<br><br>
 -	[https://github.com/wui-js/wuijs-lab](https://github.com/wui-js/wuijs-lab)<br>
 	Repositorio con demos y ejemplos de uso de las librerías del proyecto.<br><br>
 
