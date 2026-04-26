@@ -57,6 +57,7 @@ WUI/JS Plugins Lib es parte del proyecto WUI/JS, que consta actualmente de 4 rep
 
 ```bash
 wuijs-lib/
+├── docs/
 ├── imgs/
 │   └── logo/
 ├── legacy/
@@ -68,17 +69,18 @@ wuijs-lib/
 └── tools/
 ```
 
-| Ruta                                               | Descripción |
-| -------------------------------------------------- | ----------- |
-| [imgs](../imgs/)                                   | Imágenes utilizadas en la documentación. |
-| [imgs/logo](../imgs/logo/)                         | Logotipo e isotipo del proyecto en formato SVG y PNG. |
-| [legacy](../legacy/)                               | Fuentes obsoletas con versiones anteriores. |
-| [legacy/wui-js](../legacy/wui-js)                  | Directorio del proyecto WUI/JS. |
-| [legacy/wui-js/plugins](../legacy/wui-js/plugins/) | Librería WUI/JS Plugins. |
-| [src](../src/)                                     | Fuentes principales de la última versión. |
-| [src/wui-js](../src/wui-js)                        | Directorio del proyecto WUI/JS. |
-| [src/wui-js/plugins](../src/wui-js/plugins/)       | Librería WUI/JS Plugins. |
-| [tools](../tools/)                                 | Herramientas complementarias. |
+| Ruta                                                                                                  | Descripción |
+| ----------------------------------------------------------------------------------------------------- | ----------- |
+| [docs](https://github.com/wui-js/wuijs-plugins-lib/tree/main/docs/)                                   | Documentación. |
+| [imgs](https://github.com/wui-js/wuijs-plugins-lib/tree/main/imgs/)                                   | Imágenes utilizadas en la documentación. |
+| [imgs/logo](https://github.com/wui-js/wuijs-plugins-lib/tree/main/imgs/logo/)                         | Logotipo e isotipo del proyecto en formato SVG y PNG. |
+| [legacy](https://github.com/wui-js/wuijs-plugins-lib/tree/main/legacy/)                               | Fuentes obsoletas con versiones anteriores. |
+| [legacy/wui-js](https://github.com/wui-js/wuijs-plugins-lib/tree/main/legacy/wui-js/)                 | Directorio del proyecto WUI/JS. |
+| [legacy/wui-js/plugins](https://github.com/wui-js/wuijs-plugins-lib/tree/main/legacy/wui-js/plugins/) | Librería WUI/JS Plugins. |
+| [src](https://github.com/wui-js/wuijs-plugins-lib/tree/main/src/)                                     | Fuentes principales de la última versión. |
+| [src/wui-js](https://github.com/wui-js/wuijs-plugins-lib/tree/main/src/wui-js)                        | Directorio del proyecto WUI/JS. |
+| [src/wui-js/plugins](https://github.com/wui-js/wuijs-plugins-lib/tree/main/src/wui-js/plugins/)       | Librería WUI/JS Plugins. |
+| [tools](https://github.com/wui-js/wuijs-plugins-lib/tree/main/tools/)                                 | Herramientas complementarias. |
 
 <a name="install"></a>
 
