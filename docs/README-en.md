@@ -74,9 +74,9 @@ wuijs-lib/
 | [docs](https://github.com/wui-js/wuijs-plugins-lib/tree/main/docs/)                                   | Documentation. |
 | [imgs](https://github.com/wui-js/wuijs-plugins-lib/tree/main/imgs/)                                   | Images used in the documentation. |
 | [imgs/logo](https://github.com/wui-js/wuijs-plugins-lib/tree/main/imgs/logo/)                         | Project logo and isotype in SVG and PNG format. |
-| [legacy](https://github.com/wui-js/wuijs-plugins-lib/tree/main/legacy/)                               | Deprecated fonts with previous versions. |
+| [legacy](https://github.com/wui-js/wuijs-plugins-lib/tree/main/legacy/)                               | Deprecated sources with previous versions. |
 | [legacy/wui-js](https://github.com/wui-js/wuijs-plugins-lib/tree/main/legacy/wui-js/)                 | WUI/JS Project directory. |
-| [legacy/wui-js/plugins](https://github.com/wui-js/wuijs-plugins-lib/tree/main/legacy/wui-js/plugins/) | WUI/JS Plugins library. |
+| [legacy/wui-js/plugins](https://github.com/wui-js/wuijs-plugins-lib/tree/main/legacy/wui-js/plugins/) | WUI/JS Plugins library (previous versions). |
 | [src](https://github.com/wui-js/wuijs-plugins-lib/tree/main/src/)                                     | Main sources of the latest version. |
 | [src/wui-js](https://github.com/wui-js/wuijs-plugins-lib/tree/main/src/wui-js)                        | WUI/JS Project directory. |
 | [src/wui-js/plugins](https://github.com/wui-js/wuijs-plugins-lib/tree/main/src/wui-js/plugins/)       | WUI/JS Plugins library. |
