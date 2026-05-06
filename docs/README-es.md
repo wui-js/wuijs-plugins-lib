@@ -10,13 +10,17 @@
 	<img src="https://github.com/wui-js/wuijs-plugins-lib/blob/main/imgs/logo/wuijs-plugins-logotype-color.svg" width="220" height="220">
 </div>
 
-**Versión librería**: `0.6.0` ([Registro de Cambios](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/CHANGELOG-es.md))
-
-**Versión documentación**: `0.6.0.20260502.0`
-
-**Licencia**: `Apache License 2.0`
-
-**Autor**: `Sergio E. Belmar V. <wuijs.project@gmail.com>`
+|                       | |
+| --------------------- | ----------- |
+| **Nombre librería**   | `wuijs-plugins-lib` |
+| **Versión librería**  | `0.6.1` ([Registro de Cambios](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/CHANGELOG-es.md)) |
+| **Paquete npm**       | `@wui-js/plugins` |
+| **Versión documento** | `0.6.1.20260506.0` |
+| **Licencia**          | `Licencia Apache 2.0` |
+| **Autor**             | `Sergio E. Belmar V. <wuijs.project@gmail.com>` |
+| **Repositorio**       | [https://github.com/wui-js/wuijs-plugins-lib](https://github.com/wui-js/wuijs-plugins-lib) |
+| **Documentación**     | [https://docs.wuijs.dev](https://docs.wuijs.dev) |
+| **Sitio web**         | [https://wuijs.dev](https://wuijs.dev) |
 
 ## Índice
 

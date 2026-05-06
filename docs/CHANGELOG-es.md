@@ -1,14 +1,24 @@
 # Registro de Cambios
 
-## [v0.6.0] - 2026-05-02
+## [v0.6.1] - 2026-05-06
+
+Características:
+
+1. Liberación del sitio oficial de documentación de WUI/JS: [https://docs.wuijs.dev](https://docs.wuijs.dev)
+2. Sincronización de versión con `wuijs-main-lib`.
+
+## [v0.6.0] - 2026-05-01
 
 Características:
 
 1. Actualización versión clase WUIPluginThemes a `0.5`.
-	- Se agregaron las variables CSS:
-		- `--wui-table-width`
-		- `--wui-table-column-bordercolor-disabled`
-		- `--wui-table-column-bgcolor-disabled`
+	- Se agregó la variable CSS `--wui-table-width`.
+	- Se agregó la variable CSS `--wui-table-column-bordercolor-disabled`.
+	- Se agregó la variable CSS `--wui-table-column-bgcolor-disabled`.
+	- Se agregó la variable CSS `--wui-button-default-borderwidth`.
+	- Se agregó la variable CSS `--wui-button-default-horizpadding`.
+	- Se agregó la variable CSS `--wui-button-default-vertpadding`.
+	- Se agregó la variable CSS `--wui-button-mobile-default-minwidth`.
 	- Se renombró la variable CSS `--wui-table-column-bordercolor-width` a `--wui-table-column-borderwidth`.
 	- Se renombró la variable CSS `--wui-form-button-minwidth` a `--wui-form-button-minwidth`.
 	- Se eliminó la variable CSS `--wui-switch-bordercolor-invalid`.

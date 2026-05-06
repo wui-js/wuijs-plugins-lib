@@ -1,14 +1,24 @@
 # Change Log
 
-## [v0.6.0] - 2026-05-02
+## [v0.6.1] - 2026-05-06
 
 Features:
 
-1. Update WUIPluginThemes version class to `0.5`.
-	- Added CSS vars:
-		- `--wui-table-width`
-		- `--wui-table-column-bordercolor-disabled`
-		- `--wui-table-column-bgcolor-disabled`
+1. Release of the official documentation site for WUI/JS: [https://docs.wuijs.dev](https://docs.wuijs.dev)
+2. Version synchronization with `wuijs-main-lib`.
+
+## [v0.6.0] - 2026-05-01
+
+Features:
+
+1. Update WUIPluginThemes version class to `0.6`.
+	- Added `--wui-table-width` CSS var.
+	- Added `--wui-table-column-bordercolor-disabled` CSS var.
+	- Added `--wui-table-column-bgcolor-disabled` CSS var.
+	- Added `--wui-button-default-borderwidth` CSS var.
+	- Added `--wui-button-default-horizpadding` CSS var.
+	- Added `--wui-button-default-vertpadding` CSS var.
+	- Added `--wui-button-mobile-default-minwidth` CSS var.
 	- Renamed `--wui-table-column-bordercolor-width` CSS var to `--wui-table-column-borderwidth`.
 	- Removed `--wui-switch-bordercolor-invalid` CSS var.
 
