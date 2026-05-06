@@ -547,6 +547,8 @@
 
 	/* wui-markdown (lab) */
 
+	--wui-markdown-hr-width: 1px;
+	--wui-markdown-hr-color: #d5dce3;
 	--wui-markdown-table-valign: center;
 	--wui-markdown-table-borderradius: 5px;
 	--wui-markdown-table-bordercolor: #d5dce3;

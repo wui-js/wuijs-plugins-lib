@@ -545,6 +545,8 @@
 
 	/* wui-markdown (lab) */
 
+	--wui-markdown-hr-width: 1px;
+	--wui-markdown-hr-color: var(--wuiplugin-theme-bordercolor-high);
 	--wui-markdown-table-valign: center;
 	--wui-markdown-table-borderradius: 5px;
 	--wui-markdown-table-bordercolor: var(--wuiplugin-theme-bordercolor-high);

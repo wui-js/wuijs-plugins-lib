@@ -1,14 +1,17 @@
 > [!IMPORTANT]
 > The GitHub account `@wuiproject` was migrated to `@wui-js` to match the name with the NPM account.
 
-> [!NOTE]
-> Para la versión en Español de este documento, consulte [README-es.md](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/README-es.md).
+<p align="right">
+	[English](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/README-en.md) |
+	[Español](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/README-es.md)
+</p>
+---
 
 # wuijs-plugins-lib
 
-<div align="center">
+<p align="center">
 	<img src="https://github.com/wui-js/wuijs-plugins-lib/blob/main/imgs/logo/wuijs-plugins-logotype-color.svg" width="220" height="220">
-</div>
+</p>
 
 |                      | |
 | -------------------- | ----------- |
