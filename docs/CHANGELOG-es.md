@@ -1,11 +1,24 @@
 # Registro de Cambios
 
+## [v0.6.0] - 2026-05-02
+
+Características:
+
+1. Actualización versión clase WUIPluginThemes a `0.5`.
+	- Se agregaron las variables CSS:
+		- `--wui-table-width`
+		- `--wui-table-column-bordercolor-disabled`
+		- `--wui-table-column-bgcolor-disabled`
+	- Se renombró la variable CSS `--wui-table-column-bordercolor-width` a `--wui-table-column-borderwidth`.
+	- Se renombró la variable CSS `--wui-form-button-minwidth` a `--wui-form-button-minwidth`.
+	- Se eliminó la variable CSS `--wui-switch-bordercolor-invalid`.
+
 ## [v0.5.2] - 2026-04-19
 
 Características:
 
 1. Se sincronizó la versión de la librería `wuijs-plugins-lib` con la de `wuijs-main-lib` con el fin de mantener la integridad del proyecto y mejorar la lectura de compatibilidad entre librerías.
-2. Actualización versión clase WUIPluginThemes a 0.4.
+2. Actualización versión clase WUIPluginThemes a `0.4`.
 	- Se agregó la variable CSS `--wui-modal-mobile-page-box-topmargin` para mejorar compatibilidad con pantallas iPhone.
 	- Se agregó la variable CSS `--wui-modal-mobile-page-box-borderradius-maximized` para mejorar compatibilidad con pantallas iPhone.
 	- Se agregó la variable CSS `--wui-menubar-mobile-bar-horizpadding` para mejorar compatibilidad con pantallas iPhone.
@@ -20,7 +33,7 @@ Características:
 
 1. Habilitación de instalación vía NPM.
 2. Cambio de nombre del directorio fuente de `src/wuiplugins` a `src/wui-js/plugins` para dar soporte a integración con otras librerías del proyecto WUI/JS.
-3. Actualización versión clase WUIPluginThemes a 0.3.
+3. Actualización versión clase WUIPluginThemes a `0.3`.
 	- Se agregó la variable global CSS `--wuiplugin-theme-name` para identificar el tema activo.
 	- Se actualizó el método `getTheme()` para que devuelva el valor de la variable global CSS `--wuiplugin-theme-name` del tema activo.
 
@@ -32,10 +45,10 @@ Características:
 2. Se agregó la carpeta `legacy/` con versiones anteriores de los archivos fuente (`WUIPluginThemes-0.1`, `WUIPluginSelector-0.2`).
 3. Se renombró el directorio `src/wuiplugin/` (antes `src/WUIPlugins/`) para usar una convención de nombres en minúscula consistente.
 4. Se renombró el directorio `legacy/WUIPlugin/` (antes `legacy/WUIPlugins/`) para usar una convención de nombres en singular consistente.
-5. Actualización versión clase WUIPluginThemes a 0.2.
+5. Actualización versión clase WUIPluginThemes a `0.2`.
 	- Se renombró el directorio y archivos a minúscula.
 	- Se cambió la opacidad de la variable CSS `--wui-modal-message-box-bgcolor` de `80%` a `100%` en el tema base.
-6. Actualización versión clase WUIPluginSelector a 0.3.
+6. Actualización versión clase WUIPluginSelector a `0.3`.
 	- Se renombró el directorio y archivos a minúscula.
 
 ## [v0.1.0] - 2025-10-15

@@ -1,15 +1,27 @@
 # Change Log
 
+## [v0.6.0] - 2026-05-02
+
+Features:
+
+1. Update WUIPluginThemes version class to `0.5`.
+	- Added CSS vars:
+		- `--wui-table-width`
+		- `--wui-table-column-bordercolor-disabled`
+		- `--wui-table-column-bgcolor-disabled`
+	- Renamed `--wui-table-column-bordercolor-width` CSS var to `--wui-table-column-borderwidth`.
+	- Removed `--wui-switch-bordercolor-invalid` CSS var.
+
 ## [v0.5.2] - 2026-04-19
 
 Features:
 
 1. Synchronized the version of the `wuijs-plugins-lib` library with that of `wuijs-main-lib` in order to maintain the integrity of the project and improve the reading of compatibility between libraries.
-2. Update WUIPluginThemes version class to 0.4.
-	- Added the CSS variable `--wui-modal-mobile-page-box-topmargin` to improve compatibility with iPhone screens.
-	- Added the CSS variable `--wui-modal-mobile-page-box-borderradius-maximized` to improve compatibility with iPhone screens.
-	- Added the CSS variable `--wui-menubar-mobile-bar-horizpadding` to improve compatibility with iPhone screens.
-	- Added the CSS variable `--wui-menubar-mobile-bar-vertpadding` to improve compatibility with iPhone screens.
+2. Update WUIPluginThemes version class to `0.4`.
+	- Added `--wui-modal-mobile-page-box-topmargin` CSS var to improve compatibility with iPhone screens.
+	- Added `--wui-modal-mobile-page-box-borderradius-maximized` CSS var to improve compatibility with iPhone screens.
+	- Added `--wui-menubar-mobile-bar-horizpadding` CSS var to improve compatibility with iPhone screens.
+	- Added `--wui-menubar-mobile-bar-vertpadding` CSS var to improve compatibility with iPhone screens.
 
 ## [v0.4.0] - 2026-04-09
 
@@ -18,22 +30,22 @@ Features:
 
 1. Enable installation via NPM.
 2. Change of source directory name from `src/wuiplugins` to `src/wui-js/plugins` to support integration with other WUI/JS project libraries.
-3. Update WUIPluginThemes version class to 0.3.
-	- Added the global CSS variable `--wuiplugin-theme-name` to identify the active theme.
-	- Updated the `getTheme()` method to return the value of the global CSS variable `--wuiplugin-theme-name` of the active theme.
+3. WUIPluginThemes version class update to `0.3`.
+	- Added `--wuiplugin-theme-name` global CSS var to identify the active theme.
+	- Updated `getTheme()` method to return the value of the global CSS variable `--wuiplugin-theme-name` of the active theme.
 
 ## [v0.3.0] - 2026-03-20
 
 Features:
 
 1. Renamed source directories and files to lowercase (e.g. `src/WUIPlugin/Themes/WUIPluginTheme-0.1.js` → `src/wuiplugin/themes/wuiplugin-themes-0.2.js`).
-1. Added `legacy/` folder with previous versions of source files (`WUIPluginThemes-0.1`, `WUIPluginSelector-0.2`).
-2. Renamed `src/wuiplugin/` directory (previously `src/WUIPlugins/`) to use consistent lowercase naming convention.
-3. Renamed `legacy/WUIPlugin/` directory (previously `legacy/WUIPlugins/`) to use consistent singular naming convention.
-4. WUIPluginThemes version class update to 0.2.
+2. Added `legacy/` folder with previous versions of source files (`WUIPluginThemes-0.1`, `WUIPluginSelector-0.2`).
+3. Renamed `src/wuiplugin/` directory (previously `src/WUIPlugins/`) to use consistent lowercase naming convention.
+4. Renamed `legacy/WUIPlugin/` directory (previously `legacy/WUIPlugins/`) to use consistent singular naming convention.
+5. WUIPluginThemes version class update to `0.2`.
 	- Renamed the directory and files to lowercase.
-	- Changed `--wui-modal-message-box-bgcolor` CSS variable opacity from `80%` to `100%` in the base theme.
-5. WUIPluginSelector version class update to 0.3.
+	- Changed `--wui-modal-message-box-bgcolor` CSS var opacity from `80%` to `100%` in the base theme.
+6. WUIPluginSelector version class update to `0.3`.
 	- Renamed the directory and files to lowercase.
 
 ## [v0.1.0] - 2025-10-15

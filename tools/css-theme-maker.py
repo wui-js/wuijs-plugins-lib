@@ -3,10 +3,10 @@ import re
 import argparse
 
 # Default arguments
-default_source_path = "../src/wui-js/plugins/themes/wuiplugin-themes-0.4.css"
+default_source_path = "../src/wui-js/plugins/themes/wuiplugin-themes-0.5.css"
 default_themes_dir  = "../src/wui-js/plugins/themes"
 default_name        = "default"
-default_version     = "0.3"
+default_version     = "0.4"
 
 # Get arguments
 parser = argparse.ArgumentParser(
