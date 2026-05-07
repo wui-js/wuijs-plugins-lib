@@ -545,37 +545,37 @@
 	--wui-button-mobile-submit-height: 40px;
 	--wui-button-mobile-icon-float-padding: 10px;
 
-	/* wui-codeview (lab) */
+	/* wui-codebox (lab) */
 
-	--wui-codeview-maxheight: 50vh;
-	--wui-codeview-borderradius: 5px;
-	--wui-codeview-bordercolor: #d5dce3;
-	--wui-codeview-bgcolor: #f6f6f6;
-	--wui-codeview-scroll-width: 4px;
-	--wui-codeview-scroll-bgcolor-out: #b5bbc1;
-	--wui-codeview-scroll-bgcolor-over: #959da5;
-	--wui-codeview-linenumber-width: 52px;
-	--wui-codeview-linenumber-color: #6a737d;
-	--wui-codeview-linenumber-bordercolor: #d5dce3;
-	--wui-codeview-textcolor: #2d3a47;
-	--wui-codeview-token-command: mediumaquamarine;
-	--wui-codeview-token-comment: #6a737d;
-	--wui-codeview-token-string: #032f62;
-	--wui-codeview-token-keyword: #d73a49;
-	--wui-codeview-token-number: #005cc5;
-	--wui-codeview-token-tag: #22863a;
-	--wui-codeview-token-attr: #6f42c1;
-	--wui-codeview-token-selector: #6f42c1;
-	--wui-codeview-token-property: #005cc5;
-	--wui-codeview-token-function: #6f42c1;
-	--wui-codeview-token-operator: #24292e;
-	--wui-codeview-token-variable: #e36209;
-	--wui-codeview-token-constant: #005cc5;
-	--wui-codeview-token-decorator: #6f42c1;
-	--wui-codeview-token-type: #6f42c1;
-	--wui-codeview-token-builtin: #005cc5;
-	--wui-codeview-token-color: #005cc5;
-	--wui-codeview-token-regex: #032f62;
+	--wui-codebox-maxheight: 50vh;
+	--wui-codebox-borderradius: 5px;
+	--wui-codebox-bordercolor: #d5dce3;
+	--wui-codebox-bgcolor: #f6f6f6;
+	--wui-codebox-scroll-width: 4px;
+	--wui-codebox-scroll-bgcolor-out: #b5bbc1;
+	--wui-codebox-scroll-bgcolor-over: #959da5;
+	--wui-codebox-linenumber-width: 52px;
+	--wui-codebox-linenumber-color: #444;
+	--wui-codebox-linenumber-bordercolor: #d5dce3;
+	--wui-codebox-textcolor: #2d3a47;
+	--wui-codebox-token-command: mediumaquamarine;
+	--wui-codebox-token-comment: #6a737d;
+	--wui-codebox-token-string: #032f62;
+	--wui-codebox-token-keyword: #d73a49;
+	--wui-codebox-token-number: #005cc5;
+	--wui-codebox-token-tag: #22863a;
+	--wui-codebox-token-attr: #6f42c1;
+	--wui-codebox-token-selector: #6f42c1;
+	--wui-codebox-token-property: #005cc5;
+	--wui-codebox-token-function: #6f42c1;
+	--wui-codebox-token-operator: #24292e;
+	--wui-codebox-token-variable: #e36209;
+	--wui-codebox-token-constant: #005cc5;
+	--wui-codebox-token-decorator: #6f42c1;
+	--wui-codebox-token-type: #6f42c1;
+	--wui-codebox-token-builtin: #005cc5;
+	--wui-codebox-token-color: #005cc5;
+	--wui-codebox-token-regex: #032f62;
 
 	/* wui-markdown (lab) */
 

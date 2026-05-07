@@ -14,7 +14,7 @@ Características:
 1. Liberación del sitio oficial de documentación de WUI/JS: [https://docs.wuijs.dev](https://docs.wuijs.dev)
 2. Sincronización de versión con `wuijs-main-lib`.
 3. Actualización versión clase WUIPluginThemes a `0.6`.
-	- Se agregó la variable CSS asociadas al componente `wui-codeview` (paquete lab).
+	- Se agregó la variable CSS asociadas al componente `wui-codebox` (paquete lab).
 	- Se agregó la variable CSS asociadas al componente `wui-markdown` (paquete lab).
 	- Se sincronizó la versión del template `default` con el de la versión del plugin.
 

@@ -592,16 +592,16 @@
 	--wui-markdown-link-textdecoration-out: none;
 	--wui-markdown-link-textdecoration-hover: underline;
 
-	/* wui-codeview (lab) */
+	/* wui-codebox (lab) */
 
-	--wui-codeview-maxheight: 50vh;
-	--wui-codeview-borderradius: 5px;
-	--wui-codeview-bordercolor: var(--wuiplugin-theme-bordercolor-high);
-	--wui-codeview-bgcolor: var(--wuiplugin-theme-bgcolor-over);
-	--wui-codeview-scroll-width: 4px;
-	--wui-codeview-scroll-bgcolor-out: var(--wuiplugin-theme-bordercolor-max);
-	--wui-codeview-scroll-bgcolor-over: var(--wuiplugin-theme-shadowcolor-low);
-	--wui-codeview-textcolor: var(--wuiplugin-theme-textcolor-active);
+	--wui-codebox-maxheight: 50vh;
+	--wui-codebox-borderradius: 5px;
+	--wui-codebox-bordercolor: var(--wuiplugin-theme-bordercolor-high);
+	--wui-codebox-bgcolor: var(--wuiplugin-theme-bgcolor-over);
+	--wui-codebox-scroll-width: 4px;
+	--wui-codebox-scroll-bgcolor-out: var(--wuiplugin-theme-bordercolor-max);
+	--wui-codebox-scroll-bgcolor-over: var(--wuiplugin-theme-shadowcolor-low);
+	--wui-codebox-textcolor: var(--wuiplugin-theme-textcolor-active);
 
 	/* wuiplugin-selector */
 

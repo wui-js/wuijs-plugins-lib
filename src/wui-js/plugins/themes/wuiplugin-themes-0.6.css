@@ -543,37 +543,37 @@
 	--wui-button-mobile-submit-height: 40px;
 	--wui-button-mobile-icon-float-padding: 10px;
 
-	/* wui-codeview (lab) */
+	/* wui-codebox (lab) */
 
-	--wui-codeview-maxheight: 50vh;
-	--wui-codeview-borderradius: 5px;
-	--wui-codeview-bordercolor: var(--wuiplugin-theme-bordercolor-high);
-	--wui-codeview-bgcolor: var(--wuiplugin-theme-bgcolor-over);
-	--wui-codeview-scroll-width: 4px;
-	--wui-codeview-scroll-bgcolor-out: var(--wuiplugin-theme-bordercolor-max);
-	--wui-codeview-scroll-bgcolor-over: var(--wuiplugin-theme-shadowcolor-low);
-	--wui-codeview-linenumber-width: 52px;
-	--wui-codeview-linenumber-color: var(--wuiplugin-theme-token-comment);
-	--wui-codeview-linenumber-bordercolor: var(--wuiplugin-theme-bordercolor-high);
-	--wui-codeview-textcolor: var(--wuiplugin-theme-textcolor-active);
-	--wui-codeview-token-command: var(--wuiplugin-theme-token-command);
-	--wui-codeview-token-comment: var(--wuiplugin-theme-token-comment);
-	--wui-codeview-token-string: var(--wuiplugin-theme-token-string);
-	--wui-codeview-token-keyword: var(--wuiplugin-theme-token-keyword);
-	--wui-codeview-token-number: var(--wuiplugin-theme-token-number);
-	--wui-codeview-token-tag: var(--wuiplugin-theme-token-tag);
-	--wui-codeview-token-attr: var(--wuiplugin-theme-token-attr);
-	--wui-codeview-token-selector: var(--wuiplugin-theme-token-selector);
-	--wui-codeview-token-property: var(--wuiplugin-theme-token-property);
-	--wui-codeview-token-function: var(--wuiplugin-theme-token-function);
-	--wui-codeview-token-operator: var(--wuiplugin-theme-token-operator);
-	--wui-codeview-token-variable: var(--wuiplugin-theme-token-variable);
-	--wui-codeview-token-constant: var(--wuiplugin-theme-token-constant);
-	--wui-codeview-token-decorator: var(--wuiplugin-theme-token-decorator);
-	--wui-codeview-token-type: var(--wuiplugin-theme-token-type);
-	--wui-codeview-token-builtin: var(--wuiplugin-theme-token-builtin);
-	--wui-codeview-token-color: var(--wuiplugin-theme-token-color);
-	--wui-codeview-token-regex: var(--wuiplugin-theme-token-regex);
+	--wui-codebox-maxheight: 50vh;
+	--wui-codebox-borderradius: 5px;
+	--wui-codebox-bordercolor: var(--wuiplugin-theme-bordercolor-high);
+	--wui-codebox-bgcolor: var(--wuiplugin-theme-bgcolor-over);
+	--wui-codebox-scroll-width: 4px;
+	--wui-codebox-scroll-bgcolor-out: var(--wuiplugin-theme-bordercolor-max);
+	--wui-codebox-scroll-bgcolor-over: var(--wuiplugin-theme-shadowcolor-low);
+	--wui-codebox-linenumber-width: 52px;
+	--wui-codebox-linenumber-color: var(--wuiplugin-theme-graycolor-low);
+	--wui-codebox-linenumber-bordercolor: var(--wuiplugin-theme-bordercolor-high);
+	--wui-codebox-textcolor: var(--wuiplugin-theme-textcolor-active);
+	--wui-codebox-token-command: var(--wuiplugin-theme-token-command);
+	--wui-codebox-token-comment: var(--wuiplugin-theme-token-comment);
+	--wui-codebox-token-string: var(--wuiplugin-theme-token-string);
+	--wui-codebox-token-keyword: var(--wuiplugin-theme-token-keyword);
+	--wui-codebox-token-number: var(--wuiplugin-theme-token-number);
+	--wui-codebox-token-tag: var(--wuiplugin-theme-token-tag);
+	--wui-codebox-token-attr: var(--wuiplugin-theme-token-attr);
+	--wui-codebox-token-selector: var(--wuiplugin-theme-token-selector);
+	--wui-codebox-token-property: var(--wuiplugin-theme-token-property);
+	--wui-codebox-token-function: var(--wuiplugin-theme-token-function);
+	--wui-codebox-token-operator: var(--wuiplugin-theme-token-operator);
+	--wui-codebox-token-variable: var(--wuiplugin-theme-token-variable);
+	--wui-codebox-token-constant: var(--wuiplugin-theme-token-constant);
+	--wui-codebox-token-decorator: var(--wuiplugin-theme-token-decorator);
+	--wui-codebox-token-type: var(--wuiplugin-theme-token-type);
+	--wui-codebox-token-builtin: var(--wuiplugin-theme-token-builtin);
+	--wui-codebox-token-color: var(--wuiplugin-theme-token-color);
+	--wui-codebox-token-regex: var(--wuiplugin-theme-token-regex);
 
 	/* wui-markdown (lab) */
 
