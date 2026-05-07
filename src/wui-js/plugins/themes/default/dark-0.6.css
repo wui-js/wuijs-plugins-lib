@@ -554,7 +554,7 @@
 	--wui-codeview-scroll-width: 4px;
 	--wui-codeview-scroll-bgcolor-out: #4b5563;
 	--wui-codeview-scroll-bgcolor-over: #1f2937;
-	--wui-codeview-linenumber-width: 2.5em;
+	--wui-codeview-linenumber-width: 52px;
 	--wui-codeview-linenumber-color: #7ee787;
 	--wui-codeview-linenumber-bordercolor: #4b5563;
 	--wui-codeview-textcolor: #f3f4f6;

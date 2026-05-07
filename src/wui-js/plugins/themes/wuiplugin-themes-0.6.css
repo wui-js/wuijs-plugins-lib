@@ -552,7 +552,7 @@
 	--wui-codeview-scroll-width: 4px;
 	--wui-codeview-scroll-bgcolor-out: var(--wuiplugin-theme-bordercolor-max);
 	--wui-codeview-scroll-bgcolor-over: var(--wuiplugin-theme-shadowcolor-low);
-	--wui-codeview-linenumber-width: 2.5em;
+	--wui-codeview-linenumber-width: 52px;
 	--wui-codeview-linenumber-color: var(--wuiplugin-theme-token-comment);
 	--wui-codeview-linenumber-bordercolor: var(--wuiplugin-theme-bordercolor-high);
 	--wui-codeview-textcolor: var(--wuiplugin-theme-textcolor-active);
