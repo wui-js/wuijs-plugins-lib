@@ -1,3 +1,10 @@
+> [!IMPORTANT]
+> The GitHub account `@wuiproject` was migrated to `@wui-js` to match the name with the NPM account.
+
+[English](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/CHANGELOG-en.md) |
+[Español](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/CHANGELOG-es.md)
+---
+
 # Change Log
 
 ## [v0.6.1] - 2026-05-06
@@ -6,6 +13,10 @@ Features:
 
 1. Release of the official documentation site for WUI/JS: [https://docs.wuijs.dev](https://docs.wuijs.dev)
 2. Version synchronization with `wuijs-main-lib`.
+3. Update WUIPluginThemes version class to `0.6`.
+	- Added CSS variables associated with the `wui-codeview` component (lab package).
+	- Added CSS variables associated with the `wui-markdown` component (lab package).
+	- Synchronized the `default` theme template version with the plugin version.
 
 ## [v0.6.0] - 2026-05-01
 
