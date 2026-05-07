@@ -554,6 +554,11 @@
 	--wui-codebox-scroll-width: 4px;
 	--wui-codebox-scroll-bgcolor-out: #b5bbc1;
 	--wui-codebox-scroll-bgcolor-over: #959da5;
+	--wui-codebox-copyicon-src: none;
+	--wui-codebox-copyicon-color: #b5bbc1;
+	--wui-codebox-copiedicon-src: none;
+	--wui-codebox-copiedicon-color: #b5bbc1;
+	--wui-codebox-line-bgcolor-over: #d5dce3;
 	--wui-codebox-linenumber-width: 52px;
 	--wui-codebox-linenumber-color: #444;
 	--wui-codebox-linenumber-bordercolor: #d5dce3;

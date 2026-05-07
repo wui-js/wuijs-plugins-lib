@@ -552,6 +552,11 @@
 	--wui-codebox-scroll-width: 4px;
 	--wui-codebox-scroll-bgcolor-out: var(--wuiplugin-theme-bordercolor-max);
 	--wui-codebox-scroll-bgcolor-over: var(--wuiplugin-theme-shadowcolor-low);
+	--wui-codebox-copyicon-src: none;
+	--wui-codebox-copyicon-color: var(--wuiplugin-theme-bordercolor-max);
+	--wui-codebox-copiedicon-src: none;
+	--wui-codebox-copiedicon-color: var(--wuiplugin-theme-bordercolor-max);
+	--wui-codebox-line-bgcolor-over: var(--wuiplugin-theme-bordercolor-high);
 	--wui-codebox-linenumber-width: 52px;
 	--wui-codebox-linenumber-color: var(--wuiplugin-theme-graycolor-low);
 	--wui-codebox-linenumber-bordercolor: var(--wuiplugin-theme-bordercolor-high);
