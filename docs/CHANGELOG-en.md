@@ -11,7 +11,8 @@
 
 Features:
 
-1. Synchronized with `wuijs-main-lib` version `0.14.1`.
+1. Added a `prepare` script to `package.json` so a git-tag install (`npm install github:wui-js/wuijs-plugins-lib#vX.Y.Z`) produces the same flattened file layout as an npm-registry install.
+2. Synchronized with `wuijs-main-lib` version `0.14.1`.
 
 ## [v0.14.0] - 2026-09-01
 

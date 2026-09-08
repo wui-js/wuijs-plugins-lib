@@ -11,7 +11,8 @@
 
 Características:
 
-1. Se sincronizó la versión con la versión `0.14.1` de la librería `wuijs-main-lib`.
+1. Se agregó el script `prepare` a `package.json` para que una instalación vía tag de git (`npm install github:wui-js/wuijs-plugins-lib#vX.Y.Z`) produzca la misma estructura de archivos aplanada que una instalación desde el registro de npm.
+2. Se sincronizó la versión con la versión `0.14.1` de la librería `wuijs-main-lib`.
 
 ## [v0.14.0] - 2026-09-01
 
