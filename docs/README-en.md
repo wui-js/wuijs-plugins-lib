@@ -14,9 +14,9 @@
 |                      | |
 | -------------------- | --- |
 | **Library name**     | `wuijs-plugins-lib` |
-| **Library version**  | `0.14.0` ([Change Log](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/CHANGELOG-en.md)) |
+| **Library version**  | `0.14.1` ([Change Log](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/CHANGELOG-en.md)) |
 | **NPM package**      | `@wui-js/plugins` ([npm](https://www.npmjs.com/package/@wui-js/plugins)) |
-| **Document version** | `0.14.0.20260901.0` |
+| **Document version** | `0.14.1.20260908.0` |
 | **License**          | `Apache License 2.0` |
 | **Author**           | `Sergio E. Belmar V. <wuijs.project@gmail.com>` |
 | **Repository**       | [https://github.com/wui-js/wuijs-plugins-lib](https://github.com/wui-js/wuijs-plugins-lib) |
@@ -101,7 +101,7 @@ To install the WUI/JS Plugins library, it must be cloned from the official GitHu
 Assuming the project where it will be deployed has a source directory: `./src` and within that, a `./src/libraries` library directory, you must type the following in the terminal:
 
 ```bash
-git clone https://git@github.com/wui-js/wuijs-plugins-lib.git
+git clone --branch v0.14.1 https://git@github.com/wui-js/wuijs-plugins-lib.git
 cp -r ./wuijs-plugins-lib/src/wui-js/ ../src/libraries/
 ```
 
