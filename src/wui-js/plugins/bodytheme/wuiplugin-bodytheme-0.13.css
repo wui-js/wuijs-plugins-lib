@@ -107,7 +107,7 @@
 	--wui-menubar-shadowopacity: 40%;
 	--wui-menubar-margin: 10px;
 	--wui-menubar-bar-borderradius: var(--wuiplugin-bodytheme-borderradius-low);
-	--wui-menubar-bar-bordercolor: var(--wuiplugin-bodytheme-bordercolor-low);
+	--wui-menubar-bar-bordercolor: var(--wuiplugin-bodytheme-bordercolor-high);
 	--wui-menubar-bar-bgcolor-top: var(--wuiplugin-bodytheme-bordercolor-low);
 	--wui-menubar-bar-bgcolor-bottom: var(--wuiplugin-bodytheme-bordercolor-low);
 	--wui-menubar-bar-button-borderradius: var(--wuiplugin-bodytheme-borderradius-low);

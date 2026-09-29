@@ -7,12 +7,20 @@
 
 # Registro de Cambios
 
+## [v0.15.0] - 2026-09-27
+
+Características:
+
+1. Se sincronizó la versión con la versión `0.15.0` de la librería `wuijs-main-lib`.
+2. Se actualizó versión clase WUIPluginFormValidation a `0.3`.
+	- Se corriguó error en método `prepare()`.
+
 ## [v0.14.1] - 2026-09-08
 
 Características:
 
-1. Se agregó el script `prepare` a `package.json` para que una instalación vía tag de git (`npm install github:wui-js/wuijs-plugins-lib#vX.Y.Z`) produzca la misma estructura de archivos aplanada que una instalación desde el registro de npm.
-2. Se sincronizó la versión con la versión `0.14.1` de la librería `wuijs-main-lib`.
+1. Se sincronizó la versión con la versión `0.14.1` de la librería `wuijs-main-lib`.
+2. Se agregó el script `prepare` a `package.json` para que una instalación vía tag de git (`npm install github:wui-js/wuijs-plugins-lib#vX.Y.Z`) produzca la misma estructura de archivos aplanada que una instalación desde el registro de npm.
 
 ## [v0.14.0] - 2026-09-01
 

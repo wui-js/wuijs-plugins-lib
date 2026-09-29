@@ -14,9 +14,9 @@
 |                       | |
 | --------------------- | --- |
 | **Nombre librería**   | `wuijs-plugins-lib` |
-| **Versión librería**  | `0.14.1` ([Registro de Cambios](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/CHANGELOG-es.md)) |
+| **Versión librería**  | `0.15.0` ([Registro de Cambios](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/CHANGELOG-es.md)) |
 | **Paquete npm**       | `@wui-js/plugins` ([npm](https://www.npmjs.com/package/@wui-js/plugins)) |
-| **Versión documento** | `0.14.1.20260908.0` |
+| **Versión documento** | `0.15.0.20260927.0` |
 | **Licencia**          | `Licencia Apache 2.0` |
 | **Autor**             | `Sergio E. Belmar V. <wuijs.project@gmail.com>` |
 | **Repositorio**       | [https://github.com/wui-js/wuijs-plugins-lib](https://github.com/wui-js/wuijs-plugins-lib) |
@@ -58,7 +58,7 @@ WUI/JS Plugins Lib es parte del proyecto WUI/JS, que consta actualmente de 4 rep
 | Nombre Plugin                                          | Versión | Descripción |
 | ------------------------------------------------------ |:-------:| ----------- |
 | [WUIPluginBodyTheme](#wuiplugin-bodytheme)             | `0.13`  | Plugin para el manejo de temas prediseñados y modo claro y oscuro. |
-| [WUIPluginFormValidation](#wuiplugin-formvalidation)   | `0.2`   | Extensión de validación de campos para WUIForm. |
+| [WUIPluginFormValidation](#wuiplugin-formvalidation)   | `0.3`   | Extensión de validación de campos para WUIForm. |
 | [WUIPluginFormHttp](#wuiplugin-formhttp)               | `0.1`   | Extensión de transporte de datos para WUIForm (envío JSON). |
 | [WUIPluginSelector](#wuiplugin-selector) `(deprecado)` | `0.4`   | Selector modal basado en WUIModal. |
 
@@ -101,7 +101,7 @@ Para instalar la biblioteca WUI/JS Plugins, debe ser clonada desde el repositori
 Suponiendo que el proyecto donde se implementará tenga un directorio de código fuente `./src` y, dentro de este, un directorio de librerías `./src/libraries`, debe escribir lo siguiente en la terminal:
 
 ```bash
-git clone --branch v0.14.1 https://git@github.com/wui-js/wuijs-plugins-lib.git
+git clone --branch v0.15.0 https://git@github.com/wui-js/wuijs-plugins-lib.git
 cp -r ./wuijs-plugins-lib/src/wui-js/ ../src/libraries/
 ```
 
@@ -534,7 +534,7 @@ Los archivos `light-0.1.css` y `dark-0.1.css` se generan en `src/wui-js/plugins/
 
 ### WUIPluginFormValidation
 
-Versión: `0.2`
+Versión: `0.3`
 
 Extensión de validación de campos para WUIForm.
 
@@ -557,7 +557,7 @@ Los campos de tipo arreglo (`name="...[]"`) se soportan de forma transparente: c
 
 | Tipo | Archivo |
 | ---- | ------- |
-| JS   | [src/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.2.js](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.2.js) |
+| JS   | [src/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.3.js](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.3.js) |
 
 #### Constructor
 
@@ -595,7 +595,7 @@ Cabecera HTML:
 
 ```html
 <script type="text/javascript" src="./libraries/wui-js/main/form/wui-form-0.11.js"></script>
-<script type="text/javascript" src="./libraries/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.2.js"></script>
+<script type="text/javascript" src="./libraries/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.3.js"></script>
 ```
 
 Código HTML:

@@ -7,12 +7,20 @@
 
 # Change Log
 
+## [v0.15.0] - 2026-09-27
+
+Features:
+
+1. Synchronized with `wuijs-main-lib` version `0.15.0`.
+2. Updated WUIPluginFormValidation class version to `0.3`.
+	- Fixed error in `prepare()` methid.
+
 ## [v0.14.1] - 2026-09-08
 
 Features:
 
-1. Added a `prepare` script to `package.json` so a git-tag install (`npm install github:wui-js/wuijs-plugins-lib#vX.Y.Z`) produces the same flattened file layout as an npm-registry install.
-2. Synchronized with `wuijs-main-lib` version `0.14.1`.
+1. Synchronized with `wuijs-main-lib` version `0.14.1`.
+2. Added a `prepare` script to `package.json` so a git-tag install (`npm install github:wui-js/wuijs-plugins-lib#vX.Y.Z`) produces the same flattened file layout as an npm-registry install.
 
 ## [v0.14.0] - 2026-09-01
 
