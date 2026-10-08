@@ -7,6 +7,13 @@
 
 # Change Log
 
+## [v0.16.0] - 2026-10-08
+
+Features:
+
+1. Updated WUIPluginBodyTheme class version to `0.15`.
+	- Updated `wuiplugin-themes-0.15.css` file with the updating of the CSS variable values ​​of the `WUISelectpicker` component.
+
 ## [v0.15.0] - 2026-09-27
 
 Features:

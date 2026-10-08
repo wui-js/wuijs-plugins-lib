@@ -7,6 +7,13 @@
 
 # Registro de Cambios
 
+## [v0.16.0] - 2026-10-08
+
+Características:
+
+1. Se actualizó versión clase WUIPluginBodyTheme a `0.15`.
+	- Se actualizó el archivo `wuiplugin-themes-0.15.css` con la actualización de los valores de las variables CSS del componente `WUISelectpicker`.
+
 ## [v0.15.0] - 2026-09-27
 
 Características:
