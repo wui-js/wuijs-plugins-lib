@@ -9,7 +9,5 @@
 		"statusBar.debuggingForeground": "#e7e7e7",
 		"statusBar.inactiveBackground": "#9933ff"
 	},
-	"peacock.color": "#9933ff",
-	"liveServer.settings.port": 5501,
-	"CodeGPT.apiKey": "Anthropic"
+	"peacock.color": "#9933ff"
 }
