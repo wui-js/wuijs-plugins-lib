@@ -14,9 +14,9 @@
 |                      | |
 | -------------------- | --- |
 | **Library name**     | `wuijs-plugins-lib` |
-| **Library version**  | `0.16.0` ([Change Log](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/CHANGELOG-en.md)) |
+| **Library version**  | `0.16.1` ([Change Log](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/CHANGELOG-en.md)) |
 | **NPM package**      | `@wui-js/plugins` ([npm](https://www.npmjs.com/package/@wui-js/plugins)) |
-| **Document version** | `0.16.0.20261008.0` |
+| **Document version** | `0.16.1.20261008.0` |
 | **License**          | `Apache License 2.0` |
 | **Author**           | `Sergio E. Belmar V. <wuijs.project@gmail.com>` |
 | **Repository**       | [https://github.com/wui-js/wuijs-plugins-lib](https://github.com/wui-js/wuijs-plugins-lib) |
@@ -101,7 +101,7 @@ To install the WUI/JS Plugins library, it must be cloned from the official GitHu
 Assuming the project where it will be deployed has a source directory: `./src` and within that, a `./src/libraries` library directory, you must type the following in the terminal:
 
 ```bash
-git clone --branch v0.16.0 https://git@github.com/wui-js/wuijs-plugins-lib.git
+git clone --branch v0.16.1 https://git@github.com/wui-js/wuijs-plugins-lib.git
 cp -r ./wuijs-plugins-lib/src/wui-js/ ../src/libraries/
 ```
 
@@ -545,7 +545,7 @@ WUIPluginFormValidation extends `WUIForm`, attaching a `validation` namespace to
 Array-type inputs (`name="...[]"`) are supported transparently: every method resolves each occurrence by its position among inputs sharing the same name, matching the `position` parameter added in `WUIForm` `0.11`.
 
 > [!NOTE]
-> The complete documentation for the `WUIForm` class can be found in the `wuijs-main-lib` project at the following link: [https://github.com/wui-js/wuijs-main-lib/blob/main/docs/README-en.md#wui-form](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/README-en.md#wui-form).
+> The complete documentation for the `WUIForm` class can be found in the `wuijs-main-lib` project at the following link: [https://github.com/wui-js/wuijs-main-lib/blob/main/docs/classes/form/wui-form-en.md](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/classes/form/wui-form-en.md).
 
 #### Dependencies
 
@@ -641,7 +641,7 @@ WUIPluginFormHttp extends `WUIForm`, attaching an `http` namespace to `WUIForm.p
 > The namespace is `http`, not `submit`, since `WUIForm` already exposes a `submit` property (boolean, get/set) that controls native form submission.
 
 > [!NOTE]
-> The complete documentation for the `WUIForm` class can be found in the `wuijs-main-lib` project at the following link: [https://github.com/wui-js/wuijs-main-lib/blob/main/docs/README-en.md#wui-form](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/README-en.md#wui-form).
+> The complete documentation for the `WUIForm` class can be found in the `wuijs-main-lib` project at the following link: [https://github.com/wui-js/wuijs-main-lib/blob/main/docs/classes/form/wui-form-en.md](https://github.com/wui-js/wuijs-main-lib/blob/main/docs/classes/form/wui-form-en.md).
 
 #### Dependencies
 

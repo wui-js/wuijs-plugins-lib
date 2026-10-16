@@ -7,6 +7,12 @@
 
 # Change Log
 
+## [v0.16.1] - 2026-10-08
+
+Features:
+
+1. Updated the `WUIForm` documentation links to its class file in `wuijs-main-lib` (`docs/classes/form/wui-form-en.md`).
+
 ## [v0.16.0] - 2026-10-08
 
 Features:

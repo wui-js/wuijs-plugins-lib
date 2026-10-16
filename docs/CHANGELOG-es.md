@@ -7,6 +7,12 @@
 
 # Registro de Cambios
 
+## [v0.16.1] - 2026-10-08
+
+Características:
+
+1. Se actualizaron los enlaces a la documentación de `WUIForm` hacia su archivo de clase en `wuijs-main-lib` (`docs/classes/form/wui-form-es.md`).
+
 ## [v0.16.0] - 2026-10-08
 
 Características:
