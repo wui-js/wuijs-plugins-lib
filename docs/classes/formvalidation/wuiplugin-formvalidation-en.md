@@ -4,7 +4,7 @@
 
 # WUIPluginFormValidation
 
-Version: `0.3`
+Version: `0.4`
 
 Input validation extension for WUIForm.
 
@@ -21,13 +21,13 @@ Array-type inputs (`name="...[]"`) are supported transparently: every method res
 
 | Class     | Version | Description |
 | --------- |:-------:| ----------- |
-| `WUIForm` | `0.11`  | Base class extended by the plugin. Required. |
+| `WUIForm` | `0.16`  | Base class extended by the plugin. Required. |
 
 ## Sources
 
 | Type | File |
 | ---- | ---- |
-| JS   | [src/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.3.js](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.3.js) |
+| JS   | [src/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.4.js](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.4.js) |
 
 ## Constructor
 
@@ -64,8 +64,8 @@ It does not have instance properties.
 HTML head:
 
 ```html
-<script type="text/javascript" src="./libraries/wui-js/main/form/wui-form-0.11.js"></script>
-<script type="text/javascript" src="./libraries/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.3.js"></script>
+<script type="text/javascript" src="./libraries/wui-js/main/form/wui-form-0.16.js"></script>
+<script type="text/javascript" src="./libraries/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.4.js"></script>
 ```
 
 HTML code:

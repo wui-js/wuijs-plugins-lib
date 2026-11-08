@@ -4,7 +4,7 @@
 
 # WUIPluginFormHttp
 
-Versión: `0.1`
+Versión: `0.2`
 
 Extensión de transporte de datos para WUIForm (envío JSON).
 
@@ -22,13 +22,13 @@ WUIPluginFormHttp extiende `WUIForm`, agregando un namespace `http` a `WUIForm.p
 
 | Clase     | Versión | Descripción |
 | --------- |:-------:| ----------- |
-| `WUIForm` | `0.11`  | Clase base extendida por el plugin. Requerida. |
+| `WUIForm` | `0.16`  | Clase base extendida por el plugin. Requerida. |
 
 ## Fuentes
 
 | Tipo | Archivo |
 | ---- | ------- |
-| JS   | [src/wui-js/plugins/formhttp/wuiplugin-formhttp-0.1.js](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/formhttp/wuiplugin-formhttp-0.1.js) |
+| JS   | [src/wui-js/plugins/formhttp/wuiplugin-formhttp-0.2.js](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/formhttp/wuiplugin-formhttp-0.2.js) |
 
 ## Constructor
 
@@ -50,7 +50,7 @@ No posee propiedades de instancia.
 
 | Método        | Return type         | Descripción |
 | ------------- | ------------------- | ----------- |
-| submitJson    | `Promise<object>` | `http.submitJson(options)`<br><br>Parámetros:<br>**• options:** `object`. Opciones de envío, con las mismas propiedades aceptadas por `fetch()`.<br>&nbsp;&nbsp;- **url:** `string`. Endpoint de destino.<br>&nbsp;&nbsp;- **token:** `string` *opcional*. Si se entrega, se envía como cabecera `Authorization: Bearer {token}`.<br><br>Envía los datos del formulario en formato JSON vía `POST`, construyendo el cuerpo desde `getFormData()`. Si la respuesta no es `ok`, retorna `{ status: "error" }`. Si lo es, intenta parsear el cuerpo como JSON y lo retorna tal cual (se espera que incluya su propia clave `status`); si el parseo falla, retorna `{ status: "error", content: <texto de la respuesta> }`. |
+| submitJson    | `Promise<object>` | `http.submitJson(options)`<br><br>Parámetros:<br>**• options:** `object`. Opciones de envío, con las mismas propiedades aceptadas por `fetch()`.<br>&nbsp;&nbsp;- **url:** `string`. Endpoint de destino.<br>&nbsp;&nbsp;- **token:** `string` *opcional*. Si se entrega, se envía como cabecera `Authorization: Bearer {token}`.<br><br>Envía los datos del formulario en formato JSON vía `POST`, construyendo el cuerpo desde `getFormData()`: un campo repetido aporta su último valor, salvo un `<select multiple>`, que siempre se envía como arreglo con sus opciones seleccionadas (ausente si no hay ninguna). Si la respuesta no es `ok`, retorna `{ status: "error" }`. Si lo es, intenta parsear el cuerpo como JSON y lo retorna tal cual (se espera que incluya su propia clave `status`); si el parseo falla, retorna `{ status: "error", content: <texto de la respuesta> }`. |
 
 > [!TIP]
 > Usa `form.closeKeyboard()` (disponible directamente en `WUIForm` desde la versión `0.10` de `wuijs-main-lib`) para cerrar el teclado en pantalla en dispositivos móviles antes o después del envío.
@@ -60,8 +60,8 @@ No posee propiedades de instancia.
 Cabecera HTML:
 
 ```html
-<script type="text/javascript" src="./libraries/wui-js/main/form/wui-form-0.11.js"></script>
-<script type="text/javascript" src="./libraries/wui-js/plugins/formhttp/wuiplugin-formhttp-0.1.js"></script>
+<script type="text/javascript" src="./libraries/wui-js/main/form/wui-form-0.16.js"></script>
+<script type="text/javascript" src="./libraries/wui-js/plugins/formhttp/wuiplugin-formhttp-0.2.js"></script>
 ```
 
 Código JS:

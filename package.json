@@ -1,9 +1,9 @@
 {
 	"name": "@wui-js/plugins",
-	"version": "0.16.1",
+	"version": "0.17.0",
 	"license": "Apache-2.0",
 	"author": "Sergio E. Belmar V. <wuijs.project@gmail.com>",
-	"description": "WUI/JS Plugins Lib - WUI/JS Plugins Lib is an open-source JavaScript/CSS library that provides a collection of plugins for WUI/JS Main Lib classes.",
+	"description": "WUI/JS Plugins Lib - Open-source JavaScript/CSS library of plugins for WUI/JS Main Lib classes: body themes, form validation and form HTTP submission.",
 	"keywords": [
 		"ui",
 		"components",
@@ -27,8 +27,8 @@
 	},
 	"files": [
 		"bodytheme/",
-		"formhttp/",
-		"formvalidation/"
+		"formvalidation/",
+		"formhttp/"
 	],
 	"scripts": {
 		"prepare": "test -d .git && exit 0 || (rm -f README.md && cp NPM.md README.md && cp -r src/wui-js/plugins/. .)",

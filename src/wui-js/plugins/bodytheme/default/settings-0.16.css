@@ -1,0 +1,238 @@
+/*
+@file settings-0.16.css
+@class WUIPluginBodyTheme
+@theme default
+@version 0.16
+@author Sergio E. Belmar V. (wuijs.project@gmail.com)
+@copyright Sergio E. Belmar V. (wuijs.project@gmail.com)
+*/
+
+.wuiplugin-bodytheme.default {
+
+	/* global */
+
+	--wuiplugin-bodytheme-name: "default";
+
+	/* common */
+
+	--wuiplugin-bodytheme-borderradius-low: 10px;
+	--wuiplugin-bodytheme-borderradius-half: 15px;
+	--wuiplugin-bodytheme-borderradius-high: 17px;
+	--wuiplugin-bodytheme-borderradius-round: 50%;
+	--wuiplugin-bodytheme-titlefont: Arial, Helvetica, Verdana, sans-serif;
+	--wuiplugin-bodytheme-textfont: Arial, Helvetica, Verdana, sans-serif;
+	--wuiplugin-bodytheme-textweight: 200;
+	--wuiplugin-bodytheme-textsize-xsmall: 10px;
+	--wuiplugin-bodytheme-textsize-small: 12px;
+	--wuiplugin-bodytheme-textsize-medium: 13px;
+	--wuiplugin-bodytheme-textsize-normal: 14px;
+	--wuiplugin-bodytheme-textsize-large: 15px;
+	--wuiplugin-bodytheme-textsize-xlarge: 17px;
+	--wuiplugin-bodytheme-textsize-xxlarge: 20px;
+	--wuiplugin-bodytheme-input-opener-iconsize: 30px;
+	--wuiplugin-bodytheme-transition-delay: .4s;
+	--wuiplugin-bodytheme-box-filter: blur(10px);
+
+	/* light mode */
+
+	--wuiplugin-bodytheme-graycolor-max-light: #fff;
+	--wuiplugin-bodytheme-graycolor-high-light: #ccc;
+	--wuiplugin-bodytheme-graycolor-half-light: #888;
+	--wuiplugin-bodytheme-graycolor-low-light: #444;
+	--wuiplugin-bodytheme-graycolor-min-light: #000;
+	--wuiplugin-bodytheme-shadowcolor-high-light: #304d63;
+	--wuiplugin-bodytheme-shadowcolor-low-light: #959da5;
+	--wuiplugin-bodytheme-bordercolor-max-light: #b5bbc1;
+	--wuiplugin-bodytheme-bordercolor-high-light: #d5dce3;
+	--wuiplugin-bodytheme-bordercolor-low-light: #f0f0f3;
+	--wuiplugin-bodytheme-bgcolor-page-light: #f8fafb;
+	--wuiplugin-bodytheme-bgcolor-overlay-light: #010203;
+	--wuiplugin-bodytheme-bgcolor-box-light: #efeff6;
+	--wuiplugin-bodytheme-bgcolor-out-light: #fdfdfe;
+	--wuiplugin-bodytheme-bgcolor-over-light: #f6f6f6;
+	--wuiplugin-bodytheme-bgcolor-fieldset-light: #fdfdfe;
+	--wuiplugin-bodytheme-bgcolor-field-light: #f6f6f6;
+	--wuiplugin-bodytheme-bgcolor-scroll-light: #353a40;
+	--wuiplugin-bodytheme-bgcolor-icon-light: #353a40;
+	--wuiplugin-bodytheme-bgcolor-highcontrast-light: #1f2429;
+	--wuiplugin-bodytheme-textcolor-title-light: #000;
+	--wuiplugin-bodytheme-textcolor-active-light: #2d3a47;
+	--wuiplugin-bodytheme-textcolor-focus-light: #1f2937;
+	--wuiplugin-bodytheme-textcolor-onaccent-light: #fff;
+	--wuiplugin-bodytheme-textcolor-highlight-light: #fff;
+	--wuiplugin-bodytheme-utilitycolor-highlight-light: #1e90ff;
+	--wuiplugin-bodytheme-utilitycolor-success-light: #22c55e;
+	--wuiplugin-bodytheme-utilitycolor-warning-light: #f59e0b;
+	--wuiplugin-bodytheme-utilitycolor-danger-light: #ef4444;
+	--wuiplugin-bodytheme-utilitycolor-info-light: #1e90ff;
+	--wuiplugin-bodytheme-utilitycolor-disabled-light: #d5dce3;
+	--wuiplugin-bodytheme-intensitycolor-low-light: mediumaquamarine;
+	--wuiplugin-bodytheme-intensitycolor-half-light: darkorange;
+	--wuiplugin-bodytheme-intensitycolor-high-light: orangered;
+	--wuiplugin-bodytheme-code-command-light: #3e999f;
+	--wuiplugin-bodytheme-code-comment-light: #8e908c;
+	--wuiplugin-bodytheme-code-string-light: #718c00;
+	--wuiplugin-bodytheme-code-keyword-light: #8959a8;
+	--wuiplugin-bodytheme-code-number-light: #f5871f;
+	--wuiplugin-bodytheme-code-tag-light: #c82829;
+	--wuiplugin-bodytheme-code-attr-light: #3e999f;
+	--wuiplugin-bodytheme-code-selector-light: #8959a8;
+	--wuiplugin-bodytheme-code-property-light: #4271ae;
+	--wuiplugin-bodytheme-code-function-light: #eab700;
+	--wuiplugin-bodytheme-code-operator-light: #4d4d4c;
+	--wuiplugin-bodytheme-code-variable-light: #4271ae;
+	--wuiplugin-bodytheme-code-constant-light: #f5871f;
+	--wuiplugin-bodytheme-code-decorator-light: #f5871f;
+	--wuiplugin-bodytheme-code-type-light: #3e999f;
+	--wuiplugin-bodytheme-code-builtin-light: #3e999f;
+	--wuiplugin-bodytheme-code-color-light: #4271ae;
+	--wuiplugin-bodytheme-code-regex-light: #3e999f;
+
+	/* dark mode */
+
+	--wuiplugin-bodytheme-graycolor-max-dark: #000;
+	--wuiplugin-bodytheme-graycolor-high-dark: #444;
+	--wuiplugin-bodytheme-graycolor-half-dark: #888;
+	--wuiplugin-bodytheme-graycolor-low-dark: #ccc;
+	--wuiplugin-bodytheme-graycolor-min-dark: #fff;
+	--wuiplugin-bodytheme-shadowcolor-high-dark: #2f3a48;
+	--wuiplugin-bodytheme-shadowcolor-low-dark: #1f2937;
+	--wuiplugin-bodytheme-bordercolor-max-dark: #4b5563;
+	--wuiplugin-bodytheme-bordercolor-high-dark: #4b5563;
+	--wuiplugin-bodytheme-bordercolor-low-dark: #374151;
+	--wuiplugin-bodytheme-bgcolor-page-dark: #374151;
+	--wuiplugin-bodytheme-bgcolor-overlay-dark: #000;
+	--wuiplugin-bodytheme-bgcolor-box-dark: #2f3a48;
+	--wuiplugin-bodytheme-bgcolor-out-dark: #1f2937;
+	--wuiplugin-bodytheme-bgcolor-over-dark: #374151;
+	--wuiplugin-bodytheme-bgcolor-fieldset-dark: #1f2937;
+	--wuiplugin-bodytheme-bgcolor-field-dark: #374151;
+	--wuiplugin-bodytheme-bgcolor-scroll-dark: #9fa8b6;
+	--wuiplugin-bodytheme-bgcolor-icon-dark: #d1d5db;
+	--wuiplugin-bodytheme-bgcolor-highcontrast-dark: #f9fafb;
+	--wuiplugin-bodytheme-textcolor-title-dark: #fff;
+	--wuiplugin-bodytheme-textcolor-active-dark: #f3f4f6;
+	--wuiplugin-bodytheme-textcolor-focus-dark: #fff;
+	--wuiplugin-bodytheme-textcolor-onaccent-dark: #000;
+	--wuiplugin-bodytheme-textcolor-highlight-dark: #00000099;
+	--wuiplugin-bodytheme-utilitycolor-highlight-dark: #1e90ff;
+	--wuiplugin-bodytheme-utilitycolor-success-dark: #22c55e;
+	--wuiplugin-bodytheme-utilitycolor-warning-dark: #f59e0b;
+	--wuiplugin-bodytheme-utilitycolor-danger-dark: #f15757;
+	--wuiplugin-bodytheme-utilitycolor-info-dark: #1e90ff;
+	--wuiplugin-bodytheme-utilitycolor-disabled-dark: #4b5563;
+	--wuiplugin-bodytheme-intensitycolor-low-dark: mediumaquamarine;
+	--wuiplugin-bodytheme-intensitycolor-half-dark: darkorange;
+	--wuiplugin-bodytheme-intensitycolor-high-dark: orangered;
+	--wuiplugin-bodytheme-code-command-dark: #8abeb7;
+	--wuiplugin-bodytheme-code-comment-dark: #969896;
+	--wuiplugin-bodytheme-code-string-dark: #b5bd68;
+	--wuiplugin-bodytheme-code-keyword-dark: #b294bb;
+	--wuiplugin-bodytheme-code-number-dark: #de935f;
+	--wuiplugin-bodytheme-code-tag-dark: #cc6666;
+	--wuiplugin-bodytheme-code-attr-dark: #8abeb7;
+	--wuiplugin-bodytheme-code-selector-dark: #b294bb;
+	--wuiplugin-bodytheme-code-property-dark: #81a2be;
+	--wuiplugin-bodytheme-code-function-dark: #f0c674;
+	--wuiplugin-bodytheme-code-operator-dark: #c5c8c6;
+	--wuiplugin-bodytheme-code-variable-dark: #81a2be;
+	--wuiplugin-bodytheme-code-constant-dark: #de935f;
+	--wuiplugin-bodytheme-code-decorator-dark: #de935f;
+	--wuiplugin-bodytheme-code-type-dark: #8abeb7;
+	--wuiplugin-bodytheme-code-builtin-dark: #8abeb7;
+	--wuiplugin-bodytheme-code-color-dark: #81a2be;
+	--wuiplugin-bodytheme-code-regex-dark: #8abeb7;
+
+	/* components */
+
+	--wui-modal-box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+	--wui-modal-box-bordercolor: var(--wuiplugin-bodytheme-bordercolor-high);
+	--wui-modal-footer-justify: center;
+	--wui-modal-footer-horizontalmargin: 5px;
+	--wui-menubar-shadow: rgb(from var(--wuiplugin-bodytheme-shadowcolor-low) r g b / 40%) 0px 4px 12px;
+	--wui-menubar-bar-bordercolor: var(--wuiplugin-bodytheme-bordercolor-high);
+	--wui-menubar-mobile-bar-height: 50px;
+	--wui-menubar-mobile-bar-bgcolor-top: var(--wuiplugin-bodytheme-bordercolor-low);
+	--wui-menubar-mobile-bar-bgcolor-bottom: var(--wuiplugin-bodytheme-bordercolor-low);
+	--wui-menubar-mobile-bar-borderradius: var(--wuiplugin-bodytheme-borderradius-low);
+	--wui-menubar-mobile-bar-button-width: 36px;
+	--wui-menubar-mobile-bar-button-borderradius: 9999px;
+	--wui-menubar-mobile-bar-filter: none;
+	--wui-list-shadow: rgb(from var(--wuiplugin-bodytheme-shadowcolor-low) r g b / 40%) 0px 4px 12px;
+	--wui-table-shadow: rgb(from var(--wuiplugin-bodytheme-shadowcolor-low) r g b / 40%) 0px 4px 12px;
+	--wui-form-legend-texttransform: none;
+	--wui-form-button-bordercolor-out: var(--wui-button-default-bordercolor-out);
+	--wui-form-button-bordercolor-disabled: var(--wui-button-default-bordercolor-disabled);
+	--wui-form-button-bordercolor-submit-out: var(--wui-button-submit-bordercolor-out);
+	--wui-form-button-bordercolor-danger-out: var(--wui-button-danger-bordercolor-out);
+	--wui-form-button-bordercolor-danger-over: var(--wui-button-danger-bordercolor-over);
+	--wui-form-button-bgcolor-out: var(--wui-button-default-bgcolor-out);
+	--wui-form-button-bgcolor-over: var(--wui-button-default-bgcolor-over);
+	--wui-form-mobile-textsize: max(16px, var(--wuiplugin-bodytheme-textsize-large));
+	--wui-form-mobile-input-height: 32px;
+	--wui-datepicker-box-month-titlecolor: var(--wuiplugin-bodytheme-graycolor-half);
+	--wui-switch-bordercolor-activated: var(--wuiplugin-bodytheme-utilitycolor-highlight);
+	--wui-switch-bgcolor-activated: var(--wuiplugin-bodytheme-utilitycolor-highlight);
+	--wui-switch-button-bordercolor-activated: var(--wuiplugin-bodytheme-utilitycolor-highlight);
+	--wui-switch-button-bgcolor-out: var(--wuiplugin-bodytheme-bgcolor-over);
+	--wui-switch-button-bgcolor-activated: var(--wuiplugin-bodytheme-bgcolor-over);
+	--wui-button-default-shadow: rgba(50, 50, 93, .25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+	--wui-button-danger-bordercolor-out: rgb(from var(--wuiplugin-bodytheme-utilitycolor-danger) r g b / 25%);
+	--wui-button-danger-bordercolor-over: var(--wuiplugin-bodytheme-utilitycolor-danger);
+	--wui-button-danger-bgcolor-out: var(--wuiplugin-bodytheme-utilitycolor-danger);
+	--wui-button-danger-bgcolor-over: var(--wuiplugin-bodytheme-utilitycolor-danger);
+	--wui-button-danger-textcolor-out: var(--wuiplugin-bodytheme-textcolor-onaccent);
+	--wui-button-danger-textcolor-over: var(--wuiplugin-bodytheme-textcolor-onaccent);
+	--wui-button-submit-bordercolor-disabled: rgb(from var(--wuiplugin-bodytheme-textcolor-active) r g b / 20%);
+	--wui-button-join-bordercolor-out: var(--wui-button-default-bordercolor-out);
+	--wui-button-join-bordercolor-disabled: var(--wui-button-default-bordercolor-disabled);
+	--wui-button-join-bordercolor-submit-out: var(--wui-button-submit-bordercolor-out);
+	--wui-button-join-bordercolor-danger-out: var(--wui-button-danger-bordercolor-out);
+	--wui-button-join-bordercolor-danger-over: var(--wui-button-danger-bordercolor-over);
+	--wui-button-join-bgcolor-out: var(--wui-button-default-bgcolor-out);
+	--wui-button-join-bgcolor-over: var(--wui-button-default-bgcolor-over);
+	--wui-button-join-bgcolor-selected: var(--wui-button-default-bgcolor-selected);
+	--wui-button-join-bgcolor-disabled: var(--wui-button-default-bgcolor-disabled);
+	--wui-button-join-separatorcolor-out: var(--wui-button-default-bordercolor-out);
+	--wui-button-join-separatorcolor-over: var(--wui-button-default-bordercolor-over);
+	--wui-button-join-separatorcolor-selected: var(--wui-button-default-bordercolor-selected);
+	--wui-button-join-separatorcolor-disabled: var(--wui-button-default-bordercolor-disabled);
+	--wui-button-mobile-default-height: 40px;
+	--wui-button-mobile-submit-height: 40px;
+}
+
+@media (prefers-contrast: more) {
+
+	.wuiplugin-bodytheme.default {
+
+		/* light mode */
+
+		--wuiplugin-bodytheme-graycolor-half-light: #6b6b6b;
+		--wuiplugin-bodytheme-graycolor-low-light: #2b2b2b;
+		--wuiplugin-bodytheme-bordercolor-max-light: #6b7680;
+		--wuiplugin-bodytheme-bordercolor-high-light: #8a949e;
+		--wuiplugin-bodytheme-bordercolor-low-light: #f0f0f3;
+		--wuiplugin-bodytheme-textcolor-active-light: #141c24;
+		--wuiplugin-bodytheme-utilitycolor-highlight-light: #0063d1;
+
+		/* dark mode */
+
+		--wuiplugin-bodytheme-graycolor-half-dark: #a8a8a8;
+		--wuiplugin-bodytheme-graycolor-low-dark: #e6e6e6;
+		--wuiplugin-bodytheme-bordercolor-max-dark: #8b95a3;
+		--wuiplugin-bodytheme-bordercolor-high-dark: #6b7684;
+		--wuiplugin-bodytheme-bordercolor-low-dark: #374151;
+		--wuiplugin-bodytheme-textcolor-active-dark: #fff;
+		--wuiplugin-bodytheme-utilitycolor-highlight-dark: #5aaeff;
+		--wuiplugin-bodytheme-utilitycolor-success-dark: #4ade80;
+	}
+}
+
+@media (prefers-reduced-transparency: reduce) {
+
+	.wuiplugin-bodytheme.default {
+		--wui-menubar-mobile-bar-bgcolor-top: var(--wuiplugin-bodytheme-bordercolor-low);
+		--wui-menubar-mobile-bar-bgcolor-bottom: var(--wuiplugin-bodytheme-bordercolor-low);
+		--wui-menubar-mobile-bar-filter: none;
+	}
+}

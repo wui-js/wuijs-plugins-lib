@@ -14,9 +14,9 @@
 |                      | |
 | -------------------- | --- |
 | **Library name**     | `wuijs-plugins-lib` |
-| **Library version**  | `0.16.1` ([Change Log](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/CHANGELOG-en.md)) |
+| **Library version**  | `0.17.0` ([Change Log](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/CHANGELOG-en.md)) |
 | **NPM package**      | `@wui-js/plugins` ([npm](https://www.npmjs.com/package/@wui-js/plugins)) |
-| **Document version** | `0.16.1.20261016.0` |
+| **Document version** | `0.17.0.20261107.0` |
 | **License**          | `Apache License 2.0` |
 | **Author**           | `Sergio E. Belmar V. <wuijs.project@gmail.com>` |
 | **Repository**       | [https://github.com/wui-js/wuijs-plugins-lib](https://github.com/wui-js/wuijs-plugins-lib) |
@@ -43,14 +43,22 @@ WUI/JS Plugins Lib is an open-source JavaScript/CSS library that provides a coll
 
 ### About the WUI/JS Project
 
-WUI/JS Plugins Lib is part of the WUI/JS project, which currently consists of 4 repositories:
+WUI/JS Plugins Lib is part of the WUI/JS project, which currently consists of 8 repositories:
 
 -	[https://github.com/wui-js/wuijs-main-lib](https://github.com/wui-js/wuijs-main-lib)<br>
 	UI Main library.<br><br>
--	[https://github.com/wui-js/wuijs-environment-lib](https://github.com/wui-js/wuijs-environment-lib)<br>
-	UI Bridge library between a web environments and native web rendering engines.<br><br>
+-	[https://github.com/wui-js/wuijs-data-lib](https://github.com/wui-js/wuijs-data-lib)<br>
+	Reference Data library.<br><br>
 -	[https://github.com/wui-js/wuijs-plugins-lib](https://github.com/wui-js/wuijs-plugins-lib)<br>
 	UI Plugins library.<br><br>
+-	[https://github.com/wui-js/wuijs-views-lib](https://github.com/wui-js/wuijs-views-lib)<br>
+	UI Views library.<br><br>
+-	[https://github.com/wui-js/wuijs-environment-lib](https://github.com/wui-js/wuijs-environment-lib)<br>
+	UI Bridge library between web environments and native web rendering engines.<br><br>
+-	[https://github.com/wui-js/wuijs-lab-lib](https://github.com/wui-js/wuijs-lab-lib)<br>
+	Experimental UI components library.<br><br>
+-	[https://github.com/wui-js/wuijs-specs-lib](https://github.com/wui-js/wuijs-specs-lib)<br>
+	Universal code and content Specifications library.<br><br>
 -	[https://github.com/wui-js/wuijs-demos](https://github.com/wui-js/wuijs-demos)<br>
 	Repository with demos and usage examples for the project libraries.<br><br>
 
@@ -60,9 +68,9 @@ WUI/JS Plugins Lib is part of the WUI/JS project, which currently consists of 4 
 
 | Class Name                                                                                                                                  | Version | Description |
 | ------------------------------------------------------------------------------------------------------------------------------------------- |:-------:| ----------- |
-| [WUIPluginBodyTheme](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/classes/bodytheme/wuiplugin-bodytheme-en.md)                | `0.15`  | Plugin for managing pre-designed themes and light and dark modes. |
-| [WUIPluginFormValidation](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/classes/formvalidation/wuiplugin-formvalidation-en.md) | `0.3`   | Input validation extension for WUIForm. |
-| [WUIPluginFormHttp](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/classes/formhttp/wuiplugin-formhttp-en.md)                   | `0.1`   | Data transport extension for WUIForm (JSON submission). |
+| [WUIPluginBodyTheme](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/classes/bodytheme/wuiplugin-bodytheme-en.md)                | `0.16`  | Plugin for managing pre-designed themes and light and dark modes. |
+| [WUIPluginFormValidation](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/classes/formvalidation/wuiplugin-formvalidation-en.md) | `0.4`   | Input validation extension for WUIForm. |
+| [WUIPluginFormHttp](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/classes/formhttp/wuiplugin-formhttp-en.md)                   | `0.2`   | Data transport extension for WUIForm (JSON submission). |
 | [WUIPluginSelector](#wuiplugin-selector) `(deprecated)`                                                                                     | `0.4`   | Modal selector based on WUIModal. |
 
 ### Directory Map
@@ -104,7 +112,7 @@ To install the WUI/JS Plugins library, it must be cloned from the official GitHu
 Assuming the project where it will be deployed has a source directory: `./src` and within that, a `./src/libraries` library directory, you must type the following in the terminal:
 
 ```bash
-git clone --branch v0.16.1 https://git@github.com/wui-js/wuijs-plugins-lib.git
+git clone --branch v0.17.0 https://git@github.com/wui-js/wuijs-plugins-lib.git
 cp -r ./wuijs-plugins-lib/src/wui-js/ ../src/libraries/
 ```
 

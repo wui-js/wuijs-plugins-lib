@@ -14,9 +14,9 @@
 |                       | |
 | --------------------- | --- |
 | **Nombre librería**   | `wuijs-plugins-lib` |
-| **Versión librería**  | `0.16.1` ([Registro de Cambios](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/CHANGELOG-es.md)) |
+| **Versión librería**  | `0.17.0` ([Registro de Cambios](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/CHANGELOG-es.md)) |
 | **Paquete npm**       | `@wui-js/plugins` ([npm](https://www.npmjs.com/package/@wui-js/plugins)) |
-| **Versión documento** | `0.16.1.20261016.0` |
+| **Versión documento** | `0.17.0.20261107.0` |
 | **Licencia**          | `Licencia Apache 2.0` |
 | **Autor**             | `Sergio E. Belmar V. <wuijs.project@gmail.com>` |
 | **Repositorio**       | [https://github.com/wui-js/wuijs-plugins-lib](https://github.com/wui-js/wuijs-plugins-lib) |
@@ -43,14 +43,22 @@ WUI/JS Plugins Lib es una librería JavaScript/CSS de código abierto que propor
 
 ### Acerca del Proyecto WUI/JS
 
-WUI/JS Plugins Lib es parte del proyecto WUI/JS, que consta actualmente de 4 repositorios:
+WUI/JS Plugins Lib es parte del proyecto WUI/JS, que consta actualmente de 8 repositorios:
 
 -	[https://github.com/wui-js/wuijs-main-lib](https://github.com/wui-js/wuijs-main-lib)<br>
 	Librería Principal UI.<br><br>
--	[https://github.com/wui-js/wuijs-environment-lib](https://github.com/wui-js/wuijs-environment-lib)<br>
-	Librería Puente UI entre entornos web y motores de renderizado web nativos.<br><br>
+-	[https://github.com/wui-js/wuijs-data-lib](https://github.com/wui-js/wuijs-data-lib)<br>
+	Librería de Datos de referencia.<br><br>
 -	[https://github.com/wui-js/wuijs-plugins-lib](https://github.com/wui-js/wuijs-plugins-lib)<br>
 	Librería de Complementos UI.<br><br>
+-	[https://github.com/wui-js/wuijs-views-lib](https://github.com/wui-js/wuijs-views-lib)<br>
+	Librería de Vistas UI.<br><br>
+-	[https://github.com/wui-js/wuijs-environment-lib](https://github.com/wui-js/wuijs-environment-lib)<br>
+	Librería Puente UI entre entornos web y motores de renderizado web nativos.<br><br>
+-	[https://github.com/wui-js/wuijs-lab-lib](https://github.com/wui-js/wuijs-lab-lib)<br>
+	Librería de componentes UI experimentales.<br><br>
+-	[https://github.com/wui-js/wuijs-specs-lib](https://github.com/wui-js/wuijs-specs-lib)<br>
+	Librería de Especificaciones universales de código y contenido.<br><br>
 -	[https://github.com/wui-js/wuijs-demos](https://github.com/wui-js/wuijs-demos)<br>
 	Repositorio con demos y ejemplos de uso de las librerías del proyecto.<br><br>
 
@@ -60,9 +68,9 @@ WUI/JS Plugins Lib es parte del proyecto WUI/JS, que consta actualmente de 4 rep
 
 | Nombre Clase                                                                                                                                | Versión | Descripción |
 | ------------------------------------------------------------------------------------------------------------------------------------------- |:-------:| ----------- |
-| [WUIPluginBodyTheme](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/classes/bodytheme/wuiplugin-bodytheme-es.md)                | `0.15`  | Plugin para el manejo de temas prediseñados y modo claro y oscuro. |
-| [WUIPluginFormValidation](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/classes/formvalidation/wuiplugin-formvalidation-es.md) | `0.3`   | Extensión de validación de campos para WUIForm. |
-| [WUIPluginFormHttp](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/classes/formhttp/wuiplugin-formhttp-es.md)                   | `0.1`   | Extensión de transporte de datos para WUIForm (envío JSON). |
+| [WUIPluginBodyTheme](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/classes/bodytheme/wuiplugin-bodytheme-es.md)                | `0.16`  | Plugin para el manejo de temas prediseñados y modo claro y oscuro. |
+| [WUIPluginFormValidation](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/classes/formvalidation/wuiplugin-formvalidation-es.md) | `0.4`   | Extensión de validación de campos para WUIForm. |
+| [WUIPluginFormHttp](https://github.com/wui-js/wuijs-plugins-lib/blob/main/docs/classes/formhttp/wuiplugin-formhttp-es.md)                   | `0.2`   | Extensión de transporte de datos para WUIForm (envío JSON). |
 | [WUIPluginSelector](#wuiplugin-selector) `(deprecado)`                                                                                      | `0.4`   | Selector modal basado en WUIModal. |
 
 ### Mapa de Directorios
@@ -104,7 +112,7 @@ Para instalar la biblioteca WUI/JS Plugins, debe ser clonada desde el repositori
 Suponiendo que el proyecto donde se implementará tenga un directorio de código fuente `./src` y, dentro de este, un directorio de librerías `./src/libraries`, debe escribir lo siguiente en la terminal:
 
 ```bash
-git clone --branch v0.16.1 https://git@github.com/wui-js/wuijs-plugins-lib.git
+git clone --branch v0.17.0 https://git@github.com/wui-js/wuijs-plugins-lib.git
 cp -r ./wuijs-plugins-lib/src/wui-js/ ../src/libraries/
 ```
 

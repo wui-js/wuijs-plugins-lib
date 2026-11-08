@@ -4,7 +4,7 @@
 
 # WUIPluginFormValidation
 
-Versión: `0.3`
+Versión: `0.4`
 
 Extensión de validación de campos para WUIForm.
 
@@ -21,13 +21,13 @@ Los campos de tipo arreglo (`name="...[]"`) se soportan de forma transparente: c
 
 | Clase     | Versión | Descripción |
 | --------- |:-------:| ----------- |
-| `WUIForm` | `0.11`  | Clase base extendida por el plugin. Requerida. |
+| `WUIForm` | `0.16`  | Clase base extendida por el plugin. Requerida. |
 
 ## Fuentes
 
 | Tipo | Archivo |
 | ---- | ------- |
-| JS   | [src/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.3.js](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.3.js) |
+| JS   | [src/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.4.js](https://github.com/wui-js/wuijs-plugins-lib/blob/main/src/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.4.js) |
 
 ## Constructor
 
@@ -64,8 +64,8 @@ No posee propiedades de instancia.
 Cabecera HTML:
 
 ```html
-<script type="text/javascript" src="./libraries/wui-js/main/form/wui-form-0.11.js"></script>
-<script type="text/javascript" src="./libraries/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.3.js"></script>
+<script type="text/javascript" src="./libraries/wui-js/main/form/wui-form-0.16.js"></script>
+<script type="text/javascript" src="./libraries/wui-js/plugins/formvalidation/wuiplugin-formvalidation-0.4.js"></script>
 ```
 
 Código HTML:
